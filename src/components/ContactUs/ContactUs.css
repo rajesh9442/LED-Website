@@ -1,0 +1,130 @@
+/* Icon Styles */
+.contact-icon {
+  font-size: 28px; /* Adjust icon size */
+  margin-right: 10px;
+  color: black; /* Set icon color to black */
+}
+
+/* General Container Styles */
+.contact-us-container {
+  padding: 15px; /* Adjusted padding around the container */
+}
+
+/* Heading Styles */
+.contact-us-heading {
+  text-align: center;
+  margin-bottom: 15px; /* Adjusted margin below heading */
+  font-size: 1.5em; /* Adjusted font size */
+}
+
+/* Layout for Contact Details and Form */
+.contact-us-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+  gap: 15px; /* Space between the columns */
+}
+
+/* Contact Details Styles */
+.contact-details {
+  margin-top: 20px; /* Reduced margin at the top */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between items */
+  padding: 15px; /* Adjusted padding */
+  font-size: 16px; /* Consistent font size */
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px; /* Reduced margin below items */
+}
+
+.contact-info h2 {
+  margin: 0;
+  font-size: 20px; /* Reduced heading size */
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 16px; /* Reduced font size for content */
+}
+
+/* Contact Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px; /* Adjusted padding */
+  font-size: 16px; /* Consistent font size */
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+  font-size: 20px; /* Reduced heading size */
+}
+
+/* Form Row Styles */
+.form-row {
+  display: flex;
+  gap: 15px; /* Space between form fields */
+  margin-bottom: 15px; /* Reduced margin below rows */
+}
+
+.form-group {
+  flex: 1;
+}
+
+/* Styles for Labels and Inputs */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Shorten the length of name and mobile input fields */
+#name,
+#mobile {
+  width: 85%; /* Make the name and mobile input fields slightly shorter */
+}
+
+.form-group textarea {
+  height: 100px; /* Reduced height for textarea */
+}
+
+button {
+  padding: 8px 16px; /* Reduced padding */
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px; /* Reduced font size */
+  cursor: pointer;
+  border-radius: 4px;
+  align-self: center; /* Center the button horizontally */
+  margin-bottom: 15px; /* Reduced space below the button */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Map Container Styles */
+.map-container {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Make the map container full width */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 250px; /* Reduced height for the map */
+  border: none;
+  border-radius: 8px;
+}
