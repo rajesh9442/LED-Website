@@ -1,4 +1,46 @@
+/* General slideshow container styling */
 .home {
-    padding: 20px;
-  }
-  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Ensure images fit the container */
+.slick-slide img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Remove default arrow styles */
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000; /* Ensure it is above other content */
+  cursor: pointer;
+  color: black; /* Arrow color */
+  font-size: 30px; /* Adjust the font size for the arrows */
+  background: transparent; /* Remove background */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove any potential box-shadow */
+}
+
+/* Ensure no additional white arrows */
+.slick-prev::before, .slick-next::before {
+  display: none; /* Hide default arrow icons */
+}
+
+/* Arrow positions */
+.slick-prev {
+  left: 10px; /* Adjust position to move left arrow inside */
+}
+
+.slick-next {
+  right: 10px; /* Adjust position to move right arrow inside */
+}

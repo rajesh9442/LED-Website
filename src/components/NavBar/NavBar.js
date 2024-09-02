@@ -14,6 +14,11 @@ const NavBar = () => {
     setDropdownVisible(false);
   };
 
+  const handleLightingClick = (e) => {
+    e.preventDefault(); // Prevent navigation
+    setDropdownVisible(!dropdownVisible); // Toggle dropdown visibility
+  };
+
   return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-logo">
@@ -25,12 +30,9 @@ const NavBar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <NavLink
-            to="/lighting"
-            className={({ isActive }) => (isActive ? 'active' : '')}
-          >
+          <a href="/lighting" onClick={handleLightingClick} className="nav-link">
             LIGHTING
-          </NavLink>
+          </a>
           {dropdownVisible && (
             <div className="dropdown">
               <div className="dropdown-section">
@@ -55,7 +57,6 @@ const NavBar = () => {
                   <li><NavLink to="/lighting/shoe-box">SHOE BOX</NavLink></li>
                   <li><NavLink to="/lighting/landscape-accent-lights">LANDSCAPE ACCENT LIGHTS</NavLink></li>
                   <li><NavLink to="/lighting/wall-packs">WALL PACKS</NavLink></li>
-                  {/* Add more outdoor lighting options here */}
                 </ul>
               </div>
             </div>
