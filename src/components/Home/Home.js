@@ -2,11 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import './Home.css';
-import Home1 from '../../images/Home1.png';
-import Home2 from '../../images/Home2.png';
-import Home3 from '../../images/Home3.png';
-import Home4 from '../../images/Home4.png';
-import Home5 from '../../images/Home5.png';
+import Home1 from '../../images/HomeCover/Home1.png';
+import Home2 from '../../images/HomeCover/Home2.png';
+import Home3 from '../../images/HomeCover/Home3.png';
+import Home4 from '../../images/HomeCover/Home4.png';
+import Home5 from '../../images/HomeCover/Home5.png';
 
 const Arrow = ({ className, onClick, direction }) => (
   <div
