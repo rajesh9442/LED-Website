@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LEDDownlight1 from '../../../images/Indoor/DownLightSeries/1.jpg'; // Adjust the path based on your folder structure
 
 const imageData = {
-  'Downlight 1': {
+  'LED 4-6″ Retrofit Downlight 10W-15W 5CCT': {
     src: LEDDownlight1,
     specs: {
       SIZE: '10W: 4.9” L x 2.6” D<br />15W: 7.3” L x 3” D',

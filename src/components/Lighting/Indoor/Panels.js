@@ -8,7 +8,7 @@ import Panel6 from '../../../images/Indoor/Panels/6.jpg';
 import Panel7 from '../../../images/Indoor/Panels/7.jpg';
 
 const panelData = {
-  'Panel 1': {
+  '2×4 FT LED Light Flat Panel, 40/50/60W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights, 5000/6250/7500 Lumens, Lay in Fixture for Office, 120-277V, UL DLC(6 Pack)s': {
     src: Panel1,
     specs: {
       TITLE: 'Specification',
@@ -29,7 +29,7 @@ const panelData = {
       ],
     },
   },
-  'Panel 2': {
+  '2x2FT LED Flat Panel Troffer Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light, 5200lm Lay in Fixture for Office, 0-10V Dimmable, 3-Lamp F17T8 Fixture Replacement, ETL Listed 100-277V – DLC 6 Pack': {
     src: Panel2,
     specs: {
       TITLE: 'Features',
@@ -50,7 +50,7 @@ const panelData = {
       ],
     },
   },
-  'Panel 3': {
+  '2×4 FT LED Light Flat Panel, 40/50/60W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights, 5000/6250/7500 Lumens, Lay in Fixture for Office, 120-277V, UL DLC(6 Pack)': {
     src: Panel3,
     specs: {
       TITLE: 'Features',
@@ -71,7 +71,7 @@ const panelData = {
       ],
     },
   },
-  'Panel 4': {
+  '2×2 FT LED Light Flat Panel, 20/30/40W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights, 2500/3750/5000 Lumens, Lay in Fixture for Office, 120-277V, UL DLC(6 Pack)': {
     src: Panel4,
     specs: {
       TITLE: 'Features',
@@ -92,7 +92,7 @@ const panelData = {
       ],
     },
   },
-  'Panel 5': {
+  'LED Adjustable CCT Backlit Panel Light Adjustable 2x2ft 2x4ft 20-60W': {
     src: Panel5,
     specs: {
       TITLE: 'Specification',
@@ -115,7 +115,7 @@ const panelData = {
       },
     },
   },
-  'Panel 6': {
+  'LED Adjustable CCT T-Bar Light 2x2ft 20/30/40W 2x4ft 40/50/60W': {
     src: Panel6,
     specs: {
       TITLE: 'Specification',
@@ -137,7 +137,7 @@ const panelData = {
       },
     },
   },
-  'Panel 7': {
+  'LED Backlit Panel Light 2x2ft 40W 2x4ft 72W': {
     src: Panel7,
     specs: {
       TITLE: 'Specification',

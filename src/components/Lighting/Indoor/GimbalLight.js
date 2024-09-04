@@ -8,7 +8,7 @@ import LEDGimbalLight6 from '../../../images/Indoor/GimbalLight/6.jpg';
 import LEDGimbalLight7 from '../../../images/Indoor/GimbalLight/7.jpg';
 
 const imageData = {
-  'Gimbal Light 1': {
+  '5CCT 6” 12W Panel Light': {
     src: LEDGimbalLight1,
     specs: {
       'Cut-Out Size': '6 inch',
@@ -32,7 +32,7 @@ const imageData = {
       'Air Tight': 'Yes',
     }
   },
-  'Gimbal Light 2': {
+  '5CCT 4” 9W Panel Light': {
     src: LEDGimbalLight2,
     specs: {
       'Cut-Out Size': '4 inch',
@@ -56,7 +56,7 @@ const imageData = {
       'Air Tight': 'Yes',
     }
   },
-  'Gimbal Light 3': {
+  '5CCT 3” 8W Gimbal Light': {
     src: LEDGimbalLight3,
     specs: {
       'Cut-Out Size': '3 inch',
@@ -80,7 +80,7 @@ const imageData = {
       'Air Tight': 'Yes',
     }
   },
-  'Gimbal Light 4': {
+  '5CCT 4” 12W Gimbal Light': {
     src: LEDGimbalLight4,
     specs: {
       'Cut-Out Size': '4 inch',
@@ -104,7 +104,7 @@ const imageData = {
       'Air Tight': 'Yes',
     }
   },
-  'Gimbal Light 5': {
+  '5CCT 4” 9W Slim Gimbal Light': {
     src: LEDGimbalLight5,
     specs: {
       'Cut-Out Size': '4 inch',
@@ -128,7 +128,7 @@ const imageData = {
       'Air Tight': 'Yes',
     }
   },
-  'Gimbal Light 6': {
+  '5CCT 4” 9W Multi-Directional Light': {
     src: LEDGimbalLight6,
     specs: {
       'Cut-Out Size': '4 inch',
@@ -152,7 +152,7 @@ const imageData = {
       'Air Tight': 'Yes',
     }
   },
-  'Gimbal Light 7': {
+  'RGB 6Inch12W Panel Light': {
     src: LEDGimbalLight7,
     specs: {
       'Cut-Out Size': '6 inch',

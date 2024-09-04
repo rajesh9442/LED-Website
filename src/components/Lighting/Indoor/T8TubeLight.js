@@ -79,7 +79,7 @@ const T8TubeLight = () => {
             alt="T8 Tube Light 1"
             style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }}
           />
-          <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>T8 Tube Light 1</p>
+          <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>LED T8 Tube Light Single Pin 8ft 50W</p>
         </div>
         <div
           style={{
@@ -96,7 +96,7 @@ const T8TubeLight = () => {
             alt="T8 Tube Light 2"
             style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }}
           />
-          <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>T8 Tube Light 2</p>
+          <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>LED T8 Tube Light 2ft – 4ft 10 – 22W</p>
         </div>
       </div>
       {renderSpecifications()}

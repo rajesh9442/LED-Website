@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Troffers1 from '../../../images/Indoor/Troffers/LEDAdjustableCCTCenterBasketTroffer2x2ft2x4ft20to60W.jpg'; // Adjust the path based on your folder structure
 
 const troffersData = {
-  'Troffers 1': {
+  'LED Adjustable CCT Center Basket Troffer 2x2ft 2x4ft 20-60W': {
     src: Troffers1,
     specs: {
       SIZE: 'BL22: 2′ L x 2’W x 1.2″D, BL24: 4′ L x 2′ W x 1.2″ D',
@@ -54,24 +54,25 @@ const Troffers = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Troffers</h1>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
         {Object.keys(troffersData).map((key) => (
           <div
             key={key}
             style={{
-              margin: '0 15px',
+              margin: '15px',
               cursor: 'pointer',
               border: selectedImage === key ? '2px solid black' : '2px solid transparent', // Border color change on click
               padding: '5px', // Padding to fit the border around the image
               display: 'inline-block', // Ensure div only takes up as much space as needed
               transform: selectedImage === key ? 'scale(1.1)' : 'scale(1)', // Scale effect on selection
+              textAlign: 'center',
             }}
             onClick={() => handleImageClick(key)}
           >
             <img
               src={troffersData[key].src}
               alt={key}
-              style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }} // Ensure image does not extend beyond its container
+              style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block', margin: 'auto' }} // Center image within its container
             />
             <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
               {key}

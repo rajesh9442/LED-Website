@@ -37,7 +37,7 @@ const IntegratedTubeLight = () => {
             style={{ width: '250px', height: '250px', objectFit: 'cover', border: showSpecs ? '2px solid black' : 'none' }} 
           />
           <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
-            LED Integrated Tube Light
+            LED Integrated Tube Light 2-8ft, 10-72W
           </p>
         </div>
       </div>

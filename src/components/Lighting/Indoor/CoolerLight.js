@@ -65,7 +65,7 @@ const CoolerLight = () => {
           style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }} // Ensure image does not extend beyond its container
         />
         <p style={{ marginTop: '10px', fontSize: '16px', color: 'black' }}>
-          Cooler Light
+          LED Cooler Light 5ft – 32W, 6ft – 40W
         </p>
       </div>
       {isSelected && renderSpecifications()} {/* Show specifications if selected */}
