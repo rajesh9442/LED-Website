@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// src/components/Lighting/Indoor/GimbalLight.js
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import LEDGimbalLight1 from '../../../images/Indoor/GimbalLight/1.jpg';
 import LEDGimbalLight2 from '../../../images/Indoor/GimbalLight/2.jpg';
 import LEDGimbalLight3 from '../../../images/Indoor/GimbalLight/3.jpg';
@@ -9,228 +11,87 @@ import LEDGimbalLight7 from '../../../images/Indoor/GimbalLight/7.jpg';
 
 const imageData = {
   '5CCT 6” 12W Panel Light': {
+    path: 'gimbal-light-1', // Identifier for routing
     src: LEDGimbalLight1,
-    specs: {
-      'Cut-Out Size': '6 inch',
-      'Wattage': '12 watts',
-      'Input Voltage': 'AC120V, 60Hz',
-      'Beam Angle': '120°',
-      'Light Source': 'SMD LED',
-      'Color Temperature': '27K-30K-35K-40K-50K',
-      'CRI': '80Ra',
-      'Lumens Output': '950±5%lm',
-      'Lumen Efficiency': '80~90lm/w',
-      'Halogen Equiv.': '95 watts',
-      'Dimmable': 'Yes, 100%-5%',
-      'Dimming Tech.': 'Triac Dimming',
-      'Certification': 'ETL, cETL, Energy Star',
-      'Power Factor': '>0.95',
-      'Projected Life': '50,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Insulated Ceiling & Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: '5CCT 6” 12W Panel Light'
   },
   '5CCT 4” 9W Panel Light': {
+    path: 'gimbal-light-2', // Identifier for routing
     src: LEDGimbalLight2,
-    specs: {
-      'Cut-Out Size': '4 inch',
-      'Wattage': '12 watts',
-      'Input Voltage': 'AC120V, 60Hz',
-      'Beam Angle': '120°',
-      'Light Source': 'SMD LED',
-      'Color Temperature': '27K-30K-35K-40K-50K',
-      'CRI': '80Ra',
-      'Lumens Output': '700±5%',
-      'Lumen Efficiency': '80lm/w',
-      'Halogen Equiv.': '65 watts',
-      'Dimmable': '10%-100% (110V only)',
-      'Dimming Tech.': 'Triac Dimming',
-      'Certification': 'cETLus, Energy Star',
-      'Power Factor': '>0.9',
-      'Projected Life': '50,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: '5CCT 4” 9W Panel Light'
   },
   '5CCT 3” 8W Gimbal Light': {
+    path: 'gimbal-light-3', // Identifier for routing
     src: LEDGimbalLight3,
-    specs: {
-      'Cut-Out Size': '3 inch',
-      'Wattage': '8 watts',
-      'Input Voltage': 'AC120V, 60Hz',
-      'Beam Angle': '38°',
-      'Light Source': 'COB LED (LM80 Rated)',
-      'Color Temperature': '27K-30K-35K-40K-50K',
-      'CRI': '80Ra',
-      'Lumens Output': '700lm±5%',
-      'Lumen Efficiency': '85~90lm/w',
-      'Halogen Equiv.': '65 watts',
-      'Dimmable': '10%-100% (110V only)',
-      'Dimming Tech.': 'Triac Dimming',
-      'Certification': 'cETLus',
-      'Power Factor': '>0.9',
-      'Projected Life': '50,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: '5CCT 3” 8W Gimbal Light'
   },
   '5CCT 4” 12W Gimbal Light': {
+    path: 'gimbal-light-4', // Identifier for routing
     src: LEDGimbalLight4,
-    specs: {
-      'Cut-Out Size': '4 inch',
-      'Wattage': '12 watts',
-      'Input Voltage': 'AC110V/120V, 60Hz',
-      'Beam Angle': '38°',
-      'Light Source': 'COB LED (LM80 Rated)',
-      'Color Temperature': '27K-30K-35K-40K-50K',
-      'CRI': '83Ra',
-      'Lumens Output': '1000lm~',
-      'Lumen Efficiency': '85~90lm/w',
-      'Halogen Equiv.': '100 watts',
-      'Dimmable': '10%-100% (110V only)',
-      'Dimming Tech.': 'Triac Dimming',
-      'Certification': 'ETL, cETL',
-      'Power Factor': '>0.95',
-      'Projected Life': '50,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: '5CCT 4” 12W Gimbal Light'
   },
   '5CCT 4” 9W Slim Gimbal Light': {
+    path: 'gimbal-light-5', // Identifier for routing
     src: LEDGimbalLight5,
-    specs: {
-      'Cut-Out Size': '4 inch',
-      'Wattage': '9 watts',
-      'Input Voltage': 'AC120V, 60Hz',
-      'Beam Angle': '45°',
-      'Light Source': 'SMD2835',
-      'Color Temperature': '27K 30K 40K 50K 60K',
-      'CRI': '80Ra',
-      'Lumens Output': '670~805lm',
-      'Lumen Efficiency': '88lm/W',
-      'Halogen Equiv.': '75 watts',
-      'Dimmable': 'Yes, 100%-5%',
-      'Dimming Tech.': 'Triac Dimming',
-      'Certification': 'cETLus',
-      'Power Factor': '>0.9',
-      'Projected Life': '50,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Insulated Ceiling & Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: '5CCT 4” 9W Slim Gimbal Light'
   },
   '5CCT 4” 9W Multi-Directional Light': {
+    path: 'gimbal-light-6', // Identifier for routing
     src: LEDGimbalLight6,
-    specs: {
-      'Cut-Out Size': '4 inch',
-      'Wattage': '9 watts',
-      'Input Voltage': 'AC120V, 60Hz',
-      'Beam Angle': '45°',
-      'Light Source': 'COB',
-      'Color Temperature': '3CCT /5CCT 27K/30K/35K/40K/50K',
-      'CRI': '80Ra',
-      'Lumens Output': '750~800lm',
-      'Lumen Efficiency': '95lm/W',
-      'Halogen Equiv.': '65 watts',
-      'Dimmable': 'Yes, 100%-5%',
-      'Dimming Tech.': 'Triac Dimming',
-      'Certification': 'cETLus',
-      'Power Factor': '>0.9',
-      'Projected Life': '25,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Insulated Ceiling & Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: '5CCT 4” 9W Multi-Directional Light'
   },
   'RGB 6Inch12W Panel Light': {
+    path: 'gimbal-light-7', // Identifier for routing
     src: LEDGimbalLight7,
-    specs: {
-      'Cut-Out Size': '6 inch',
-      'Wattage': '12 watts',
-      'Input Voltage': 'AC120V, 60Hz',
-      'Beam Angle': '120°',
-      'Light Source': 'SMD LED',
-      'Color Temperature': 'RGB W2700K-6000K',
-      'CRI': '80Ra',
-      'Lumens Output': '900±5%',
-      'Lumen Efficiency': '75lm/w',
-      'Halogen Equiv.': '95 watts',
-      'Dimmable': '100%-5% (110V only)',
-      'Dimming Tech.': 'WIFI BLE',
-      'Certification': 'cETLus, Energy Star',
-      'Power Factor': '>0.9',
-      'Projected Life': '50,000hrs at 70% Light Output',
-      'Warranty': '3 years',
-      'Approved Location': 'Damp Locations',
-      'IC Rated': 'Yes',
-      'Air Tight': 'Yes',
-    }
+    description: 'RGB 6Inch12W Panel Light'
   }
 };
 
 const GimbalLight = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const navigate = useNavigate();
 
   const handleImageClick = (key) => {
-    setSelectedImage(selectedImage === key ? null : key); // Toggle selection
-  };
-
-  const renderSpecifications = () => {
-    if (!selectedImage) return null;
-
-    const { specs } = imageData[selectedImage];
-    return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <tbody>
-            {Object.entries(specs).map(([key, value]) => (
-              <tr key={key}>
-                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{key}</td>
-                <td style={{ border: '1px solid #ddd', padding: '8px' }}>{value}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
+    navigate(`/lighting/gimbal-light/details/${imageData[key].path}`);
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Gimbal Light Options</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
         {Object.keys(imageData).map((key) => (
           <div
             key={key}
             style={{
-              margin: '10px',
+              margin: '15px',
               cursor: 'pointer',
-              border: selectedImage === key ? '2px solid black' : '2px solid transparent',
-              padding: '5px'
+              border: '2px solid transparent',
+              padding: '5px',
+              display: 'inline-block',
+              transform: 'scale(1)',
+              transition: 'transform 0.2s, border-color 0.2s',
+              textAlign: 'center',
             }}
             onClick={() => handleImageClick(key)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#000'; // Changed to black
+              e.currentTarget.style.transform = 'scale(1.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
           >
             <img
               src={imageData[key].src}
               alt={key}
-              style={{ width: '200px', height: 'auto' }}
+              style={{ width: '250px', height: 'auto', maxWidth: '100%', objectFit: 'cover' }}
             />
-            <p>{key}</p>
+            <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
+              {imageData[key].description}
+            </p>
           </div>
         ))}
       </div>
-      {renderSpecifications()}
     </div>
   );
 };

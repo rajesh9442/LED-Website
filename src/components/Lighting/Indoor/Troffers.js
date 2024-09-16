@@ -1,54 +1,20 @@
-import React, { useState } from 'react';
-import Troffers1 from '../../../images/Indoor/Troffers/LEDAdjustableCCTCenterBasketTroffer2x2ft2x4ft20to60W.jpg'; // Adjust the path based on your folder structure
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Troffers1 from '../../../images/Indoor/Troffers/LEDAdjustableCCTCenterBasketTroffer2x2ft2x4ft20to60W.jpg';
 
 const troffersData = {
   'LED Adjustable CCT Center Basket Troffer 2x2ft 2x4ft 20-60W': {
+    path: 'led-adjustable-cct-center-basket-troffer', // Unique identifier
     src: Troffers1,
-    specs: {
-      SIZE: 'BL22: 2′ L x 2’W x 1.2″D, BL24: 4′ L x 2′ W x 1.2″ D',
-      '20W +30W + 40W': '2,200lm, 3,300lm, 4,400lm',
-      '40W + 50W + 60W': '4,400lm, 5,500lm, 6,600lm',
-      'ADJUSTABLE CCT': '3000K + 4000K + 5000K',
-      VOLTAGE: 'AC120-277V',
-      DIMMABLE: '3-in-1 (0-10V, PWM, Rx)',
-      'BEAM ANGLE': '120°',
-      CRI: '>80',
-      PF: '>0.95',
-      'IP RATE': 'IP40',
-      MATERIALS: 'Aluminum, PC',
-      'HOUSING COLOR': 'White',
-      LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED Indirect Troffers are an excellent replacement for fluorescent lighting. These Troffers are intended only for indoor use. LED Indirect Troffers are ideal for locations that would benefit from soft lighting, such as waiting rooms, places of worship, classrooms, and offices. This fixture allows you to set the wattage and color temperature.',
-    },
+    description: 'LED Adjustable CCT Center Basket Troffer 2x2ft 2x4ft 20-60W'
   },
 };
 
 const Troffers = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const navigate = useNavigate();
 
   const handleImageClick = (key) => {
-    setSelectedImage(selectedImage === key ? null : key); // Toggle selection
-  };
-
-  const renderSpecifications = () => {
-    if (!selectedImage) return null;
-
-    const { specs } = troffersData[selectedImage];
-    return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <tbody>
-            {Object.entries(specs).map(([key, value]) => (
-              <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
+    navigate(`/lighting/troffers/details/${troffersData[key].path}`);
   };
 
   return (
@@ -61,26 +27,34 @@ const Troffers = () => {
             style={{
               margin: '15px',
               cursor: 'pointer',
-              border: selectedImage === key ? '2px solid black' : '2px solid transparent', // Border color change on click
-              padding: '5px', // Padding to fit the border around the image
-              display: 'inline-block', // Ensure div only takes up as much space as needed
-              transform: selectedImage === key ? 'scale(1.1)' : 'scale(1)', // Scale effect on selection
+              border: '2px solid transparent',
+              padding: '5px',
+              display: 'inline-block',
+              transform: 'scale(1)',
+              transition: 'transform 0.2s, border-color 0.2s',
               textAlign: 'center',
             }}
             onClick={() => handleImageClick(key)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'black';
+              e.currentTarget.style.transform = 'scale(1.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
           >
             <img
               src={troffersData[key].src}
               alt={key}
-              style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block', margin: 'auto' }} // Center image within its container
+              style={{ width: '250px', height: '250px', objectFit: 'cover' }}
             />
             <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
-              {key}
+              {troffersData[key].description}
             </p>
           </div>
         ))}
       </div>
-      {renderSpecifications()}
     </div>
   );
 };
