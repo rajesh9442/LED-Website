@@ -22,10 +22,14 @@ import TroffersDetails from './components/Lighting/Indoor/TroffersDetails';
 import UfoHighbay from './components/Lighting/Indoor/UfoHighbay';
 import UfoHighbayDetails from './components/Lighting/Indoor/UfoHighbayDetails';
 import CanopyLight from './components/Lighting/Outdoor/CanopyLight';
+import CanopyLightDetails from './components/Lighting/Outdoor/CanopyLightDetails'
 import FloodLight from './components/Lighting/Outdoor/FloodLight';
+import FloodLightDetails from './components/Lighting/Outdoor/FloodLightDetails';
 import LandscapeAccentLight from './components/Lighting/Outdoor/LandscapeAccentLight';
 import ShoeBox from './components/Lighting/Outdoor/ShoeBox';
+import ShoeBoxDetails from './components/Lighting/Outdoor/ShoeBoxDetails';
 import WallPacks from './components/Lighting/Outdoor/WallPacks';
+import WallPackDetails from './components/Lighting/Outdoor/WallPackDetails';
 import './App.css';
 
 const App = () => {
@@ -57,10 +61,14 @@ const App = () => {
           <Route path="/lighting/ufo-highbay/details/:id" element={<UfoHighbayDetails />} />
           {/* Outdoor Lights */}
           <Route path="/lighting/canopy-light" element={<CanopyLight />} />
+          <Route path="/lighting/canopy-light/details/:id" element={<CanopyLightDetails />} />
           <Route path="/lighting/flood-light" element={<FloodLight />} />
+          <Route path="/lighting/flood-light/details/:id" element={<FloodLightDetails />} />
           <Route path="/lighting/landscape-accent-lights" element={<LandscapeAccentLight />} />
           <Route path="/lighting/shoe-box" element={<ShoeBox />} />
+          <Route path="/lighting/shoe-box/details/:id" element={<ShoeBoxDetails />} />
           <Route path="/lighting/wall-packs" element={<WallPacks />} />
+          <Route path="/lighting/wall-packs/details/:id" element={<WallPackDetails />} />
         </Routes>
       </div>
     </Router>
