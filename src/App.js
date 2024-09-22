@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import ContactUs from './components/ContactUs/ContactUs';
+import Signs from './components/Signs/Signs';
+import SignsDetails from './components/Signs/SignsDetails';
 import NavBar from './components/NavBar/NavBar';
 import CoolerLight from './components/Lighting/Indoor/CoolerLight';
 import CoolerLightDetails from './components/Lighting/Indoor/CoolerLightDetails';
@@ -22,7 +24,7 @@ import TroffersDetails from './components/Lighting/Indoor/TroffersDetails';
 import UfoHighbay from './components/Lighting/Indoor/UfoHighbay';
 import UfoHighbayDetails from './components/Lighting/Indoor/UfoHighbayDetails';
 import CanopyLight from './components/Lighting/Outdoor/CanopyLight';
-import CanopyLightDetails from './components/Lighting/Outdoor/CanopyLightDetails'
+import CanopyLightDetails from './components/Lighting/Outdoor/CanopyLightDetails';
 import FloodLight from './components/Lighting/Outdoor/FloodLight';
 import FloodLightDetails from './components/Lighting/Outdoor/FloodLightDetails';
 import LandscapeAccentLight from './components/Lighting/Outdoor/LandscapeAccentLight';
@@ -40,6 +42,8 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/signs" element={<Signs />} />
+          <Route path="/signs/details/:id" element={<SignsDetails />} />
           {/* Indoor Lights */}
           <Route path="/lighting/cooler-light" element={<CoolerLight />} />
           <Route path="/lighting/cooler-light/details/:id" element={<CoolerLightDetails />} />
@@ -50,7 +54,7 @@ const App = () => {
           <Route path="/lighting/gimbal-light" element={<GimbalLight />} />
           <Route path="/lighting/gimbal-light/details/:id" element={<GimbalLightDetails />} />
           <Route path="/lighting/integrated-tube-light" element={<IntegratedTubeLight />} />
-          <Route path="/integrated-tube-light" element={<IntegratedTubeLightDetails />} />
+          <Route path="/lighting/integrated-tube-light/details/:id" element={<IntegratedTubeLightDetails />} />
           <Route path="/lighting/panels" element={<Panels />} />
           <Route path="/panels/:id" element={<PanelDetails />} />
           <Route path="/lighting/t8-tube-light" element={<T8TubeLight />} />
@@ -73,6 +77,6 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

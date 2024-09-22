@@ -50,8 +50,19 @@ const Panels = () => {
               textAlign: 'center',
               cursor: 'pointer',
               padding: '5px',
+              border: '2px solid transparent',
+              transform: 'scale(1)',
+              transition: 'transform 0.3s, border-color 0.3s',
             }}
             onClick={() => handlePanelClick(key)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'black';
+              e.currentTarget.style.transform = 'scale(1.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
           >
             <img
               src={panelData[key].src}

@@ -10,7 +10,15 @@ const t8TubeLightData = {
     src: T8TubeLight1,
     specs: {
       SIZE: '8ft: 1.4″ * Ø * 8 ‘L',
-      WATT: '50W'
+      WATT: '50W',
+      LUMENS: '5500',
+      CCT: '4000K, 5000K, 6000K',
+      COVER: 'Clear, Stripe, Frosted',
+      VOLTAGE: 'AC90 – 277V',
+      CRI: '80',
+      IP_RATE: 'IP20',
+      LIFESPAN: '50,000 HRS',
+      DESCRIPTION: 'LED T8 Tube Lights are commonly used to replace fluorescent light bulbs, and can provide an energy savings of up to 60%. LED T8 Tubes are perfect for offices, schools, and parking garages.'
     },
   },
   light2: {
@@ -21,7 +29,15 @@ const t8TubeLightData = {
       '10W': '1,200lm (2ft)',
       '14W': '1,680lm (3ft)',
       '22W': '2,420lm (4ft)',
-      CCT: '3000K, 4000K, 5000K, 6500K'
+      CCT: '3000K, 4000K, 5000K, 6500K',
+      VOLTAGE: 'AC90-277V',
+      BEAM_ANGLE: '120°',
+      INSTALLATION_TYPE: 'TYPE B (BALLAST BYPASS)',
+      CRI: '80',
+      PF: '0.9',
+      IP_RATE: 'IP20',
+      LIFESPAN: '50,000 hours',
+      DESCRIPTION: 'LED T8 Tube Lights are commonly used to replace fluorescent light bulbs, and can provide an energy savings of up to 60%. LED T8 Tubes are perfect for offices, schools, and parking garages.'
     },
   },
 };

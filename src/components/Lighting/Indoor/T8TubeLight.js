@@ -19,9 +19,19 @@ const T8TubeLight = () => {
             margin: '0 15px',
             cursor: 'pointer',
             padding: '5px',
-            display: 'inline-block'
+            border: '2px solid transparent',
+            transform: 'scale(1)',
+            transition: 'transform 0.3s, border-color 0.3s',
           }}
           onClick={() => handleImageClick('light1')}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'black';
+            e.currentTarget.style.transform = 'scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'transparent';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
         >
           <img
             src={T8TubeLight1}
@@ -30,14 +40,25 @@ const T8TubeLight = () => {
           />
           <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>LED T8 Tube Light Single Pin 8ft 50W</p>
         </div>
+
         <div
           style={{
             margin: '0 15px',
             cursor: 'pointer',
             padding: '5px',
-            display: 'inline-block'
+            border: '2px solid transparent',
+            transform: 'scale(1)',
+            transition: 'transform 0.3s, border-color 0.3s',
           }}
           onClick={() => handleImageClick('light2')}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'black';
+            e.currentTarget.style.transform = 'scale(1.1)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'transparent';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
         >
           <img
             src={T8TubeLight2}

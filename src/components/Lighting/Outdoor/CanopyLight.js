@@ -48,13 +48,26 @@ const CanopyLight = () => {
         {Object.keys(canopyLights).map((key) => (
           <div key={key} style={{ textAlign: 'center' }}>
             <div 
-              style={{ 
-                display: 'inline-block',
+              key={key}
+              style={{
+                margin: '15px',
                 cursor: 'pointer',
                 border: '2px solid transparent',
-                padding: '5px'
+                padding: '5px',
+                display: 'inline-block',
+                transform: 'scale(1)',
+                transition: 'transform 0.2s, border-color 0.2s',
+                textAlign: 'center',
               }}
               onClick={() => handleImageClick(canopyLights[key].id)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'black';
+                e.currentTarget.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'transparent';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
             >
               <img 
                 src={canopyLights[key].src} 
