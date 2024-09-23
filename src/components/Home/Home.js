@@ -7,6 +7,7 @@ import Home2 from '../../images/HomeCover/Home2.png';
 import Home3 from '../../images/HomeCover/Home3.png';
 import Home4 from '../../images/HomeCover/Home4.png';
 import Home5 from '../../images/HomeCover/Home5.png';
+import Footer from './Footer'; // Import the Footer component
 
 const Arrow = ({ className, onClick, direction }) => (
   <div
@@ -52,6 +53,8 @@ const Home = () => {
           <div><img src={Home5} alt="Slideshow" className="slideshow-image" /></div>
         </Slider>
       </div>
+      {/* Add Footer Component Here */}
+      <Footer />
     </div>
   );
 }

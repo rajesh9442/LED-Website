@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import ContactUs from './components/ContactUs/ContactUs';
 import Signs from './components/Signs/Signs';
+import CCTV from './components/CCTV/CCTV';
+import CCTVDetails from './components/CCTV/CCTVDetails'; 
 import SignsDetails from './components/Signs/SignsDetails';
 import NavBar from './components/NavBar/NavBar';
 import CoolerLight from './components/Lighting/Indoor/CoolerLight';
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/signs" element={<Signs />} />
           <Route path="/signs/details/:id" element={<SignsDetails />} />
+          <Route path="/cctv" element={<CCTV />} />
+          <Route path="/cctv/details/:id" element={<CCTVDetails />} />
           {/* Indoor Lights */}
           <Route path="/lighting/cooler-light" element={<CoolerLight />} />
           <Route path="/lighting/cooler-light/details/:id" element={<CoolerLightDetails />} />
