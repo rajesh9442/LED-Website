@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
-import logo from '../../images/logo.png'; // Adjust the path to your logo image
+import logo from '../../images/logo.png'; // Adjust the path based on your folder structure
 
 const NavBar = () => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [lightingDropdownVisible, setLightingDropdownVisible] = useState(false);
+  const [signsDropdownVisible, setSignsDropdownVisible] = useState(false);
 
-  const handleMouseEnter = () => {
-    setDropdownVisible(true);
+  // Toggle lighting dropdown
+  const handleLightingMouseEnter = () => {
+    setLightingDropdownVisible(true);
   };
 
-  const handleMouseLeave = () => {
-    setDropdownVisible(false);
+  const handleLightingMouseLeave = () => {
+    setLightingDropdownVisible(false);
+  };
+
+  // Toggle signs dropdown
+  const handleSignsMouseEnter = () => {
+    setSignsDropdownVisible(true);
+  };
+
+  const handleSignsMouseLeave = () => {
+    setSignsDropdownVisible(false);
   };
 
   const handleLightingClick = (e) => {
     e.preventDefault(); // Prevent navigation
-    setDropdownVisible(!dropdownVisible); // Toggle dropdown visibility
+    setLightingDropdownVisible(!lightingDropdownVisible); // Toggle dropdown visibility
   };
 
   return (
@@ -27,13 +38,13 @@ const NavBar = () => {
       <ul className="navbar-links">
         <li
           className="dropdown-container"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleLightingMouseEnter}
+          onMouseLeave={handleLightingMouseLeave}
         >
           <a href="/lighting" onClick={handleLightingClick} className="nav-link">
             LIGHTING
           </a>
-          {dropdownVisible && (
+          {lightingDropdownVisible && (
             <div className="dropdown">
               <div className="dropdown-section">
                 <h3>INDOOR</h3>
@@ -62,27 +73,32 @@ const NavBar = () => {
             </div>
           )}
         </li>
-        <li>
-          <NavLink
-            to="/signs"
-            className={({ isActive }) => (isActive ? 'active' : '')}
-          >
+        <li
+          className="dropdown-container"
+          onMouseEnter={handleSignsMouseEnter}
+          onMouseLeave={handleSignsMouseLeave}
+        >
+          <NavLink to="/signs" className="nav-link">
             SIGNS
           </NavLink>
+          {signsDropdownVisible && (
+            <div className="dropdown">
+              <div className="dropdown-section"> {/* Added for consistency */}
+                <ul>
+                  <li><NavLink to="/signs/gas-price-sign">GAS PRICE SIGN</NavLink></li>
+                  <li><NavLink to="/signs/display-sign">DISPLAY SIGN</NavLink></li>
+                </ul>
+              </div>
+            </div>
+          )}
         </li>
         <li>
-          <NavLink
-            to="/cctv"
-            className={({ isActive }) => (isActive ? 'active' : '')}
-          >
+          <NavLink to="/cctv" className="nav-link">
             CCTV
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/contactus"
-            className={({ isActive }) => (isActive ? 'active' : '')}
-          >
+          <NavLink to="/contactus" className="nav-link">
             CONTACT US
           </NavLink>
         </li>

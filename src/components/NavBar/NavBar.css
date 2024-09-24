@@ -87,27 +87,19 @@
   white-space: nowrap; /* Prevent line breaks */
   display: flex; /* Use flexbox to layout sections side by side */
   gap: 20px; /* Space between the sections */
+  min-width: 200px; /* Ensure dropdown width */
 }
 
 /* Dropdown Section */
 .dropdown-section {
   display: flex;
   flex-direction: column;
+  text-align: left; /* Align text to the left */
 }
 
-/* Dropdown Heading */
-.dropdown-section h3 {
-  margin: 0;
-  padding: 10px 0;
-  font-size: 1.1em; /* Match the font size with navbar links */
-  border-bottom: 1px solid #ddd;
-  font-weight: bold; /* Make the heading bold */
-  text-align: left; /* Align heading text to the left */
-}
-
-/* Dropdown Items */
+/* Dropdown Items (Body Text) */
 .dropdown-section ul {
-  list-style-type: none;
+  list-style-type: none; /* Remove bullet points */
   margin: 0;
   padding: 0;
 }
@@ -124,8 +116,8 @@
   text-decoration: none;
   display: block;
   padding: 5px;
-  font-size: 1em; /* Match the font size with navbar links */
-  font-weight: normal; /* Ensure dropdown items are not bold */
+  font-size: 1em; /* Regular text size, treating as body text */
+  font-weight: normal; /* Ensure dropdown items are normal weight */
   transition: color 0.3s ease;
   text-align: left; /* Align text to the left */
 }
