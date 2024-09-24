@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import coolerLightImage from '../../../images/Indoor/CoolerLight/CoolerLight.jpg'; // Adjust the path based on your folder structure
+import coolerLightImage from '../../../images/Indoor/CoolerLight/CoolerLight.jpg'; // Main image
+import additionalImage from '../../../images/Indoor/CoolerLight/11.jpg'; // Additional image
 
 const coolerLightData = {
   'cooler-light-1': {
     title: 'Cooler Light 5ft – 32W',
-    src: coolerLightImage,
+    images: [coolerLightImage, additionalImage], // Multiple images
     specs: {
       SIZE: '5ft- 0.5” Ø x 58.7” L<br />6ft- 0.5” Ø x 70.6” L',
       'Input voltage': 'AC100-250V',
@@ -27,6 +28,8 @@ const coolerLightData = {
 const CoolerLightDetails = () => {
   const { id } = useParams(); // Get the id from the URL parameter
   const coolerLight = coolerLightData[id]; // Get the data for the selected cooler light
+
+  const [selectedImage, setSelectedImage] = useState(coolerLight.images[0]); // Default to first image
 
   if (!coolerLight) {
     return <div>Invalid Cooler Light selection.</div>;
@@ -54,11 +57,37 @@ const CoolerLightDetails = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{coolerLight.title}</h1>
-      <img
-        src={coolerLight.src}
-        alt={coolerLight.title}
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
-      />
+
+      {/* Main Image Display */}
+      <div style={{ marginBottom: '20px' }}>
+        <img
+          src={selectedImage}
+          alt={coolerLight.title}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        {coolerLight.images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            onClick={() => setSelectedImage(image)}
+            style={{
+              width: '60px',
+              height: '60px',
+              objectFit: 'cover',
+              cursor: 'pointer',
+              border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
+              padding: '5px',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Specifications */}
       {renderSpecifications()}
     </div>
   );

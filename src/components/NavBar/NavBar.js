@@ -55,7 +55,7 @@ const NavBar = () => {
                   <li><NavLink to="/lighting/canopy-light">CANOPY LIGHT</NavLink></li>
                   <li><NavLink to="/lighting/flood-light">FLOOD LIGHT</NavLink></li>
                   <li><NavLink to="/lighting/shoe-box">SHOE BOX</NavLink></li>
-                  <li><NavLink to="/lighting/landscape-accent-lights">LANDSCAPE ACCENT LIGHTS</NavLink></li>
+                  <li><NavLink to="/lighting/exit-signs">EXIT SIGNS</NavLink></li>
                   <li><NavLink to="/lighting/wall-packs">WALL PACKS</NavLink></li>
                 </ul>
               </div>

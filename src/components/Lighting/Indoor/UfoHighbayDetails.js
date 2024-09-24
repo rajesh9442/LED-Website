@@ -1,13 +1,13 @@
-// src/components/Lighting/Indoor/UfoHighbayDetails.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UFOHighbayLight150W from '../../../images/Indoor/UfoHighbay/UFOHighbayLight150W.jpg';
 import UFOHighbayLight240W from '../../../images/Indoor/UfoHighbay/UFOHighbayLight240W.jpg';
+import AdditionalHighbay1 from '../../../images/Indoor/UfoHighbay/11.jpg'; // Example additional image
 
 const ufoHighbayData = {
   'ufo-highbay-150w': {
     title: 'UFO Highbay Light 150W',
-    src: UFOHighbayLight150W,
+    images: [UFOHighbayLight150W, AdditionalHighbay1], // Multiple images for this light
     specs: {
       SIZE: '12.6″ W x 7.4″ D',
       LUMENS: '21,750lm',
@@ -20,12 +20,13 @@ const ufoHighbayData = {
       MATERIALS: 'Aluminum, PC',
       OPTIONAL: 'Motion Sensor, Surge Protector',
       LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED High Bays are built from strong materials that are safe for use in extreme temperatures. They can be equipped with motion sensors. LED High Bays are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These lights are widely used in the lighting of warehouses, gas stations, exhibition halls, and gymnasiums.',
+      DESCRIPTION:
+        'LED High Bays are built from strong materials that are safe for use in extreme temperatures. They can be equipped with motion sensors. LED High Bays are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These lights are widely used in the lighting of warehouses, gas stations, exhibition halls, and gymnasiums.',
     },
   },
   'ufo-highbay-240w': {
     title: 'UFO Highbay Light 240W',
-    src: UFOHighbayLight240W,
+    images: [UFOHighbayLight240W, AdditionalHighbay1], // Multiple images for this light
     specs: {
       SIZE: '15″ W x 8″ D',
       LUMENS: '34,800lm',
@@ -38,7 +39,8 @@ const ufoHighbayData = {
       MATERIALS: 'Aluminum, PC',
       OPTIONAL: 'Motion Sensor, Surge Protector',
       LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED High Bays are built from strong materials that are safe for use in extreme temperatures. They can be equipped with motion sensors. LED High Bays are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These lights are widely used in the lighting of warehouses, gas stations, exhibition halls, and gymnasiums.',
+      DESCRIPTION:
+        'LED High Bays are built from strong materials that are safe for use in extreme temperatures. They can be equipped with motion sensors. LED High Bays are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These lights are widely used in the lighting of warehouses, gas stations, exhibition halls, and gymnasiums.',
     },
   },
 };
@@ -46,6 +48,7 @@ const ufoHighbayData = {
 const UfoHighbayDetails = () => {
   const { id } = useParams(); // Get the id from the URL parameter
   const highbay = ufoHighbayData[id]; // Get the data for the selected highbay
+  const [selectedImage, setSelectedImage] = useState(highbay ? highbay.images[0] : null); // Default to the first image
 
   if (!highbay) {
     return <div>Invalid Highbay selection.</div>;
@@ -72,12 +75,37 @@ const UfoHighbayDetails = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>{highbay.title}</h1> {/* Title of the page */}
-      <img
-        src={highbay.src}
-        alt={highbay.title}
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
-      />
+      <h1>{highbay.title}</h1>
+
+      {/* Main Image Display */}
+      <div style={{ marginBottom: '20px' }}>
+        <img
+          src={selectedImage}
+          alt={highbay.title}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        {highbay.images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            onClick={() => setSelectedImage(image)}
+            style={{
+              width: '60px', // Thumbnail size
+              height: '60px', // Thumbnail size
+              objectFit: 'cover',
+              cursor: 'pointer',
+              border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
+              padding: '5px',
+            }}
+          />
+        ))}
+      </div>
+
       {renderSpecifications()}
     </div>
   );

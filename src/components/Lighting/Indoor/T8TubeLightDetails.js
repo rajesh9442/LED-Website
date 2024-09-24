@@ -1,13 +1,13 @@
-// src/components/Lighting/Indoor/T8TubeLightDetails.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import T8TubeLight1 from '../../../images/Indoor/T8TubeLight/LEDT8TubeLight2ft-4ft10-22W.jpg';
 import T8TubeLight2 from '../../../images/Indoor/T8TubeLight/LEDT8TubeLiightSinglePin8ft50W.jpg';
+import AdditionalT8TubeLight1 from '../../../images/Indoor/T8TubeLight/11.jpg'; // Example additional image
 
 const t8TubeLightData = {
   light1: {
     title: 'LED T8 Tube Light Single Pin 8ft 50W',
-    src: T8TubeLight1,
+    images: [T8TubeLight1, AdditionalT8TubeLight1], // Multiple images
     specs: {
       SIZE: '8ft: 1.4″ * Ø * 8 ‘L',
       WATT: '50W',
@@ -18,12 +18,12 @@ const t8TubeLightData = {
       CRI: '80',
       IP_RATE: 'IP20',
       LIFESPAN: '50,000 HRS',
-      DESCRIPTION: 'LED T8 Tube Lights are commonly used to replace fluorescent light bulbs, and can provide an energy savings of up to 60%. LED T8 Tubes are perfect for offices, schools, and parking garages.'
+      DESCRIPTION: 'LED T8 Tube Lights are commonly used to replace fluorescent light bulbs, and can provide an energy savings of up to 60%. LED T8 Tubes are perfect for offices, schools, and parking garages.',
     },
   },
   light2: {
     title: 'LED T8 Tube Light 2ft – 4ft 10 – 22W',
-    src: T8TubeLight2,
+    images: [T8TubeLight2, AdditionalT8TubeLight1], // Multiple images
     specs: {
       SIZE: '2ft: 1.4″ Ø x 2′ L\n3ft: 1.4″ Ø x 3′ L\n4ft: 1.4″ Ø x 4′ L',
       '10W': '1,200lm (2ft)',
@@ -37,7 +37,7 @@ const t8TubeLightData = {
       PF: '0.9',
       IP_RATE: 'IP20',
       LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED T8 Tube Lights are commonly used to replace fluorescent light bulbs, and can provide an energy savings of up to 60%. LED T8 Tubes are perfect for offices, schools, and parking garages.'
+      DESCRIPTION: 'LED T8 Tube Lights are commonly used to replace fluorescent light bulbs, and can provide an energy savings of up to 60%. LED T8 Tubes are perfect for offices, schools, and parking garages.',
     },
   },
 };
@@ -45,6 +45,7 @@ const t8TubeLightData = {
 const T8TubeLightDetails = () => {
   const { id } = useParams(); // Get the id from the URL parameter
   const light = t8TubeLightData[id]; // Get the data for the selected light
+  const [selectedImage, setSelectedImage] = useState(light ? light.images[0] : null); // Default to the first image
 
   if (!light) {
     return <div>Invalid T8 Tube Light selection.</div>;
@@ -72,11 +73,36 @@ const T8TubeLightDetails = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{light.title}</h1> {/* Title of the page */}
-      <img
-        src={light.src}
-        alt={light.title}
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
-      />
+
+      {/* Main Image Display */}
+      <div style={{ marginBottom: '20px' }}>
+        <img
+          src={selectedImage}
+          alt={light.title}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        {light.images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            onClick={() => setSelectedImage(image)}
+            style={{
+              width: '60px', // Thumbnail size
+              height: '60px', // Thumbnail size
+              objectFit: 'cover',
+              cursor: 'pointer',
+              border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
+              padding: '5px',
+            }}
+          />
+        ))}
+      </div>
+
       {renderSpecifications()}
     </div>
   );

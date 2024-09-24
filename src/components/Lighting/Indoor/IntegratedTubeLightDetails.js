@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LEDIntegratedTubeLight from '../../../images/Indoor/IntegratedTubeLight/LEDIntegratedTubeLight2-8ft,10-72W.jpg';
+import LEDIntegratedTubeLightAlternate from '../../../images/Indoor/IntegratedTubeLight/11.jpg'; // Add another image for switching
+
+const imageData = [
+  LEDIntegratedTubeLight,
+  LEDIntegratedTubeLightAlternate,
+];
 
 const specifications = {
   SIZE: '2ft: 1.4″ Ø x 2′ L<br />3ft: 1.4″ Ø x 3′ L<br />4ft: 1.4″ Ø x 4′ L<br />8ft: 1.4″ Ø x 8′ L',
@@ -20,14 +26,44 @@ const specifications = {
 };
 
 const IntegratedTubeLightDetails = () => {
+  console.log("Rendering IntegratedTubeLightDetails component");  // Debugging log
+
+  const [selectedImage, setSelectedImage] = useState(imageData[0]); // Default to the first image
+
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Integrated Tube Light 2-8ft, 10-72W</h1>
-      <img 
-        src={LEDIntegratedTubeLight} 
-        alt="LED Integrated Tube Light" 
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }} 
-      />
+
+      {/* Main Image Display */}
+      <div style={{ marginBottom: '20px' }}>
+        <img 
+          src={selectedImage} 
+          alt="LED Integrated Tube Light" 
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }} 
+        />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        {imageData.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            onClick={() => setSelectedImage(image)}
+            style={{
+              width: '60px',  // Thumbnail size
+              height: '60px', // Thumbnail size
+              objectFit: 'cover',
+              cursor: 'pointer',
+              border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
+              padding: '5px',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Specifications */}
       <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
         <h2>Specifications</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>

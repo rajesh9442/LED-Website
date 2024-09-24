@@ -1,5 +1,4 @@
-// src/components/Lighting/Indoor/GimbalLightDetails.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LEDGimbalLight1 from '../../../images/Indoor/GimbalLight/1.jpg';
 import LEDGimbalLight2 from '../../../images/Indoor/GimbalLight/2.jpg';
@@ -8,10 +7,11 @@ import LEDGimbalLight4 from '../../../images/Indoor/GimbalLight/4.jpg';
 import LEDGimbalLight5 from '../../../images/Indoor/GimbalLight/5.jpg';
 import LEDGimbalLight6 from '../../../images/Indoor/GimbalLight/6.jpg';
 import LEDGimbalLight7 from '../../../images/Indoor/GimbalLight/7.jpg';
+import additionalImage from '../../../images/Indoor/GimbalLight/11.jpg'; // Additional image
 
 const imageData = {
   'gimbal-light-1': {
-    src: LEDGimbalLight1,
+    images: [LEDGimbalLight1, additionalImage], // Multiple images
     description: '5CCT 6” 12W Panel Light',
     specs: {
       'Cut-Out Size': '6 inch',
@@ -36,7 +36,7 @@ const imageData = {
     }
   },
   'gimbal-light-2': {
-    src: LEDGimbalLight2,
+    images: [LEDGimbalLight2, additionalImage], // Multiple images
     description: '5CCT 4” 9W Panel Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -61,7 +61,7 @@ const imageData = {
     }
   },
   'gimbal-light-3': {
-    src: LEDGimbalLight3,
+    images: [LEDGimbalLight3, additionalImage], // Multiple images
     description: '5CCT 3” 8W Gimbal Light',
     specs: {
       'Cut-Out Size': '3 inch',
@@ -86,7 +86,7 @@ const imageData = {
     }
   },
   'gimbal-light-4': {
-    src: LEDGimbalLight4,
+    images: [LEDGimbalLight4, additionalImage], // Multiple images
     description: '5CCT 4” 12W Gimbal Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -111,7 +111,7 @@ const imageData = {
     }
   },
   'gimbal-light-5': {
-    src: LEDGimbalLight5,
+    images: [LEDGimbalLight5, additionalImage], // Multiple images
     description: '5CCT 4” 9W Slim Gimbal Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -136,7 +136,7 @@ const imageData = {
     }
   },
   'gimbal-light-6': {
-    src: LEDGimbalLight6,
+    images: [LEDGimbalLight6, additionalImage], // Multiple images
     description: '5CCT 4” 9W Multi-Directional Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -161,7 +161,7 @@ const imageData = {
     }
   },
   'gimbal-light-7': {
-    src: LEDGimbalLight7,
+    images: [LEDGimbalLight7, additionalImage], // Multiple images
     description: 'RGB 6Inch12W Panel Light',
     specs: {
       'Cut-Out Size': '6 inch',
@@ -191,6 +191,9 @@ const GimbalLightDetails = () => {
   const { id } = useParams();
   const lightData = imageData[id];
 
+  // State to track the currently selected image
+  const [selectedImage, setSelectedImage] = useState(lightData ? lightData.images[0] : null);
+
   if (!lightData) {
     return (
       <div style={{ padding: '20px', textAlign: 'center' }}>
@@ -200,16 +203,42 @@ const GimbalLightDetails = () => {
     );
   }
 
-  const { src, description, specs } = lightData;
+  const { images, description, specs } = lightData;
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{description}</h1>
-      <img
-        src={src}
-        alt={description}
-        style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
-      />
+
+      {/* Main Image Display */}
+      <div style={{ marginBottom: '20px' }}>
+        <img
+          src={selectedImage}
+          alt={description}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }} // Smaller main image size
+        />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            onClick={() => setSelectedImage(image)}
+            style={{
+              width: '70px', // Smaller thumbnail size
+              height: '70px', // Smaller thumbnail size
+              objectFit: 'cover',
+              cursor: 'pointer',
+              border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
+              padding: '5px',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Specifications */}
       <div style={{ marginTop: '20px', textAlign: 'left', maxWidth: '800px', margin: '20px auto' }}>
         <h2>Specifications</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>

@@ -29,7 +29,8 @@ import CanopyLight from './components/Lighting/Outdoor/CanopyLight';
 import CanopyLightDetails from './components/Lighting/Outdoor/CanopyLightDetails';
 import FloodLight from './components/Lighting/Outdoor/FloodLight';
 import FloodLightDetails from './components/Lighting/Outdoor/FloodLightDetails';
-import LandscapeAccentLight from './components/Lighting/Outdoor/LandscapeAccentLight';
+import ExitSigns from './components/Lighting/Outdoor/ExitSigns';
+import ExitSignsDetails from './components/Lighting/Outdoor/ExitSignsDetails';
 import ShoeBox from './components/Lighting/Outdoor/ShoeBox';
 import ShoeBoxDetails from './components/Lighting/Outdoor/ShoeBoxDetails';
 import WallPacks from './components/Lighting/Outdoor/WallPacks';
@@ -58,7 +59,7 @@ const App = () => {
           <Route path="/lighting/gimbal-light" element={<GimbalLight />} />
           <Route path="/lighting/gimbal-light/details/:id" element={<GimbalLightDetails />} />
           <Route path="/lighting/integrated-tube-light" element={<IntegratedTubeLight />} />
-          <Route path="/lighting/integrated-tube-light/details/:id" element={<IntegratedTubeLightDetails />} />
+          <Route path="/lighting/integrated-tube-light/details" element={<IntegratedTubeLightDetails />} />
           <Route path="/lighting/panels" element={<Panels />} />
           <Route path="/panels/:id" element={<PanelDetails />} />
           <Route path="/lighting/t8-tube-light" element={<T8TubeLight />} />
@@ -72,7 +73,8 @@ const App = () => {
           <Route path="/lighting/canopy-light/details/:id" element={<CanopyLightDetails />} />
           <Route path="/lighting/flood-light" element={<FloodLight />} />
           <Route path="/lighting/flood-light/details/:id" element={<FloodLightDetails />} />
-          <Route path="/lighting/landscape-accent-lights" element={<LandscapeAccentLight />} />
+          <Route path="/lighting/exit-signs" element={<ExitSigns />} />
+          <Route path="/lighting/exit-signs/details/:id" element={<ExitSignsDetails />} />
           <Route path="/lighting/shoe-box" element={<ShoeBox />} />
           <Route path="/lighting/shoe-box/details/:id" element={<ShoeBoxDetails />} />
           <Route path="/lighting/wall-packs" element={<WallPacks />} />

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LEDShoeBoxAreaLight150to450W from '../../../images/Outdoor/ShoeBox/LEDShoeBoxAreaLight150to450W.jpg';
+import AdditionalImage1 from '../../../images/Outdoor/ShoeBox/11.jpg';
 
 const shoeBoxData = {
   'led-shoe-box-area-light': {
     title: 'LED Shoe Box Area Light 150-450W',
-    src: LEDShoeBoxAreaLight150to450W,
+    images: [LEDShoeBoxAreaLight150to450W, AdditionalImage1], // Multiple images for thumbnail view
     specs: {
       SIZE: '150W: 11.3″ L x 19.7″ W x 3″ D | 240-300W: 14″ L x 25.1″ W x 3″ D | 450W: TBD',
       LUMENS: '150W: 21,135lm | 240W: 33,816lm | 300W: 42,270lm | 450W: 63,405lm',
@@ -30,6 +31,7 @@ const shoeBoxData = {
 const ShoeBoxDetails = () => {
   const { id } = useParams(); // Get the id from the URL parameter
   const shoeBox = shoeBoxData[id]; // Get the data for the selected shoeBox
+  const [selectedImage, setSelectedImage] = useState(shoeBox ? shoeBox.images[0] : null); // Default to the first image
 
   if (!shoeBox) {
     return <div>Invalid ShoeBox selection.</div>;
@@ -57,11 +59,36 @@ const ShoeBoxDetails = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{shoeBox.title}</h1>
-      <img
-        src={shoeBox.src}
-        alt={shoeBox.title}
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
-      />
+
+      {/* Main Image Display */}
+      <div style={{ marginBottom: '20px' }}>
+        <img
+          src={selectedImage}
+          alt={shoeBox.title}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        />
+      </div>
+
+      {/* Thumbnail Images */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        {shoeBox.images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            onClick={() => setSelectedImage(image)}
+            style={{
+              width: '60px', // Thumbnail size
+              height: '60px', // Thumbnail size
+              objectFit: 'cover',
+              cursor: 'pointer',
+              border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
+              padding: '5px',
+            }}
+          />
+        ))}
+      </div>
+
       {renderSpecifications()}
     </div>
   );

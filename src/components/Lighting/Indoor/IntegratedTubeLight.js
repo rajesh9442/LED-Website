@@ -11,22 +11,22 @@ const IntegratedTubeLight = () => {
           style={{
             margin: '0 15px',
             cursor: 'pointer',
-            border: '2px solid transparent', // Initial border is transparent
+            border: '2px solid transparent',
             padding: '5px',
             display: 'inline-block',
-            transform: 'scale(1)', // Initial scale
-            transition: 'transform 0.3s, border-color 0.3s', // Smooth transition for scale and border color
+            transform: 'scale(1)',
+            transition: 'transform 0.3s, border-color 0.3s',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'black'; // Change border to black on hover
-            e.currentTarget.style.transform = 'scale(1.1)'; // Scale up on hover
+            e.currentTarget.style.borderColor = 'black';
+            e.currentTarget.style.transform = 'scale(1.1)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'transparent'; // Reset border color on mouse leave
-            e.currentTarget.style.transform = 'scale(1)'; // Reset scale on mouse leave
+            e.currentTarget.style.borderColor = 'transparent';
+            e.currentTarget.style.transform = 'scale(1)';
           }}
         >
-          <Link to={`/integrated-tube-light`}>
+          <Link to={`/lighting/integrated-tube-light/details`} aria-label="LED Integrated Tube Light Details">
             <img 
               src={LEDIntegratedTubeLight} 
               alt="LED Integrated Tube Light" 
