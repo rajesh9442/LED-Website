@@ -16,18 +16,13 @@ const NavBar = () => {
     setLightingDropdownVisible(false);
   };
 
-  // Toggle signs dropdown
+  // Toggle signs dropdown on hover
   const handleSignsMouseEnter = () => {
     setSignsDropdownVisible(true);
   };
 
   const handleSignsMouseLeave = () => {
     setSignsDropdownVisible(false);
-  };
-
-  const handleLightingClick = (e) => {
-    e.preventDefault(); // Prevent navigation
-    setLightingDropdownVisible(!lightingDropdownVisible); // Toggle dropdown visibility
   };
 
   return (
@@ -41,7 +36,7 @@ const NavBar = () => {
           onMouseEnter={handleLightingMouseEnter}
           onMouseLeave={handleLightingMouseLeave}
         >
-          <a href="/lighting" onClick={handleLightingClick} className="nav-link">
+          <a href="#" className="nav-link">
             LIGHTING
           </a>
           {lightingDropdownVisible && (
@@ -73,17 +68,19 @@ const NavBar = () => {
             </div>
           )}
         </li>
+
+        {/* Signs dropdown (Updated for hover functionality) */}
         <li
           className="dropdown-container"
           onMouseEnter={handleSignsMouseEnter}
           onMouseLeave={handleSignsMouseLeave}
         >
-          <NavLink to="/signs" className="nav-link">
+          <a href="#" className="nav-link">
             SIGNS
-          </NavLink>
+          </a>
           {signsDropdownVisible && (
             <div className="dropdown">
-              <div className="dropdown-section"> {/* Added for consistency */}
+              <div className="dropdown-section">
                 <ul>
                   <li><NavLink to="/signs/gas-price-sign">GAS PRICE SIGN</NavLink></li>
                   <li><NavLink to="/signs/display-sign">DISPLAY SIGN</NavLink></li>
@@ -92,6 +89,7 @@ const NavBar = () => {
             </div>
           )}
         </li>
+
         <li>
           <NavLink to="/cctv" className="nav-link">
             CCTV

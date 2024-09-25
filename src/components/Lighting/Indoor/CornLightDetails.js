@@ -11,21 +11,57 @@ const imageData = {
     images: [LEDCornLight18W, additionalImage], // Multiple images
     specs: {
       SIZE: '5.7″ L x 2.6″ W',
-    },
+      LUMENS: '2,610lm',
+      CCT: '3000K, 5700K',
+      VOLTAGE: 'AC100-277V',
+      DIMMABLE: 'No',
+      BEAM_ANGLE: '360°',
+      BASE: 'E26, E39',
+      CRI: '>80',
+      IP_RATE: 'IP64',
+      MATERIALS: 'Aluminum, PC',
+      HOUSING_COLOR: 'White, Silver',
+      LIFESPAN: '50,000 hours',
+      DESCRIPTION: 'LED Corn Light widely used in supermarket, warehouse, garage, home, office, hotel, hospital, school, etc. Direct replacement for Metal Halide, easy installation. Fits many different fixtures to replace traditional lamps. These lamps are not waterproof and should only be used outside if they have a water-tight casing.',
+    }
   },
   '54w': {
     title: '54W Corn Light',
     images: [LEDCornLight54W, additionalImage], // Multiple images
     specs: {
       SIZE: '9.5″ L x 2.6″ W',
-    },
+      LUMENS: '8,100lm',
+      CCT: '3000K, 5700K',
+      VOLTAGE: 'AC100-277V',
+      DIMMABLE: 'No',
+      BEAM_ANGLE: '360°',
+      BASE: 'E26, E39',
+      CRI: '>80',
+      IP_RATE: 'IP64',
+      MATERIALS: 'Aluminum, PC',
+      HOUSING_COLOR: 'White, Silver',
+      LIFESPAN: '50,000 hours',
+      DESCRIPTION: 'LED Corn Light widely used in supermarket, warehouse, garage, home, office, hotel, hospital, school, etc. Direct replacement for Metal Halide, easy installation. Fits many different fixtures to replace traditional lamps. These lamps are not waterproof and should only be used outside if they have a water-tight casing.',
+    }
   },
   '120w': {
     title: '120W Corn Light',
     images: [LEDCornLight120W, additionalImage], // Multiple images
     specs: {
       SIZE: '13.4″ L x 4.4″ W',
-    },
+      LUMENS: '17,400lm',
+      CCT: '3000K, 5700K',
+      VOLTAGE: 'AC100-277V',
+      DIMMABLE: 'No',
+      BEAM_ANGLE: '360°',
+      BASE: 'E26, E27, E39, E40',
+      CRI: '>80',
+      IP_RATE: 'IP64',
+      MATERIALS: 'Aluminum, PC',
+      HOUSING_COLOR: 'White, Silver',
+      LIFESPAN: '50,000 hours',
+      DESCRIPTION: 'LED Corn Light widely used in supermarket, warehouse, garage, home, office, hotel, hospital, school, etc. Direct replacement for Metal Halide, easy installation. Fits many different fixtures to replace traditional lamps. These lamps are not waterproof and should only be used outside if they have a water-tight casing.',
+    }
   },
 };
 

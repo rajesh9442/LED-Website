@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import cctvImage1 from '../../images/CCTV/1.png'; // Adjust the path based on your folder structure
 import cctvImage2 from '../../images/CCTV/2.png';
+import cctvBannerImage from '../../images/CCTV/top.webp';
+import cctvBannerImage2 from '../../images/CCTV/2.webp';
 
 const imageData = {
   'EC-B4F28M-V3': {
@@ -25,7 +27,19 @@ const CCTV = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>CCTV</h1>
+      {/* Top Image */}
+      <img 
+        src={cctvBannerImage} 
+        alt="CCTV Banner" 
+        style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} 
+      />
+
+      <img 
+        src={cctvBannerImage2} 
+        alt="CCTV Banner" 
+        style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} 
+      />
+      
       <div 
         style={{ 
           display: 'flex', 

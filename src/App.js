@@ -2,10 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import ContactUs from './components/ContactUs/ContactUs';
-import Signs from './components/Signs/Signs';
+import GasSign from './components/Signs/GasSign';
+import DisplaySign from './components/Signs/DisplaySign';
+import DragonFlySign from './components/Signs/DisplaySignDetails/DragonFlySign'; // Create separate components for each sign
+import LionSign from './components/Signs/DisplaySignDetails/LionSign';
+import DolphinSign from './components/Signs/DisplaySignDetails/DolphinSign';
 import CCTV from './components/CCTV/CCTV';
 import CCTVDetails from './components/CCTV/CCTVDetails'; 
-import SignsDetails from './components/Signs/SignsDetails';
 import NavBar from './components/NavBar/NavBar';
 import CoolerLight from './components/Lighting/Indoor/CoolerLight';
 import CoolerLightDetails from './components/Lighting/Indoor/CoolerLightDetails';
@@ -45,8 +48,11 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/signs" element={<Signs />} />
-          <Route path="/signs/details/:id" element={<SignsDetails />} />
+          <Route path="/signs/gas-price-sign" element={<GasSign />} />
+          <Route path="/signs/display-sign" element={<DisplaySign />} />
+          <Route path="/signs/display-sign/details/dragonfly-sign" element={<DragonFlySign />} />
+          <Route path="/signs/display-sign/details/lion-sign" element={<LionSign />} />
+          <Route path="/signs/display-sign/details/dolphin-sign" element={<DolphinSign />} />
           <Route path="/cctv" element={<CCTV />} />
           <Route path="/cctv/details/:id" element={<CCTVDetails />} />
           {/* Indoor Lights */}
