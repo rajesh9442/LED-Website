@@ -13,7 +13,7 @@ const panelData = {
   'panel1': {
     images: [Panel1, AdditionalImage],
     specs: {
-      TITLE: 'Specification',
+      TITLE: '2×4 FT LED Light Flat Panel, 40/50/60W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights',
       FEATURES: [
         'This 2×4 LED Backlit Flat Panel is the perfect replacement for fluorescent troffers used in drop ceilings.',
         'Designed to fit in conventional suspended grid ceilings for new construction or retrofit projects, LED flat panels will save you time and money.',
@@ -34,7 +34,7 @@ const panelData = {
   'panel2': {
     images: [Panel2, AdditionalImage],
     specs: {
-      TITLE: 'Features',
+      TITLE: '2x2FT LED Flat Panel Troffer Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
       FEATURES: [
         'This 2×2 LED Backlit Flat Panel is the perfect replacement for fluorescent troffers used in drop ceilings.',
         'Designed to fit in conventional suspended grid ceilings for new construction or retrofit projects, LED flat panels will save you time and money.',
@@ -55,7 +55,7 @@ const panelData = {
   'panel3': {
     images: [Panel3, AdditionalImage],
     specs: {
-      TITLE: 'Features',
+      TITLE: '2×4 FT LED Flat Panel, 40/50/60W, Dimmable Recessed Drop Ceiling Lights',
       FEATURES: [
         'This 2×4 LED Backlit Flat Panel is the perfect replacement for fluorescent troffers used in drop ceilings.',
         'Designed to fit in conventional suspended grid ceilings for new construction or retrofit projects, LED flat panels will save you time and money.',
@@ -76,7 +76,7 @@ const panelData = {
   'panel4': {
     images: [Panel4, AdditionalImage],
     specs: {
-      TITLE: 'Features',
+      TITLE: '2×2 FT LED Light Flat Panel, 20/30/40W, Color Temperature Selectable 3K | 4K | 5K',
       FEATURES: [
         'This 2×2 LED Backlit Flat Panel is the perfect replacement for fluorescent troffers used in drop ceilings.',
         'Designed to fit in a conventional suspended grid ceiling for new construction or retrofit projects, LED flat panels will save you time and money.',
@@ -97,7 +97,7 @@ const panelData = {
   'panel5': {
     images: [Panel5, AdditionalImage],
     specs: {
-      TITLE: 'Specification',
+      TITLE: 'LED Adjustable CCT Backlit Panel Light Adjustable 2x2ft 2x4ft 20-60W',
       SPECIFICATIONS: {
         SIZE: 'BL22: 2′ L x 2′ W x 1.2″ D, BL24: 4′ L x 2′ W x 1.2″ D',
         '20W +30W + 40W': '2,200lm, 3,300lm, 4,400lm',
@@ -120,7 +120,7 @@ const panelData = {
   'panel6': {
     images: [Panel6, AdditionalImage],
     specs: {
-      TITLE: 'Specification',
+      TITLE: 'LED Adjustable CCT T-Bar Light 2x2ft 20/30/40W 2x4ft 40/50/60W',
       SPECIFICATIONS: {
         SIZE: 'FL22: 24" L x 24" W x 0.6″ D, FL24: 48" L x 24" W x 0.6″ D',
         '20W +30W + 40W': '2,200lm, 3,300lm, 4,400lm',
@@ -142,7 +142,7 @@ const panelData = {
   'panel7': {
     images: [Panel7, AdditionalImage],
     specs: {
-      TITLE: 'Specification',
+      TITLE: 'LED Backlit Panel Light 2x2ft 40W 2x4ft 72W',
       SPECIFICATIONS: {
         SIZE: 'BL22: 2′ L x 2′ W x 1.2″ D, BL24: 4′ L x 2′ W x 1.2″ D',
         '40W': '4,400lm',

@@ -1,4 +1,4 @@
-/* General slideshow container styling */
+/* General container styling for the home content */
 .home {
   width: 100%;
   max-width: 1200px;
@@ -43,4 +43,76 @@
 
 .slick-next {
   right: 10px; /* Adjust position to move right arrow inside */
+}
+
+/* Container for each section (left and right image) */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center;
+  gap: 20px; /* Space between the text and image */
+  margin: 40px 0;
+}
+
+.content-text h2 {
+  color: #ff4500; /* Example color: You can change this to any color you like */
+  font-weight: bold; /* Optional: Make the heading bold */
+  font-size: 24px; /* Optional: Adjust the font size */
+}
+
+/* Left Image and Right Text */
+.leftimage-container .content-image {
+  order: 1; /* Image first in the grid */
+}
+
+.leftimage-container .content-text {
+  order: 2; /* Text second in the grid */
+}
+
+/* Right Image and Left Text */
+.rightimage-container .content-image {
+  order: 2; /* Image second in the grid */
+}
+
+.rightimage-container .content-text {
+  order: 1; /* Text first in the grid */
+}
+
+/* Style for the text section */
+.content-text {
+  padding: 20px;
+  font-size: 18px;
+  text-align: left; /* Align text to the left */
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Style for the image section */
+.content-image {
+  text-align: center;
+}
+
+/* Ensure images are responsive */
+.content-image img {
+  max-width: 100%;
+  width: 50%; /* Reduced image size from 80% to 70% */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for a floating effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack text and image in one column */
+    text-align: center; /* Center text and image for mobile */
+  }
+
+  .content-image img {
+    width: 60%; /* Reduced mobile image size from 70% to 60% */
+    margin-bottom: 20px; /* Space between the image and text when stacked */
+  }
+
+  .content-text {
+    text-align: center; /* Center align text on mobile */
+  }
 }

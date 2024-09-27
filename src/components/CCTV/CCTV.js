@@ -2,8 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import cctvImage1 from '../../images/CCTV/1.png'; // Adjust the path based on your folder structure
 import cctvImage2 from '../../images/CCTV/2.png';
-import cctvBannerImage from '../../images/CCTV/top.webp';
-import cctvBannerImage2 from '../../images/CCTV/2.webp';
+import cctvImage3 from '../../images/CCTV/3.png';
+import cctvImage4 from '../../images/CCTV/4.png';
+import cctvBannerImage from '../../images/CCTV/cctvbanner.png';
+// import cctvBannerImage2 from '../../images/CCTV/2.webp';
 
 const imageData = {
   'EC-B4F28M-V3': {
@@ -15,6 +17,16 @@ const imageData = {
     src: cctvImage2,
     title: 'EC-T8F28M',
     path: 'cctv2',
+  },
+  'LTK3411MF':{
+    src: cctvImage3,
+    title: 'LTK3411MF',
+    path: 'cctv3',
+  },
+  'IPC6424SR-X25-VF-B':{
+    src: cctvImage4,
+    title: 'IPC6424SR-X25-VF-B',
+    path: 'cctv4',
   },
 };
 
@@ -34,11 +46,11 @@ const CCTV = () => {
         style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} 
       />
 
-      <img 
+      {/* <img 
         src={cctvBannerImage2} 
         alt="CCTV Banner" 
         style={{ maxWidth: '100%', height: 'auto', marginBottom: '20px' }} 
-      />
+      /> */}
       
       <div 
         style={{ 

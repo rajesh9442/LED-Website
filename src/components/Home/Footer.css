@@ -1,111 +1,127 @@
 /* General footer styling */
 .footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 20px;
-    width: 100%;  /* Ensure the footer spans the full width */
-    box-sizing: border-box;  /* Include padding and border in the element's width */
-    display: flex;
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  width: 100%;  /* Ensure the footer spans the full width */
+  box-sizing: border-box;  /* Include padding and border in the element's width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;  /* Remove any default margins */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Evenly distribute space between sections */
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;  /* Add padding inside the container */
+  box-sizing: border-box;  /* Include padding in the width */
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px; /* Ensure sections don't get too wide */
+  text-align: left;  /* Left-align the content */
+}
+
+/* Center the Products section, including heading and list */
+.footer-section.products {
+  text-align: center; /* Center the whole section */
+}
+
+/* Ensure list items in Products section are centered */
+.footer-section.products ul {
+  display: inline-block; /* Make the list inline to keep it centered */
+  text-align: left; /* Keep the list text left-aligned */
+}
+
+.footer-section.products h4 {
+  text-align: center; /* Center the Products heading */
+}
+
+/* Style for other sections */
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: left; /* Left-align for non-products sections */
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left; /* Ensure body text is left-aligned */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Ensure list items are left-aligned */
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between; /* Align left and right sections */
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #555;
+  padding: 0 20px;  /* Ensure padding on the sides */
+  box-sizing: border-box;
+}
+
+/* Left side: copyright text */
+.footer-bottom-left {
+  font-size: 14px;
+  text-align: left; /* Ensure the copyright text is left-aligned */
+}
+
+/* Right side: social media icons */
+.footer-bottom-right a {
+  color: white;
+  font-size: 24px;
+  margin-left: 15px; /* Space between icons */
+  text-decoration: none;
+}
+
+.footer-bottom-right a:hover {
+  color: #ccc; /* Change icon color on hover */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .footer-container {
     flex-direction: column;
     align-items: center;
-    margin: 0;  /* Remove any default margins */
+    padding: 0 10px;  /* Adjust padding for smaller screens */
   }
-  
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;  /* Add padding inside the container */
-    box-sizing: border-box;  /* Include padding in the width */
-    gap: 30px;
-  }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 250px;
-    text-align: left;  /* Left-align the content */
-  }
-  
-  .footer-section h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    text-align: left; /* Ensure heading is left-aligned */
-  }
-  
-  .footer-section p {
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: left; /* Ensure body text is left-aligned */
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    text-align: left; /* Ensure list items are left-aligned */
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  
-  .footer-section ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-section ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Footer Bottom Section */
+
   .footer-bottom {
-    display: flex;
-    justify-content: space-between; /* Align left and right sections */
-    align-items: center;
-    width: 100%;
-    padding-top: 20px;
-    border-top: 1px solid #555;
-    padding: 0 20px;  /* Ensure padding on the sides */
-    box-sizing: border-box;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  /* Left side: copyright text */
-  .footer-bottom-left {
-    font-size: 14px;
-    text-align: left; /* Ensure the copyright text is left-aligned */
+
+  .footer-bottom-right {
+    margin-top: 10px;
   }
-  
-  /* Right side: social media icons */
-  .footer-bottom-right a {
-    color: white;
-    font-size: 24px;
-    margin-left: 15px; /* Space between icons */
-    text-decoration: none;
-  }
-  
-  .footer-bottom-right a:hover {
-    color: #ccc; /* Change icon color on hover */
-  }
-  
-  /* Media query for responsive design */
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10px;  /* Adjust padding for smaller screens */
-    }
-  
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-bottom-right {
-      margin-top: 10px;
-    }
-  }
-  
+}

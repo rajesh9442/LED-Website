@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
+import Footer from './components/Home/Footer';
 import ContactUs from './components/ContactUs/ContactUs';
 import GasSign from './components/Signs/GasSign';
 import DisplaySign from './components/Signs/DisplaySign';
@@ -86,6 +87,7 @@ const App = () => {
           <Route path="/lighting/wall-packs" element={<WallPacks />} />
           <Route path="/lighting/wall-packs/details/:id" element={<WallPackDetails />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

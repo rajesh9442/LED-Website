@@ -37,17 +37,6 @@ const Footer = () => {
             <li>730 W. Historical Mitchell St., Milwaukee, USA</li>
           </ul>
         </div>
-
-        {/* Quick Links Section */}
-        <div className="footer-section quick-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-          </ul>
-        </div>
       </div>
 
       {/* Footer Bottom with Copyright and Social Icons */}
