@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import LEDIntegratedTubeLight from '../../../images/Indoor/IntegratedTubeLight/LEDIntegratedTubeLight2-8ft,10-72W.jpg';
 import LEDIntegratedTubeLightAlternate from '../../../images/Indoor/IntegratedTubeLight/11.jpg'; // Add another image for switching
+import LEDIntegratedTubeLightAlternate1 from '../../../images/Indoor/IntegratedTubeLight/12.jpg';
 
 const imageData = [
   LEDIntegratedTubeLight,
+  LEDIntegratedTubeLightAlternate1,
   LEDIntegratedTubeLightAlternate,
 ];
 

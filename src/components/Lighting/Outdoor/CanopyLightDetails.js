@@ -6,11 +6,12 @@ import CanopyLight3 from '../../../images/Outdoor/CanopyLight/3.jpg';
 import CanopyLight4 from '../../../images/Outdoor/CanopyLight/4.jpg';
 import CanopyLight5 from '../../../images/Outdoor/CanopyLight/5.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/CanopyLight/11.jpg';
+import AdditionalImage12 from '../../../images/Outdoor/CanopyLight/12.jpg';
 
 const canopyLightData = {
   'led-canopy-light-150w': {
     title: 'LED Canopy Light 150W',
-    images: [CanopyLight1, AdditionalImage1], // Multiple images
+    images: [CanopyLight1,AdditionalImage12, AdditionalImage1], // Multiple images
     specs: {
       SIZE: '15” L x 15″ W x 3.4” D',
       WATTS: '150W',
@@ -29,7 +30,7 @@ const canopyLightData = {
   },
   'led-canopy-light-180w': {
     title: 'LED Canopy Light 180W',
-    images: [CanopyLight2, AdditionalImage1], // Multiple images
+    images: [CanopyLight2,AdditionalImage12, AdditionalImage1], // Multiple images
     specs: {
       SIZE: '20.5” L x 20.5” W x 9.6” D',
       WATTS: '180W',
@@ -46,7 +47,7 @@ const canopyLightData = {
   },
   'led-parking-garage-canopy-light-100w': {
     title: 'LED Parking Garage Canopy Light 100W',
-    images: [CanopyLight3,AdditionalImage1], // Single image
+    images: [CanopyLight3,AdditionalImage12,AdditionalImage1], // Single image
     specs: {
       SIZE: '9.56” L x 9.56” W x 3.68” D',
       WATTS: '100W',
@@ -65,7 +66,7 @@ const canopyLightData = {
   },
   'led-parking-garage-canopy-light-75w': {
     title: 'LED Parking Garage Canopy Light 75W',
-    images: [CanopyLight4,AdditionalImage1], // Single image
+    images: [CanopyLight4,AdditionalImage12,AdditionalImage1], // Single image
     specs: {
       SIZE: '10.03” L x 10.03” W x 4.92” D',
       WATTS: '75W',
@@ -84,7 +85,7 @@ const canopyLightData = {
   },
   'led-parking-garage-canopy-light-50w': {
     title: 'LED Parking Garage Canopy Light 50W',
-    images: [CanopyLight5,AdditionalImage1], // Single image
+    images: [CanopyLight5,AdditionalImage12,AdditionalImage1], // Single image
     specs: {
       SIZE: 'N/A',
       WATTS: '50W',
@@ -140,7 +141,7 @@ const CanopyLightDetails = () => {
         <img
           src={selectedImage}
           alt={canopyLight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

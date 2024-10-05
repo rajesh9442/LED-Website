@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import UFOHighbayLight150W from '../../../images/Indoor/UfoHighbay/UFOHighbayLight150W.jpg';
 import UFOHighbayLight240W from '../../../images/Indoor/UfoHighbay/UFOHighbayLight240W.jpg';
 import AdditionalHighbay1 from '../../../images/Indoor/UfoHighbay/11.jpg'; // Example additional image
+import AdditionalHighbay12 from '../../../images/Indoor/UfoHighbay/12.jpg'; 
 
 const ufoHighbayData = {
   'ufo-highbay-150w': {
     title: 'UFO Highbay Light 150W',
-    images: [UFOHighbayLight150W, AdditionalHighbay1], // Multiple images for this light
+    images: [UFOHighbayLight150W,AdditionalHighbay12, AdditionalHighbay1], // Multiple images for this light
     specs: {
       SIZE: '12.6″ W x 7.4″ D',
       LUMENS: '21,750lm',
@@ -26,7 +27,7 @@ const ufoHighbayData = {
   },
   'ufo-highbay-240w': {
     title: 'UFO Highbay Light 240W',
-    images: [UFOHighbayLight240W, AdditionalHighbay1], // Multiple images for this light
+    images: [UFOHighbayLight240W,AdditionalHighbay12, AdditionalHighbay1], // Multiple images for this light
     specs: {
       SIZE: '15″ W x 8″ D',
       LUMENS: '34,800lm',
@@ -82,7 +83,7 @@ const UfoHighbayDetails = () => {
         <img
           src={selectedImage}
           alt={highbay.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

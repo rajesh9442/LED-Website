@@ -5,11 +5,12 @@ import signImage2 from '../../../images/Outdoor/ExitSigns/2.jpg';
 import signImage3 from '../../../images/Outdoor/ExitSigns/3.jpg';
 import additionalImage1 from '../../../images/Outdoor/ExitSigns/11.jpg';
 import additionalImage2 from '../../../images/Outdoor/ExitSigns/12.jpg';
+import additionalImage3 from '../../../images/Outdoor/ExitSigns/13.jpg';
 
 const imageData = {
   'sign1': {
     title: 'LED Exit & Emergency Combo Sign 5W',
-    images: [signImage1, additionalImage1],
+    images: [signImage1,additionalImage3, additionalImage1],
     specs: {
       SIZE: '11.7” L x 12” W x 3.8” H',
       WATTS: '5W',
@@ -28,7 +29,7 @@ const imageData = {
   },
   'sign2': {
     title: 'LED Indoor Slim Exit Combo',
-    images: [signImage2,additionalImage1],
+    images: [signImage2,additionalImage3,additionalImage1],
     specs: {
       SIZE: '16.9” L x 7.5” H x 1.8” D',
       WATTS: '5W',
@@ -107,7 +108,7 @@ const ExitSignsDetails = () => {
         <img
           src={selectedImage}
           alt={sign.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

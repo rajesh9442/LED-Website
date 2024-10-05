@@ -19,14 +19,14 @@ const ContactUs = () => {
             <span className="contact-icon"><i className="fa fa-phone" aria-hidden="true"></i></span>
             <div className="contact-info">
               <h2>Phone</h2>
-              <p>+1-414-627-0979</p>
+              <p>+1-414-539-4006</p>
             </div>
           </div>
           <div className="contact-item">
             <span className="contact-icon"><i className="fa fa-envelope" aria-hidden="true"></i></span>
             <div className="contact-info">
               <h2>Email</h2>
-              <p>contact@brightworld.com</p>
+              <p>brightworldled@gmail.com</p>
             </div>
           </div>
         </div>

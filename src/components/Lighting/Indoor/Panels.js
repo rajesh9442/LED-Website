@@ -14,7 +14,7 @@ const panelData = {
     src: Panel1,
   },
   'panel2': {
-    name: '2x2FT LED Flat Panel Troffer Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
+    name: '2x2FT LED Flat Panel Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
     src: Panel2,
   },
   'panel3': {

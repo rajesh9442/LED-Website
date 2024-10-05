@@ -7,12 +7,15 @@ import WallPack4 from '../../../images/Outdoor/WallPacks/4.jpg';
 import WallPack5 from '../../../images/Outdoor/WallPacks/5.jpg';
 import WallPack6 from '../../../images/Outdoor/WallPacks/6.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/WallPacks/11.jpg';
+import AdditionalImage2 from '../../../images/Outdoor/WallPacks/12.jpg';
+import AdditionalImage3 from '../../../images/Outdoor/WallPacks/13.jpg';
+import AdditionalImage4 from '../../../images/Outdoor/WallPacks/14.jpg';
 
 // Data for Wall Packs
 const specifications = {
   'led-mini-wall-pack-w-photocell-30w': {
     title: 'LED Mini Wall Pack W/Photocell 30W',
-    images: [WallPack1, AdditionalImage1], // Add more images if available
+    images: [WallPack1,AdditionalImage4, AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '8.58”L x 5.78”W x 2.91” D',
       WATTS: '30W',
@@ -32,7 +35,7 @@ const specifications = {
   },
   'led-mini-wall-pack-w-photocell-13w': {
     title: 'LED Mini Wall Pack W/Photocell 13W',
-    images: [WallPack2, AdditionalImage1], // Add more images if available
+    images: [WallPack2,AdditionalImage4, AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '8.15”L x 5.35”W x 2.5” D',
       WATTS: '13W',
@@ -52,7 +55,7 @@ const specifications = {
   },
   'led-mini-wall-pack-20w': {
     title: 'LED Mini Wall Pack 20W',
-    images: [WallPack3,AdditionalImage1], // Add more images if available
+    images: [WallPack3,AdditionalImage4,AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '8.58”L x 5.78”W x 2.91” D',
       WATTS: '20W',
@@ -72,7 +75,7 @@ const specifications = {
   },
   'led-rotatable-wall-pack-40-120w': {
     title: 'LED Rotatable Wall Pack, 40-120W',
-    images: [WallPack4,AdditionalImage1], // Add more images if available
+    images: [WallPack4,AdditionalImage3,AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '40W: 5,200-5,600lm, 80W: 10,400-11,200lm, 120W: 15,400-16,800lm',
       CCT: '5700K',
@@ -91,7 +94,7 @@ const specifications = {
   },
   'led-outdoor-wall-pack-w-inbuilt-battery-backup-55w': {
     title: 'LED Outdoor Wall Pack W/Inbuilt Battery Backup 55W',
-    images: [WallPack5,AdditionalImage1], // Add more images if available
+    images: [WallPack5,AdditionalImage2,AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '14.2” L x 9.3” W x 9.9” D',
       WATTS: '55W',
@@ -114,7 +117,7 @@ const specifications = {
   },
   'led-outdoor-wall-pack-w-photo-cell-sensor-40-120w': {
     title: 'LED Outdoor Wall Pack W/Photo Cell Sensor 40 -120W',
-    images: [WallPack6,AdditionalImage1], // Add more images if available
+    images: [WallPack6,AdditionalImage2,AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '14.2” L x 9.3” W x 9.9” D',
       WATTS: '40W, 55W, 60W, 80W, 100W, 120W',
@@ -192,7 +195,7 @@ const WallPackDetails = () => {
       <img
         src={selectedImage}
         alt={selectedPack.title}
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
       />
       {renderImageThumbnails()}
       {renderSpecifications()}

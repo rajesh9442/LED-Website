@@ -8,10 +8,11 @@ import Panel5 from '../../../images/Indoor/Panels/5.jpg';
 import Panel6 from '../../../images/Indoor/Panels/6.jpg';
 import Panel7 from '../../../images/Indoor/Panels/7.jpg';
 import AdditionalImage from '../../../images/Indoor/Panels/11.jpg';
+import AdditionalImage1 from '../../../images/Indoor/Panels/12.jpg';
 
 const panelData = {
   'panel1': {
-    images: [Panel1, AdditionalImage],
+    images: [Panel1,AdditionalImage1, AdditionalImage],
     specs: {
       TITLE: '2×4 FT LED Light Flat Panel, 40/50/60W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights',
       FEATURES: [
@@ -32,9 +33,9 @@ const panelData = {
     },
   },
   'panel2': {
-    images: [Panel2, AdditionalImage],
+    images: [Panel2,AdditionalImage1, AdditionalImage],
     specs: {
-      TITLE: '2x2FT LED Flat Panel Troffer Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
+      TITLE: '2x2FT LED Flat Panel Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
       FEATURES: [
         'This 2×2 LED Backlit Flat Panel is the perfect replacement for fluorescent troffers used in drop ceilings.',
         'Designed to fit in conventional suspended grid ceilings for new construction or retrofit projects, LED flat panels will save you time and money.',
@@ -53,7 +54,7 @@ const panelData = {
     },
   },
   'panel3': {
-    images: [Panel3, AdditionalImage],
+    images: [Panel3,AdditionalImage1, AdditionalImage],
     specs: {
       TITLE: '2×4 FT LED Flat Panel, 40/50/60W, Dimmable Recessed Drop Ceiling Lights',
       FEATURES: [
@@ -74,7 +75,7 @@ const panelData = {
     },
   },
   'panel4': {
-    images: [Panel4, AdditionalImage],
+    images: [Panel4,AdditionalImage1, AdditionalImage],
     specs: {
       TITLE: '2×2 FT LED Light Flat Panel, 20/30/40W, Color Temperature Selectable 3K | 4K | 5K',
       FEATURES: [
@@ -95,7 +96,7 @@ const panelData = {
     },
   },
   'panel5': {
-    images: [Panel5, AdditionalImage],
+    images: [Panel5,AdditionalImage1, AdditionalImage],
     specs: {
       TITLE: 'LED Adjustable CCT Backlit Panel Light Adjustable 2x2ft 2x4ft 20-60W',
       SPECIFICATIONS: {
@@ -118,7 +119,7 @@ const panelData = {
     },
   },
   'panel6': {
-    images: [Panel6, AdditionalImage],
+    images: [Panel6,AdditionalImage1, AdditionalImage],
     specs: {
       TITLE: 'LED Adjustable CCT T-Bar Light 2x2ft 20/30/40W 2x4ft 40/50/60W',
       SPECIFICATIONS: {
@@ -140,7 +141,7 @@ const panelData = {
     },
   },
   'panel7': {
-    images: [Panel7, AdditionalImage],
+    images: [Panel7,AdditionalImage1, AdditionalImage],
     specs: {
       TITLE: 'LED Backlit Panel Light 2x2ft 40W 2x4ft 72W',
       SPECIFICATIONS: {
@@ -210,7 +211,7 @@ const PanelDetails = () => {
         <img
           src={selectedImage}
           alt={id}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

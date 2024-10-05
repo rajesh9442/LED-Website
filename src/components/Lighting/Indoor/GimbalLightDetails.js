@@ -8,10 +8,11 @@ import LEDGimbalLight5 from '../../../images/Indoor/GimbalLight/5.jpg';
 import LEDGimbalLight6 from '../../../images/Indoor/GimbalLight/6.jpg';
 import LEDGimbalLight7 from '../../../images/Indoor/GimbalLight/7.jpg';
 import additionalImage from '../../../images/Indoor/GimbalLight/11.jpg'; // Additional image
+import additionalImage1 from '../../../images/Indoor/GimbalLight/12.jpg';
 
 const imageData = {
   'gimbal-light-1': {
-    images: [LEDGimbalLight1, additionalImage], // Multiple images
+    images: [LEDGimbalLight1, additionalImage1, additionalImage], // Multiple images
     description: '5CCT 6” 12W Panel Light',
     specs: {
       'Cut-Out Size': '6 inch',
@@ -36,7 +37,7 @@ const imageData = {
     }
   },
   'gimbal-light-2': {
-    images: [LEDGimbalLight2, additionalImage], // Multiple images
+    images: [LEDGimbalLight2,additionalImage1, additionalImage], // Multiple images
     description: '5CCT 4” 9W Panel Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -61,7 +62,7 @@ const imageData = {
     }
   },
   'gimbal-light-3': {
-    images: [LEDGimbalLight3, additionalImage], // Multiple images
+    images: [LEDGimbalLight3,additionalImage1, additionalImage], // Multiple images
     description: '5CCT 3” 8W Gimbal Light',
     specs: {
       'Cut-Out Size': '3 inch',
@@ -86,7 +87,7 @@ const imageData = {
     }
   },
   'gimbal-light-4': {
-    images: [LEDGimbalLight4, additionalImage], // Multiple images
+    images: [LEDGimbalLight4,additionalImage1, additionalImage], // Multiple images
     description: '5CCT 4” 12W Gimbal Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -111,7 +112,7 @@ const imageData = {
     }
   },
   'gimbal-light-5': {
-    images: [LEDGimbalLight5, additionalImage], // Multiple images
+    images: [LEDGimbalLight5, additionalImage1, additionalImage], // Multiple images
     description: '5CCT 4” 9W Slim Gimbal Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -136,7 +137,7 @@ const imageData = {
     }
   },
   'gimbal-light-6': {
-    images: [LEDGimbalLight6, additionalImage], // Multiple images
+    images: [LEDGimbalLight6,additionalImage1, additionalImage], // Multiple images
     description: '5CCT 4” 9W Multi-Directional Light',
     specs: {
       'Cut-Out Size': '4 inch',
@@ -161,7 +162,7 @@ const imageData = {
     }
   },
   'gimbal-light-7': {
-    images: [LEDGimbalLight7, additionalImage], // Multiple images
+    images: [LEDGimbalLight7,additionalImage1, additionalImage], // Multiple images
     description: 'RGB 6Inch12W Panel Light',
     specs: {
       'Cut-Out Size': '6 inch',
@@ -214,7 +215,7 @@ const GimbalLightDetails = () => {
         <img
           src={selectedImage}
           alt={description}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }} // Smaller main image size
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }} // Smaller main image size
         />
       </div>
 

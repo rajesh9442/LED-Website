@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Troffers1 from '../../../images/Indoor/Troffers/LEDAdjustableCCTCenterBasketTroffer2x2ft2x4ft20to60W.jpg';
 import AdditionalTroffer1 from '../../../images/Indoor/Troffers/11.jpg';// Another additional image
+import AdditionalTroffer12 from '../../../images/Indoor/Troffers/12.jpg';
 
 const troffersData = {
   'led-adjustable-cct-center-basket-troffer': {
     title: 'LED Adjustable CCT Center Basket Troffer 2x2ft 2x4ft 20-60W',
-    images: [Troffers1, AdditionalTroffer1], // Multiple images
+    images: [Troffers1,AdditionalTroffer12, AdditionalTroffer1], // Multiple images
     specs: {
       SIZE: 'BL22: 2′ L x 2’W x 1.2″D, BL24: 4′ L x 2′ W x 1.2″ D',
       '20W +30W + 40W': '2,200lm, 3,300lm, 4,400lm',
@@ -64,7 +65,7 @@ const TroffersDetails = () => {
         <img
           src={selectedImage}
           alt={troffer.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

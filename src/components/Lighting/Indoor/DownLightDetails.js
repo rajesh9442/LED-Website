@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DownLightImage1 from '../../../images/Indoor/DownLightSeries/1.jpg'; // Correct path
 import DownLightImage2 from '../../../images/Indoor/DownLightSeries/11.jpg'; // Additional image for switching
+import DownLightImage12 from '../../../images/Indoor/DownLightSeries/12.jpg';
 
 const downlightData = {
   'downlight-1': {
     title: 'LED 4-6″ Retrofit Downlight 10W-15W 5CCT',
-    images: [DownLightImage1, DownLightImage2], // Multiple images
+    images: [DownLightImage1, DownLightImage12, DownLightImage2], // Multiple images
     specs: {
       SIZE: '10W: 4.9” L x 2.6” D<br />15W: 7.3” L x 3” D',
       WATT: '10W - 15W',
@@ -64,7 +65,7 @@ const DownLightDetails = () => {
         <img
           src={selectedImage}
           alt={downlight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

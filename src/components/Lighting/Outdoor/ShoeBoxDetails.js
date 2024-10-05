@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LEDShoeBoxAreaLight150to450W from '../../../images/Outdoor/ShoeBox/LEDShoeBoxAreaLight150to450W.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/ShoeBox/11.jpg';
+import AdditionalImage12 from '../../../images/Outdoor/ShoeBox/12.jpg';
 
 const shoeBoxData = {
   'led-shoe-box-area-light': {
     title: 'LED Shoe Box Area Light 150-450W',
-    images: [LEDShoeBoxAreaLight150to450W, AdditionalImage1], // Multiple images for thumbnail view
+    images: [LEDShoeBoxAreaLight150to450W,AdditionalImage12, AdditionalImage1], // Multiple images for thumbnail view
     specs: {
       SIZE: '150W: 11.3″ L x 19.7″ W x 3″ D | 240-300W: 14″ L x 25.1″ W x 3″ D | 450W: TBD',
       LUMENS: '150W: 21,135lm | 240W: 33,816lm | 300W: 42,270lm | 450W: 63,405lm',

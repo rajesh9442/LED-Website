@@ -7,7 +7,7 @@ import Home2 from '../../images/HomeCover/Home2.png';
 import Home3 from '../../images/HomeCover/Home3.png';
 import Home4 from '../../images/HomeCover/Home4.png';
 import RightImage from '../../images/HomeCover/1.jpg';
-import LeftImage from '../../images/HomeCover/2.png';
+import LeftImage from '../../images/HomeCover/2.jpg';
 import RightImage3 from '../../images/HomeCover/4.png';
 import LeftImage3 from '../../images/HomeCover/slide6.jpg';
 import SampleVideo from '../../images/HomeCover/video.mp4';  // Import your video file

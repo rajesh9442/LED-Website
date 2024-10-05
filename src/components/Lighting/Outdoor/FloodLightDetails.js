@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import LEDMiniFloodLight15to50W from '../../../images/Outdoor/FloodLight/LEDMiniFloodLight15to50W.jpg'; 
 import LEDFloodLight150to300W from '../../../images/Outdoor/FloodLight/LEDFloodLight150to300W.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/FloodLight/11.jpg';
+import AdditionalImage12 from '../../../images/Outdoor/FloodLight/12.jpg';
 
 const floodLightData = {
   'led-mini-flood-light-15-50w': {
     title: 'LED Mini Flood Light 15-50W',
-    images: [LEDMiniFloodLight15to50W, AdditionalImage1], // Multiple images
+    images: [LEDMiniFloodLight15to50W,AdditionalImage12, AdditionalImage1], // Multiple images
     specs: {
         SIZE: '15-30W: 7.1″ L x 5.1″ W x 1.7″ D | 50W: 8.5″ L x 6.1″ W x 2″ D | 70-90W: 10.4″ L x 7.5″ W x 2.1″ D',
         LUMENS: '15W: 2,100lm | 30W: 4,200lm | 50W: 7,000lm',
@@ -27,7 +28,7 @@ const floodLightData = {
   },
   'led-flood-light-150-300w': {
     title: 'LED Flood Light 150-300W',
-    images: [LEDFloodLight150to300W, AdditionalImage1], // Multiple images
+    images: [LEDFloodLight150to300W, AdditionalImage12, AdditionalImage1], // Multiple images
     specs: {
         SIZE: '150W: 11.3″ L x 19.7″ W x 3″ D | 240W: 14″ L x 25.1″ W x 3″ D | 300W: 14″ L x 25.1″ W x 3″ D',
         LUMENS: '150W: 21,135lm | 240W: 33,816lm | 300W: 42,270lm',

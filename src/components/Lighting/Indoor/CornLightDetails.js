@@ -4,11 +4,12 @@ import LEDCornLight18W from '../../../images/Indoor/CornLight/LEDCornLight18W.jp
 import LEDCornLight54W from '../../../images/Indoor/CornLight/LEDCornLight54W.jpg';
 import LEDCornLight120W from '../../../images/Indoor/CornLight/LEDCornLight120W.jpg';
 import additionalImage from '../../../images/Indoor/CornLight/11.jpg'; // Additional image
+import additionalImage2 from '../../../images/Indoor/CornLight/12.jpg';
 
 const imageData = {
   '18w': {
     title: '18W Corn Light',
-    images: [LEDCornLight18W, additionalImage], // Multiple images
+    images: [LEDCornLight18W, additionalImage2, additionalImage], // Multiple images
     specs: {
       SIZE: '5.7″ L x 2.6″ W',
       LUMENS: '2,610lm',
@@ -27,7 +28,7 @@ const imageData = {
   },
   '54w': {
     title: '54W Corn Light',
-    images: [LEDCornLight54W, additionalImage], // Multiple images
+    images: [LEDCornLight54W, additionalImage2, additionalImage], // Multiple images
     specs: {
       SIZE: '9.5″ L x 2.6″ W',
       LUMENS: '8,100lm',
@@ -46,7 +47,7 @@ const imageData = {
   },
   '120w': {
     title: '120W Corn Light',
-    images: [LEDCornLight120W, additionalImage], // Multiple images
+    images: [LEDCornLight120W, additionalImage2, additionalImage], // Multiple images
     specs: {
       SIZE: '13.4″ L x 4.4″ W',
       LUMENS: '17,400lm',
@@ -104,7 +105,7 @@ const CornLightDetails = () => {
         <img
           src={selectedImage}
           alt={cornLight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 
