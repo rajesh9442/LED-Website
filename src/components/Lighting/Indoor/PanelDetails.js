@@ -9,6 +9,8 @@ import Panel6 from '../../../images/Indoor/Panels/6.jpg';
 import Panel7 from '../../../images/Indoor/Panels/7.jpg';
 import AdditionalImage from '../../../images/Indoor/Panels/11.jpg';
 import AdditionalImage1 from '../../../images/Indoor/Panels/12.jpg';
+import AdditionalImage2 from '../../../images/Indoor/Panels/21.jpg';
+import AdditionalImage23 from '../../../images/Indoor/Panels/23.jpg';
 
 const panelData = {
   'panel1': {
@@ -33,7 +35,7 @@ const panelData = {
     },
   },
   'panel2': {
-    images: [Panel2,AdditionalImage1, AdditionalImage],
+    images: [Panel2,AdditionalImage23,AdditionalImage2, AdditionalImage],
     specs: {
       TITLE: '2x2FT LED Flat Panel Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
       FEATURES: [
@@ -75,7 +77,7 @@ const panelData = {
     },
   },
   'panel4': {
-    images: [Panel4,AdditionalImage1, AdditionalImage],
+    images: [Panel4,AdditionalImage2, AdditionalImage],
     specs: {
       TITLE: '2×2 FT LED Light Flat Panel, 20/30/40W, Color Temperature Selectable 3K | 4K | 5K',
       FEATURES: [
@@ -96,7 +98,7 @@ const panelData = {
     },
   },
   'panel5': {
-    images: [Panel5,AdditionalImage1, AdditionalImage],
+    images: [Panel5,AdditionalImage2, AdditionalImage],
     specs: {
       TITLE: 'LED Adjustable CCT Backlit Panel Light Adjustable 2x2ft 2x4ft 20-60W',
       SPECIFICATIONS: {
@@ -141,7 +143,7 @@ const panelData = {
     },
   },
   'panel7': {
-    images: [Panel7,AdditionalImage1, AdditionalImage],
+    images: [Panel7,AdditionalImage2, AdditionalImage],
     specs: {
       TITLE: 'LED Backlit Panel Light 2x2ft 40W 2x4ft 72W',
       SPECIFICATIONS: {

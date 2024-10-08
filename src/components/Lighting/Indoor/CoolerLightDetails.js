@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import coolerLightImage from '../../../images/Indoor/CoolerLight/CoolerLight.jpg'; // Main image
 import additionalImage from '../../../images/Indoor/CoolerLight/11.jpg'; // Additional image
 import additionalImage1 from '../../../images/Indoor/CoolerLight/1.jpg'; 
+import additionalImage12 from '../../../images/Indoor/CoolerLight/12.jpg'; 
 
 const coolerLightData = {
   'cooler-light-1': {
     title: 'Cooler Light 5ft – 32W',
-    images: [coolerLightImage, additionalImage1, additionalImage], // Multiple images
+    images: [coolerLightImage, additionalImage1,additionalImage12, additionalImage], // Multiple images
     specs: {
       SIZE: '5ft- 0.5” Ø x 58.7” L<br />6ft- 0.5” Ø x 70.6” L',
       'Input voltage': 'AC100-250V',

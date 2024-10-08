@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import T8TubeLight1 from '../../../images/Indoor/T8TubeLight/LEDT8TubeLight2ft-4ft10-22W.jpg';
+import T8TubeLight1 from '../../../images/Indoor/T8TubeLight/1.jpg';
 import T8TubeLight2 from '../../../images/Indoor/T8TubeLight/LEDT8TubeLiightSinglePin8ft50W.jpg';
 import AdditionalT8TubeLight1 from '../../../images/Indoor/T8TubeLight/11.jpg'; // Example additional image
+import AdditionalT8TubeLight2 from '../../../images/Indoor/T8TubeLight/2.jpg';
+import AdditionalT8TubeLight3 from '../../../images/Indoor/T8TubeLight/3.jpg';
 
 const t8TubeLightData = {
   light1: {
     title: 'LED T8 Tube Light Single Pin 8ft 50W',
-    images: [T8TubeLight1, AdditionalT8TubeLight1], // Multiple images
+    images: [T8TubeLight1, AdditionalT8TubeLight2,AdditionalT8TubeLight3,AdditionalT8TubeLight1], // Multiple images
     specs: {
       SIZE: '8ft: 1.4″ * Ø * 8 ‘L',
       WATT: '50W',

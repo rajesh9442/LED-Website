@@ -4,11 +4,13 @@ import LEDMiniFloodLight15to50W from '../../../images/Outdoor/FloodLight/LEDMini
 import LEDFloodLight150to300W from '../../../images/Outdoor/FloodLight/LEDFloodLight150to300W.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/FloodLight/11.jpg';
 import AdditionalImage12 from '../../../images/Outdoor/FloodLight/12.jpg';
+import AdditionalImage13 from '../../../images/Outdoor/FloodLight/13.jpg';
+import AdditionalImage14 from '../../../images/Outdoor/FloodLight/14.jpg';
 
 const floodLightData = {
   'led-mini-flood-light-15-50w': {
     title: 'LED Mini Flood Light 15-50W',
-    images: [LEDMiniFloodLight15to50W,AdditionalImage12, AdditionalImage1], // Multiple images
+    images: [LEDMiniFloodLight15to50W,AdditionalImage13, AdditionalImage14,AdditionalImage1], // Multiple images
     specs: {
         SIZE: '15-30W: 7.1″ L x 5.1″ W x 1.7″ D | 50W: 8.5″ L x 6.1″ W x 2″ D | 70-90W: 10.4″ L x 7.5″ W x 2.1″ D',
         LUMENS: '15W: 2,100lm | 30W: 4,200lm | 50W: 7,000lm',

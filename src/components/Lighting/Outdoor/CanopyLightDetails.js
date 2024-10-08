@@ -7,11 +7,24 @@ import CanopyLight4 from '../../../images/Outdoor/CanopyLight/4.jpg';
 import CanopyLight5 from '../../../images/Outdoor/CanopyLight/5.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/CanopyLight/11.jpg';
 import AdditionalImage12 from '../../../images/Outdoor/CanopyLight/12.jpg';
+import AdditionalImage111 from '../../../images/Outdoor/CanopyLight/111.jpg';
+import AdditionalImage21 from '../../../images/Outdoor/CanopyLight/21.jpg';
+import AdditionalImage22 from '../../../images/Outdoor/CanopyLight/22.jpg';
+import AdditionalImage23 from '../../../images/Outdoor/CanopyLight/23.jpg';
+import AdditionalImage112 from '../../../images/Outdoor/CanopyLight/112.jpg';
+import AdditionalImage113 from '../../../images/Outdoor/CanopyLight/113.jpg';
+import AdditionalImage31 from '../../../images/Outdoor/CanopyLight/31.jpg';
+import AdditionalImage32 from '../../../images/Outdoor/CanopyLight/32.jpg';
+import AdditionalImage41 from '../../../images/Outdoor/CanopyLight/41.jpg';
+import AdditionalImage42 from '../../../images/Outdoor/CanopyLight/42.jpg';
+import AdditionalImage43 from '../../../images/Outdoor/CanopyLight/43.jpg';
+import AdditionalImage44 from '../../../images/Outdoor/CanopyLight/44.jpg';
+import AdditionalImage45 from '../../../images/Outdoor/CanopyLight/45.jpg';
 
 const canopyLightData = {
   'led-canopy-light-150w': {
     title: 'LED Canopy Light 150W',
-    images: [CanopyLight1,AdditionalImage12, AdditionalImage1], // Multiple images
+    images: [CanopyLight1,AdditionalImage112,AdditionalImage113,AdditionalImage111, AdditionalImage1], // Multiple images
     specs: {
       SIZE: '15” L x 15″ W x 3.4” D',
       WATTS: '150W',
@@ -30,7 +43,7 @@ const canopyLightData = {
   },
   'led-canopy-light-180w': {
     title: 'LED Canopy Light 180W',
-    images: [CanopyLight2,AdditionalImage12, AdditionalImage1], // Multiple images
+    images: [CanopyLight2,AdditionalImage21,AdditionalImage22,AdditionalImage23, AdditionalImage1], // Multiple images
     specs: {
       SIZE: '20.5” L x 20.5” W x 9.6” D',
       WATTS: '180W',
@@ -47,7 +60,7 @@ const canopyLightData = {
   },
   'led-parking-garage-canopy-light-100w': {
     title: 'LED Parking Garage Canopy Light 100W',
-    images: [CanopyLight3,AdditionalImage12,AdditionalImage1], // Single image
+    images: [CanopyLight3,AdditionalImage31,AdditionalImage32,AdditionalImage12,AdditionalImage1], // Single image
     specs: {
       SIZE: '9.56” L x 9.56” W x 3.68” D',
       WATTS: '100W',
@@ -66,7 +79,7 @@ const canopyLightData = {
   },
   'led-parking-garage-canopy-light-75w': {
     title: 'LED Parking Garage Canopy Light 75W',
-    images: [CanopyLight4,AdditionalImage12,AdditionalImage1], // Single image
+    images: [CanopyLight4,AdditionalImage31,AdditionalImage32,AdditionalImage12,AdditionalImage1], // Single image
     specs: {
       SIZE: '10.03” L x 10.03” W x 4.92” D',
       WATTS: '75W',
@@ -85,7 +98,7 @@ const canopyLightData = {
   },
   'led-parking-garage-canopy-light-50w': {
     title: 'LED Parking Garage Canopy Light 50W',
-    images: [CanopyLight5,AdditionalImage12,AdditionalImage1], // Single image
+    images: [CanopyLight5,AdditionalImage41,AdditionalImage42,AdditionalImage43,AdditionalImage44,AdditionalImage45], // Single image
     specs: {
       SIZE: 'N/A',
       WATTS: '50W',
