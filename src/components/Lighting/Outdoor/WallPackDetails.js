@@ -10,52 +10,63 @@ import AdditionalImage1 from '../../../images/Outdoor/WallPacks/11.jpg';
 import AdditionalImage2 from '../../../images/Outdoor/WallPacks/12.jpg';
 import AdditionalImage3 from '../../../images/Outdoor/WallPacks/13.jpg';
 import AdditionalImage4 from '../../../images/Outdoor/WallPacks/14.jpg';
+import AdditionalImage111 from '../../../images/Outdoor/WallPacks/111.jpg';
+import AdditionalImage112 from '../../../images/Outdoor/WallPacks/112.jpg';
+import AdditionalImage113 from '../../../images/Outdoor/WallPacks/113.jpg';
+import AdditionalImage21 from '../../../images/Outdoor/WallPacks/21.jpg';
+import AdditionalImage22 from '../../../images/Outdoor/WallPacks/22.jpg';
+import AdditionalImage23 from '../../../images/Outdoor/WallPacks/23.jpg';
+import AdditionalImage24 from '../../../images/Outdoor/WallPacks/24.jpg';
+import AdditionalImage25 from '../../../images/Outdoor/WallPacks/25.jpg';
+import AdditionalImage31 from '../../../images/Outdoor/WallPacks/31.jpg';
+import AdditionalImage32 from '../../../images/Outdoor/WallPacks/32.jpg';
+import AdditionalImage33 from '../../../images/Outdoor/WallPacks/33.jpg';
 
 // Data for Wall Packs
 const specifications = {
-  'led-mini-wall-pack-w-photocell-30w': {
-    title: 'LED Mini Wall Pack W/Photocell 30W',
-    images: [WallPack1,AdditionalImage4, AdditionalImage1], // Add more images if available
-    specs: {
-      SIZE: '8.58”L x 5.78”W x 2.91” D',
-      WATTS: '30W',
-      LUMEN: '3900lm',
-      CCT: '5700K',
-      VOLTAGE: 'AC100-277V',
-      DIMMABLE: 'No',
-      BEAM_ANGLE: '110°',
-      CRI: '>80',
-      PF: '>0.9',
-      IP_RATE: 'IP65',
-      MATERIALS: 'Aluminum',
-      HOUSING_COLOR: 'Black / Brown',
-      LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED Mini Wall Packs are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These Wall Packs are perfect for houses, boundary walls, hotels, schools, hospitals, and grocery stores.'
-    }
-  },
-  'led-mini-wall-pack-w-photocell-13w': {
-    title: 'LED Mini Wall Pack W/Photocell 13W',
-    images: [WallPack2,AdditionalImage4, AdditionalImage1], // Add more images if available
-    specs: {
-      SIZE: '8.15”L x 5.35”W x 2.5” D',
-      WATTS: '13W',
-      LUMEN: '1690lm',
-      CCT: '5700K',
-      VOLTAGE: 'AC100-277V',
-      DIMMABLE: 'No',
-      BEAM_ANGLE: '110°',
-      CRI: '>80',
-      PF: '>0.9',
-      IP_RATE: 'IP65',
-      MATERIALS: 'Aluminum',
-      HOUSING_COLOR: 'Black / Brown',
-      LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED Mini Wall Packs are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These Wall Packs are perfect for houses, boundary walls, hotels, schools, hospitals, and grocery stores.'
-    }
-  },
+  // 'led-mini-wall-pack-w-photocell-30w': {
+  //   title: 'LED Mini Wall Pack W/Photocell 30W',
+  //   images: [WallPack1,AdditionalImage4, AdditionalImage1], // Add more images if available
+  //   specs: {
+  //     SIZE: '8.58”L x 5.78”W x 2.91” D',
+  //     WATTS: '30W',
+  //     LUMEN: '3900lm',
+  //     CCT: '5700K',
+  //     VOLTAGE: 'AC100-277V',
+  //     DIMMABLE: 'No',
+  //     BEAM_ANGLE: '110°',
+  //     CRI: '>80',
+  //     PF: '>0.9',
+  //     IP_RATE: 'IP65',
+  //     MATERIALS: 'Aluminum',
+  //     HOUSING_COLOR: 'Black / Brown',
+  //     LIFESPAN: '50,000 hours',
+  //     DESCRIPTION: 'LED Mini Wall Packs are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These Wall Packs are perfect for houses, boundary walls, hotels, schools, hospitals, and grocery stores.'
+  //   }
+  // },
+  // 'led-mini-wall-pack-w-photocell-13w': {
+  //   title: 'LED Mini Wall Pack W/Photocell 13W',
+  //   images: [WallPack2,AdditionalImage4, AdditionalImage1], // Add more images if available
+  //   specs: {
+  //     SIZE: '8.15”L x 5.35”W x 2.5” D',
+  //     WATTS: '13W',
+  //     LUMEN: '1690lm',
+  //     CCT: '5700K',
+  //     VOLTAGE: 'AC100-277V',
+  //     DIMMABLE: 'No',
+  //     BEAM_ANGLE: '110°',
+  //     CRI: '>80',
+  //     PF: '>0.9',
+  //     IP_RATE: 'IP65',
+  //     MATERIALS: 'Aluminum',
+  //     HOUSING_COLOR: 'Black / Brown',
+  //     LIFESPAN: '50,000 hours',
+  //     DESCRIPTION: 'LED Mini Wall Packs are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. These Wall Packs are perfect for houses, boundary walls, hotels, schools, hospitals, and grocery stores.'
+  //   }
+  // },
   'led-mini-wall-pack-20w': {
-    title: 'LED Mini Wall Pack 20W',
-    images: [WallPack3,AdditionalImage4,AdditionalImage1], // Add more images if available
+    title: 'LED Mini Wall Pack 13W/20W/30W',
+    images: [WallPack3,AdditionalImage111,AdditionalImage112,AdditionalImage113], // Add more images if available
     specs: {
       SIZE: '8.58”L x 5.78”W x 2.91” D',
       WATTS: '20W',
@@ -74,8 +85,8 @@ const specifications = {
     }
   },
   'led-rotatable-wall-pack-40-120w': {
-    title: 'LED Rotatable Wall Pack, 40-120W',
-    images: [WallPack4,AdditionalImage3,AdditionalImage1], // Add more images if available
+    title: 'LED Rotatable Wall Pack 80W/120W',
+    images: [WallPack4,AdditionalImage21,AdditionalImage22,AdditionalImage23,AdditionalImage24,AdditionalImage25], // Add more images if available
     specs: {
       SIZE: '40W: 5,200-5,600lm, 80W: 10,400-11,200lm, 120W: 15,400-16,800lm',
       CCT: '5700K',
@@ -94,7 +105,7 @@ const specifications = {
   },
   'led-outdoor-wall-pack-w-inbuilt-battery-backup-55w': {
     title: 'LED Outdoor Wall Pack W/Inbuilt Battery Backup 55W',
-    images: [WallPack5,AdditionalImage2,AdditionalImage1], // Add more images if available
+    images: [WallPack5,AdditionalImage31,AdditionalImage32,AdditionalImage33,AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '14.2” L x 9.3” W x 9.9” D',
       WATTS: '55W',
@@ -117,7 +128,7 @@ const specifications = {
   },
   'led-outdoor-wall-pack-w-photo-cell-sensor-40-120w': {
     title: 'LED Outdoor Wall Pack W/Photo Cell Sensor 40 -120W',
-    images: [WallPack6,AdditionalImage2,AdditionalImage1], // Add more images if available
+    images: [WallPack6,AdditionalImage31,AdditionalImage32,AdditionalImage33,AdditionalImage1], // Add more images if available
     specs: {
       SIZE: '14.2” L x 9.3” W x 9.9” D',
       WATTS: '40W, 55W, 60W, 80W, 100W, 120W',

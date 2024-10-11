@@ -66,7 +66,7 @@ const ShoeBoxDetails = () => {
         <img
           src={selectedImage}
           alt={shoeBox.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
         />
       </div>
 

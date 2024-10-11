@@ -8,25 +8,25 @@ import WallPack5 from '../../../images/Outdoor/WallPacks/5.jpg';
 import WallPack6 from '../../../images/Outdoor/WallPacks/6.jpg';
 
 const specifications = {
-  'LED Mini Wall Pack W/Photocell 30W': {
-    path: 'led-mini-wall-pack-w-photocell-30w',
-    src: WallPack1,
-    description: 'LED Mini Wall Pack W/Photocell 30W',
-  },
-  'LED Mini Wall Pack W/Photocell 13W': {
-    path: 'led-mini-wall-pack-w-photocell-13w',
-    src: WallPack2,
-    description: 'LED Mini Wall Pack W/Photocell 13W',
-  },
-  'Led Mini Wall Pack 20W': {
+  // 'LED Mini Wall Pack W/Photocell 30W': {
+  //   path: 'led-mini-wall-pack-w-photocell-30w',
+  //   src: WallPack1,
+  //   description: 'LED Mini Wall Pack W/Photocell 30W',
+  // },
+  // 'LED Mini Wall Pack W/Photocell 13W': {
+  //   path: 'led-mini-wall-pack-w-photocell-13w',
+  //   src: WallPack2,
+  //   description: 'LED Mini Wall Pack W/Photocell 13W',
+  // },
+  'Led Mini Wall Pack 13W/20W/30W': {
     path: 'led-mini-wall-pack-20w',
     src: WallPack3,
     description: 'Led Mini Wall Pack 20W',
   },
-  'LED Rotatable Wall Pack, 40-120W': {
+  'LED Rotatable Wall Pack, 80W/120W': {
     path: 'led-rotatable-wall-pack-40-120w',
     src: WallPack4,
-    description: 'LED Rotatable Wall Pack, 40-120W',
+    description: 'LED Rotatable Wall Pack 80W/120W',
   },
   'LED Outdoor Wall Pack W/Inbuilt Battery Backup 55W': {
     path: 'led-outdoor-wall-pack-w-inbuilt-battery-backup-55w',

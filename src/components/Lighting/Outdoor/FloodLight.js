@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import LEDMiniFloodLight15to50W from '../../../images/Outdoor/FloodLight/LEDMiniFloodLight15to50W.jpg'; 
 import LEDFloodLight150to300W from '../../../images/Outdoor/FloodLight/LEDFloodLight150to300W.jpg';
+import LEDFloodLight450W from '../../../images/Outdoor/FloodLight/41.jpg';
 
 const floodLightData = {
   'LED Mini Flood Light 15-50W': {
@@ -9,10 +10,15 @@ const floodLightData = {
     src: LEDMiniFloodLight15to50W,
     description: 'LED Mini Flood Light 15-50W',
   },
-  'LED Flood Light 150-300W': {
+  'LED Flood Light 150W/200W/300W': {
     path: 'led-flood-light-150-300w',
     src: LEDFloodLight150to300W,
-    description: 'LED Flood Light 150-300W',
+    description: 'LED Flood Light 150W/200W/300W',
+  },
+  'LED Flood Light 450W': {
+    path: 'led-flood-light-450w',
+    src: LEDFloodLight450W,
+    description: 'LED Flood Light 450W',
   },
 };
 

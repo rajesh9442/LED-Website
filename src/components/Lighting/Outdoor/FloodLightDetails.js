@@ -6,6 +6,15 @@ import AdditionalImage1 from '../../../images/Outdoor/FloodLight/11.jpg';
 import AdditionalImage12 from '../../../images/Outdoor/FloodLight/12.jpg';
 import AdditionalImage13 from '../../../images/Outdoor/FloodLight/13.jpg';
 import AdditionalImage14 from '../../../images/Outdoor/FloodLight/14.jpg';
+import AdditionalImage21 from '../../../images/Outdoor/FloodLight/21.jpg';
+import AdditionalImage22 from '../../../images/Outdoor/FloodLight/22.jpg';
+import AdditionalImage23 from '../../../images/Outdoor/FloodLight/23.jpg';
+import AdditionalImage41 from '../../../images/Outdoor/FloodLight/41.jpg';
+import AdditionalImage42 from '../../../images/Outdoor/FloodLight/42.jpg';
+import AdditionalImage43 from '../../../images/Outdoor/FloodLight/43.jpg';
+import AdditionalImage44 from '../../../images/Outdoor/FloodLight/44.jpg';
+import AdditionalImage45 from '../../../images/Outdoor/FloodLight/45.jpg';
+import AdditionalImage46 from '../../../images/Outdoor/FloodLight/46.jpg';
 
 const floodLightData = {
   'led-mini-flood-light-15-50w': {
@@ -29,8 +38,8 @@ const floodLightData = {
     },
   },
   'led-flood-light-150-300w': {
-    title: 'LED Flood Light 150-300W',
-    images: [LEDFloodLight150to300W, AdditionalImage12, AdditionalImage1], // Multiple images
+    title: 'LED Flood Light 150W/200W/300W',
+    images: [LEDFloodLight150to300W, AdditionalImage21, AdditionalImage22,AdditionalImage23], // Multiple images
     specs: {
         SIZE: '150W: 11.3″ L x 19.7″ W x 3″ D | 240W: 14″ L x 25.1″ W x 3″ D | 300W: 14″ L x 25.1″ W x 3″ D',
         LUMENS: '150W: 21,135lm | 240W: 33,816lm | 300W: 42,270lm',
@@ -45,6 +54,26 @@ const floodLightData = {
         LIFESPAN: '50,000 hours',
         MOUNTS: 'Slip Fitter, Small Yoke, Large Yoke, Extruded Arm, 2-in-1 Slip Extruded Slip Fitter',
         OPTIONAL: 'Photocell, AC200-480V',
+        DESCRIPTION: 'LED Flood Lights are commonly used to replace HPS flood lights and metal halides. These area lights are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. LED Flood Lights are perfect for stadiums, parks, billboards, and places of worship. These come with a surge protector and slot for a photocell sensor.',
+    },
+  },
+  'led-flood-light-450w': {
+    title: 'LED Flood Light 450W',
+    images: [AdditionalImage41, AdditionalImage42, AdditionalImage43,AdditionalImage44,AdditionalImage45,AdditionalImage46], // Multiple images
+    specs: {
+        SIZE: '450W: 35.1″ L x 13.1″ W x 3″ D',
+        LUMENS: '450W: 42,270lm',
+        CCT: '5700K',
+        VOLTAGE: 'AC100-277V (Surge Protected)',
+        'BEAM ANGLE': '150*85°(Type Ⅲ)',
+        CRI: '>70',
+        PF: '>0.9',
+        'IP RATE': 'IP65',
+        MATERIALS: 'Aluminum',
+        FINISH: 'Black, Brown',
+        LIFESPAN: '50,000 hours',
+        MOUNTS: 'Slip Fitter, Small Yoke, Large Yoke, Extruded Arm, 2-in-1 Slip Extruded Slip Fitter',
+        OPTIONAL: 'Photocell, AC100-227V',
         DESCRIPTION: 'LED Flood Lights are commonly used to replace HPS flood lights and metal halides. These area lights are safe for outdoor use and protected from rain, snow, and weak jets of water, such as sprinklers. LED Flood Lights are perfect for stadiums, parks, billboards, and places of worship. These come with a surge protector and slot for a photocell sensor.',
     },
   },
