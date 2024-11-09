@@ -32,9 +32,11 @@ const Footer = () => {
         <div className="footer-section contact">
           <h4>Contact Info</h4>
           <ul>
+            <li>+1-414-539-4006</li>
             <li>+1-414-627-0979</li>
-            <li>contact@brightworld.com</li>
-            <li>730 W. Historical Mitchell St., Milwaukee, USA</li>
+            <li>brightworldled@gmail.com</li>
+            <li>730 W. Historical Mitchell St., Milwaukee</li>
+            <li>WI 53204, USA</li>
           </ul>
         </div>
       </div>
@@ -47,7 +49,6 @@ const Footer = () => {
         <div className="footer-bottom-right">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
         </div>
       </div>
     </footer>

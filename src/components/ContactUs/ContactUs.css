@@ -56,11 +56,14 @@
   flex-direction: column;
   padding: 15px; /* Adjusted padding */
   font-size: 16px; /* Consistent font size */
+  align-items: flex-start; /* Aligns form fields to the left */
+  width: 100%; /* Make form full width */
 }
 
 .contact-form h2 {
   margin-bottom: 10px;
   font-size: 20px; /* Reduced heading size */
+  text-align: left; /* Ensure heading is left-aligned */
 }
 
 /* Form Row Styles */
@@ -68,10 +71,13 @@
   display: flex;
   gap: 15px; /* Space between form fields */
   margin-bottom: 15px; /* Reduced margin below rows */
+  width: 100%; /* Full width for form rows */
+  justify-content: flex-start; /* Aligns form rows to the left */
 }
 
 .form-group {
   flex: 1;
+  min-width: 200px; /* Minimum width for form fields */
 }
 
 /* Styles for Labels and Inputs */
@@ -79,26 +85,30 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  text-align: left; /* Left-align label text */
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
+  width: 90%; /* Adjust width for left alignment */
   padding: 8px; /* Reduced padding */
   border: 1px solid #ddd;
   border-radius: 4px;
+  text-align: left; /* Ensure content is left-aligned */
 }
 
-/* Shorten the length of name and mobile input fields */
-#name,
-#mobile {
-  width: 85%; /* Make the name and mobile input fields slightly shorter */
+/* Adjust Message Field to Match Other Inputs */
+.form-group-fullwidth {
+  width: 100%; /* Make the full-width */
 }
 
 .form-group textarea {
   height: 100px; /* Reduced height for textarea */
+  resize: vertical; /* Allow vertical resizing */
+  text-align: left; /* Left-align text inside the textarea */
 }
 
+/* Button Styling */
 button {
   padding: 8px 16px; /* Reduced padding */
   border: none;
@@ -107,8 +117,8 @@ button {
   font-size: 14px; /* Reduced font size */
   cursor: pointer;
   border-radius: 4px;
-  align-self: center; /* Center the button horizontally */
   margin-bottom: 15px; /* Reduced space below the button */
+  align-self: flex-start; /* Left-align the button */
 }
 
 button:hover {
