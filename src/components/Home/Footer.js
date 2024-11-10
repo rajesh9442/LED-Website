@@ -47,7 +47,7 @@ const Footer = () => {
           <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
         <div className="footer-bottom-right">
-          <a href="https://www.facebook.com/share/1GqvcJr4Dd/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+          <a href="https://www.facebook.com/share/15LWDx2L9W/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
           <a href="https://www.instagram.com/bright_world_led?igsh=bDk4bHAzbTFuZ201" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
         </div>
       </div>
