@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
-import logo from '../../images/logo.png'; // Adjust the path based on your folder structure
+import logo from '../../images/logo.png';
 
 const NavBar = () => {
   const [lightingDropdownVisible, setLightingDropdownVisible] = useState(false);
   const [signsDropdownVisible, setSignsDropdownVisible] = useState(false);
+  const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuVisible(prev => !prev);
+  };
 
   // Toggle lighting dropdown on click
   const handleLightingClick = () => {
-    setLightingDropdownVisible((prev) => !prev);
-    setSignsDropdownVisible(false); // Ensure only one dropdown is open at a time
+    setLightingDropdownVisible(prev => !prev);
+    setSignsDropdownVisible(false);
   };
 
   // Toggle signs dropdown on click
   const handleSignsClick = () => {
-    setSignsDropdownVisible((prev) => !prev);
-    setLightingDropdownVisible(false); // Ensure only one dropdown is open at a time
+    setSignsDropdownVisible(prev => !prev);
+    setLightingDropdownVisible(false);
   };
 
-  // Hide dropdown when a dropdown link is clicked
+  // Hide dropdowns when an item is clicked
   const handleDropdownItemClick = () => {
     setLightingDropdownVisible(false);
     setSignsDropdownVisible(false);
+    setMobileMenuVisible(false); // Close mobile menu
   };
 
   return (
@@ -30,7 +36,10 @@ const NavBar = () => {
       <NavLink to="/" className="navbar-logo">
         <img src={logo} alt="Logo" className="logo-image" />
       </NavLink>
-      <ul className="navbar-links">
+      <div className="hamburger" onClick={toggleMobileMenu}>
+        ☰
+      </div>
+      <ul className={`navbar-links ${isMobileMenuVisible ? 'active' : ''}`}>
         <li className="dropdown-container">
           <a href="#" className="nav-link" onClick={handleLightingClick}>
             LIGHTING
@@ -65,7 +74,6 @@ const NavBar = () => {
           )}
         </li>
 
-        {/* Signs dropdown */}
         <li className="dropdown-container">
           <a href="#" className="nav-link" onClick={handleSignsClick}>
             SIGNS

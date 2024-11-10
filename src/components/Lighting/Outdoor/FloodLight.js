@@ -64,7 +64,7 @@ const FloodLight = () => {
             <img
               src={floodLightData[key].src}
               alt={key}
-              style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+              style={{ width: '100%', height: 'auto', borderRadius: '8px' }} // Adjusted height to auto
             />
             <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
               {floodLightData[key].description}
