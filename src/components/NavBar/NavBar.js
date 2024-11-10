@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../images/logo.png';
@@ -7,29 +7,41 @@ const NavBar = () => {
   const [lightingDropdownVisible, setLightingDropdownVisible] = useState(false);
   const [signsDropdownVisible, setSignsDropdownVisible] = useState(false);
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const dropdownRef = useRef(null); // Reference for the dropdown container
 
   const toggleMobileMenu = () => {
     setMobileMenuVisible(prev => !prev);
   };
 
-  // Toggle lighting dropdown on click
   const handleLightingClick = () => {
     setLightingDropdownVisible(prev => !prev);
     setSignsDropdownVisible(false);
   };
 
-  // Toggle signs dropdown on click
   const handleSignsClick = () => {
     setSignsDropdownVisible(prev => !prev);
     setLightingDropdownVisible(false);
   };
 
-  // Hide dropdowns when an item is clicked
   const handleDropdownItemClick = () => {
     setLightingDropdownVisible(false);
     setSignsDropdownVisible(false);
-    setMobileMenuVisible(false); // Close mobile menu
+    setMobileMenuVisible(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setLightingDropdownVisible(false);
+        setSignsDropdownVisible(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navbar">
@@ -39,7 +51,7 @@ const NavBar = () => {
       <div className="hamburger" onClick={toggleMobileMenu}>
         ☰
       </div>
-      <ul className={`navbar-links ${isMobileMenuVisible ? 'active' : ''}`}>
+      <ul className={`navbar-links ${isMobileMenuVisible ? 'active' : ''}`} ref={dropdownRef}>
         <li className="dropdown-container">
           <a href="#" className="nav-link" onClick={handleLightingClick}>
             LIGHTING
