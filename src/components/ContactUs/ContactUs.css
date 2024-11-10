@@ -1,87 +1,88 @@
 /* Icon Styles */
 .contact-icon {
-  font-size: 28px; /* Adjust icon size */
+  font-size: 28px;
   margin-right: 10px;
-  color: black; /* Set icon color to black */
+  color: black;
 }
 
 /* General Container Styles */
 .contact-us-container {
-  padding: 15px; /* Adjusted padding around the container */
-  max-width: 1200px; /* Limit max width for readability on larger screens */
-  margin: 0 auto; /* Center align the container */
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Heading Styles */
 .contact-us-heading {
   text-align: center;
-  margin-bottom: 15px; /* Adjusted margin below heading */
-  font-size: 1.5em; /* Adjusted font size */
+  margin-bottom: 15px;
+  font-size: 1.5em;
 }
 
 /* Layout for Contact Details and Form */
 .contact-us-content {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
-  gap: 15px; /* Space between the columns */
-  width: 100%; /* Full width */
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
 }
 
 /* Contact Details Styles */
 .contact-details {
-  margin-top: 20px; /* Reduced margin at the top */
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Space between items */
-  padding: 15px; /* Adjusted padding */
-  font-size: 16px; /* Consistent font size */
+  gap: 30px;
+  padding: 15px;
+  font-size: 16px;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 15px; /* Reduced margin below items */
+  margin-bottom: 15px;
 }
 
 .contact-info h2 {
   margin: 0;
-  font-size: 20px; /* Reduced heading size */
+  font-size: 20px;
 }
 
 .contact-info p {
   margin: 0;
-  font-size: 16px; /* Reduced font size for content */
+  font-size: 16px;
 }
 
 /* Contact Form Styles */
 .contact-form {
   display: flex;
   flex-direction: column;
-  padding: 15px; /* Adjusted padding */
-  font-size: 16px; /* Consistent font size */
-  align-items: flex-start; /* Aligns form fields to the left */
-  width: 100%; /* Make form full width */
+  padding: 15px;
+  font-size: 16px;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .contact-form h2 {
   margin-bottom: 10px;
-  font-size: 20px; /* Reduced heading size */
-  text-align: left; /* Ensure heading is left-aligned */
+  font-size: 20px;
+  text-align: left;
 }
 
 /* Form Row Styles */
 .form-row {
   display: flex;
-  gap: 15px; /* Space between form fields */
-  margin-bottom: 15px; /* Reduced margin below rows */
-  width: 100%; /* Full width for form rows */
-  justify-content: flex-start; /* Aligns form rows to the left */
-  flex-wrap: wrap; /* Wrap form fields on smaller screens */
+  gap: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .form-group {
   flex: 1;
-  min-width: 200px; /* Minimum width for form fields */
+  min-width: 200px;
 }
 
 /* Styles for Labels and Inputs */
@@ -89,41 +90,41 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  text-align: left; /* Left-align label text */
+  text-align: left;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%; /* Full width for inputs */
-  max-width: 100%; /* Ensure it doesn't exceed container width */
-  padding: 8px; /* Reduced padding */
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  text-align: left; /* Ensure content is left-aligned */
+  text-align: left;
 }
 
 /* Adjust Message Field to Match Other Inputs */
 .form-group-fullwidth {
-  width: 100%; /* Make the full-width */
+  width: 100%;
 }
 
 .form-group textarea {
-  height: 100px; /* Reduced height for textarea */
-  resize: vertical; /* Allow vertical resizing */
-  text-align: left; /* Left-align text inside the textarea */
+  height: 100px;
+  resize: vertical;
+  text-align: left;
 }
 
 /* Button Styling */
 button {
-  padding: 8px 16px; /* Reduced padding */
+  padding: 8px 16px;
   border: none;
   background-color: #4CAF50;
   color: white;
-  font-size: 14px; /* Reduced font size */
+  font-size: 14px;
   cursor: pointer;
   border-radius: 4px;
-  margin-bottom: 15px; /* Reduced space below the button */
-  align-self: flex-start; /* Left-align the button */
+  margin-bottom: 15px;
+  align-self: flex-start;
 }
 
 button:hover {
@@ -133,13 +134,13 @@ button:hover {
 /* Map Container Styles */
 .map-container {
   display: flex;
-  justify-content: flex-start; /* Align map to the left */
-  width: 100%; /* Make the map container full width */
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .map-container iframe {
   width: 100%;
-  height: 250px; /* Reduced height for the map */
+  height: 250px;
   border: none;
   border-radius: 8px;
 }
@@ -147,24 +148,24 @@ button:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-us-content {
-    grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    text-align: left; /* Left-align content for mobile */
+    grid-template-columns: 1fr;
+    text-align: left;
   }
 
   .form-row {
-    flex-direction: column; /* Stack form fields vertically */
+    flex-direction: column;
   }
 
   .contact-form, .contact-details {
-    align-items: flex-start; /* Left-align form fields on mobile */
+    align-items: flex-start;
     text-align: left;
   }
 
   .form-group input, .form-group textarea {
-    width: 100%; /* Full width inputs on smaller screens */
+    width: 100%;
   }
 
   button {
-    align-self: flex-start; /* Left-align button on mobile */
+    align-self: flex-start;
   }
 }

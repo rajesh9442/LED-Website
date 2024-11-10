@@ -151,9 +151,9 @@ const specifications = {
 };
 
 const WallPackDetails = () => {
-  const { id } = useParams(); // Get the id from the URL
-  const selectedPack = specifications[id]; // Find the matching Wall Pack
-  const [selectedImage, setSelectedImage] = useState(selectedPack?.images[0]); // Initialize selected image
+  const { id } = useParams();
+  const selectedPack = specifications[id];
+  const [selectedImage, setSelectedImage] = useState(selectedPack?.images[0]);
 
   if (!selectedPack) {
     return <div>Invalid Wall Pack selected.</div>;
@@ -162,14 +162,14 @@ const WallPackDetails = () => {
   const renderSpecifications = () => {
     const { specs } = selectedPack;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
+      <div style={{ marginTop: '20px', width: '80%', maxWidth: '700px', margin: 'auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '10px' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', textAlign: 'left', width: '30%' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', textAlign: 'left' }}>{value}</td>
               </tr>
             ))}
           </tbody>
@@ -180,19 +180,20 @@ const WallPackDetails = () => {
 
   const renderImageThumbnails = () => {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginTop: '10px' }}>
         {selectedPack.images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Thumbnail ${index}`}
-            onClick={() => setSelectedImage(image)} // Set selected image on click
+            onClick={() => setSelectedImage(image)}
             style={{
-              width: '50px',
-              height: '50px',
-              margin: '0 10px',
+              width: '60px',
+              height: '60px',
+              objectFit: 'cover',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ddd',
+              padding: '5px',
             }}
           />
         ))}
@@ -203,11 +204,13 @@ const WallPackDetails = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{selectedPack.title}</h1>
-      <img
-        src={selectedImage}
-        alt={selectedPack.title}
-        style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
-      />
+      <div style={{ marginBottom: '20px' }}>
+        <img
+          src={selectedImage}
+          alt={selectedPack.title}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        />
+      </div>
       {renderImageThumbnails()}
       {renderSpecifications()}
     </div>

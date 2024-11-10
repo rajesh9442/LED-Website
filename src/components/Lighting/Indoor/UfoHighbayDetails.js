@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UFOHighbayLight150W from '../../../images/Indoor/UfoHighbay/UFOHighbayLight150W.jpg';
 import UFOHighbayLight240W from '../../../images/Indoor/UfoHighbay/UFOHighbayLight240W.jpg';
-import AdditionalHighbay1 from '../../../images/Indoor/UfoHighbay/11.jpg'; // Example additional image
-import AdditionalHighbay12 from '../../../images/Indoor/UfoHighbay/12.jpg'; 
+import AdditionalHighbay1 from '../../../images/Indoor/UfoHighbay/11.jpg';
+import AdditionalHighbay12 from '../../../images/Indoor/UfoHighbay/12.jpg';
 
 const ufoHighbayData = {
   'ufo-highbay-150w': {
     title: 'UFO Highbay Light 150W',
-    images: [UFOHighbayLight150W,AdditionalHighbay12, AdditionalHighbay1], // Multiple images for this light
+    images: [UFOHighbayLight150W, AdditionalHighbay12, AdditionalHighbay1],
     specs: {
       SIZE: '12.6″ W x 7.4″ D',
       LUMENS: '21,750lm',
@@ -27,7 +27,7 @@ const ufoHighbayData = {
   },
   'ufo-highbay-240w': {
     title: 'UFO Highbay Light 240W',
-    images: [UFOHighbayLight240W,AdditionalHighbay12, AdditionalHighbay1], // Multiple images for this light
+    images: [UFOHighbayLight240W, AdditionalHighbay12, AdditionalHighbay1],
     specs: {
       SIZE: '15″ W x 8″ D',
       LUMENS: '34,800lm',
@@ -47,9 +47,9 @@ const ufoHighbayData = {
 };
 
 const UfoHighbayDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const highbay = ufoHighbayData[id]; // Get the data for the selected highbay
-  const [selectedImage, setSelectedImage] = useState(highbay ? highbay.images[0] : null); // Default to the first image
+  const { id } = useParams();
+  const highbay = ufoHighbayData[id];
+  const [selectedImage, setSelectedImage] = useState(highbay ? highbay.images[0] : null);
 
   if (!highbay) {
     return <div>Invalid Highbay selection.</div>;
@@ -58,13 +58,13 @@ const UfoHighbayDetails = () => {
   const renderSpecifications = () => {
     const { specs } = highbay;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', textAlign: 'left', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
               </tr>
             ))}
@@ -96,8 +96,8 @@ const UfoHighbayDetails = () => {
             alt={`Thumbnail ${index + 1}`}
             onClick={() => setSelectedImage(image)}
             style={{
-              width: '60px', // Thumbnail size
-              height: '60px', // Thumbnail size
+              width: '60px',
+              height: '60px',
               objectFit: 'cover',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',

@@ -118,9 +118,9 @@ const canopyLightData = {
 };
 
 const CanopyLightDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const canopyLight = canopyLightData[id]; // Get the data for the selected canopy light
-  const [selectedImage, setSelectedImage] = useState(canopyLight ? canopyLight.images[0] : null); // Default to the first image
+  const { id } = useParams();
+  const canopyLight = canopyLightData[id];
+  const [selectedImage, setSelectedImage] = useState(canopyLight ? canopyLight.images[0] : null);
 
   if (!canopyLight) {
     return <div>Invalid Canopy Light selection.</div>;
@@ -129,13 +129,13 @@ const CanopyLightDetails = () => {
   const renderSpecifications = () => {
     const { specs } = canopyLight;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', textAlign: 'left', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
               </tr>
             ))}
@@ -154,7 +154,7 @@ const CanopyLightDetails = () => {
         <img
           src={selectedImage}
           alt={canopyLight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
         />
       </div>
 
@@ -167,8 +167,8 @@ const CanopyLightDetails = () => {
             alt={`Thumbnail ${index + 1}`}
             onClick={() => setSelectedImage(image)}
             style={{
-              width: '60px', // Thumbnail size
-              height: '60px', // Thumbnail size
+              width: '60px',
+              height: '60px',
               objectFit: 'cover',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',

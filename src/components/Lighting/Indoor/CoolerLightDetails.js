@@ -8,7 +8,7 @@ import additionalImage12 from '../../../images/Indoor/CoolerLight/12.jpg';
 const coolerLightData = {
   'cooler-light-1': {
     title: 'Cooler Light 5ft – 32W',
-    images: [coolerLightImage, additionalImage1,additionalImage12, additionalImage], // Multiple images
+    images: [coolerLightImage, additionalImage1, additionalImage12, additionalImage],
     specs: {
       SIZE: '5ft- 0.5” Ø x 58.7” L<br />6ft- 0.5” Ø x 70.6” L',
       'Input voltage': 'AC100-250V',
@@ -24,14 +24,13 @@ const coolerLightData = {
       DESCRIPTION: 'LED Cooler Lights are an excellent solution for lighting refrigerated units. These lights are safe for indoor use in coolers and freezers. LED Cooler Lights are perfect for grocery stores, gas stations, and convenience stores.'
     }
   }
-  // Add more cooler light data as needed
 };
 
 const CoolerLightDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const coolerLight = coolerLightData[id]; // Get the data for the selected cooler light
+  const { id } = useParams();
+  const coolerLight = coolerLightData[id];
 
-  const [selectedImage, setSelectedImage] = useState(coolerLight.images[0]); // Default to first image
+  const [selectedImage, setSelectedImage] = useState(coolerLight.images[0]);
 
   if (!coolerLight) {
     return <div>Invalid Cooler Light selection.</div>;
@@ -40,13 +39,13 @@ const CoolerLightDetails = () => {
   const renderSpecifications = () => {
     const { specs } = coolerLight;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '10px' }}>
+      <div style={{ marginTop: '20px', margin: '0 auto', width: '80%', maxWidth: '700px' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '10px', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }} dangerouslySetInnerHTML={{ __html: value }}></td>
               </tr>
             ))}
@@ -65,12 +64,12 @@ const CoolerLightDetails = () => {
         <img
           src={selectedImage}
           alt={coolerLight.title}
-          style={{ width: '300px', height: '300px', objectFit:"fill" , display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
         />
       </div>
 
       {/* Thumbnail Images */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
         {coolerLight.images.map((image, index) => (
           <img
             key={index}

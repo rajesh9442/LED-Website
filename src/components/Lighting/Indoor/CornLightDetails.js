@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import LEDCornLight18W from '../../../images/Indoor/CornLight/LEDCornLight18W.jpg'; // Adjust the path based on your folder structure
+import LEDCornLight18W from '../../../images/Indoor/CornLight/LEDCornLight18W.jpg';
 import LEDCornLight54W from '../../../images/Indoor/CornLight/LEDCornLight54W.jpg';
 import LEDCornLight120W from '../../../images/Indoor/CornLight/LEDCornLight120W.jpg';
-import additionalImage from '../../../images/Indoor/CornLight/11.jpg'; // Additional image
+import additionalImage from '../../../images/Indoor/CornLight/11.jpg';
 import additionalImage2 from '../../../images/Indoor/CornLight/12.jpg';
 
 const imageData = {
@@ -67,10 +67,9 @@ const imageData = {
 };
 
 const CornLightDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const cornLight = imageData[id]; // Get the data for the selected corn light
+  const { id } = useParams();
+  const cornLight = imageData[id];
 
-  // Set initial image state
   const [selectedImage, setSelectedImage] = useState(cornLight.images[0]);
 
   if (!cornLight) {
@@ -80,13 +79,13 @@ const CornLightDetails = () => {
   const renderSpecifications = () => {
     const { specs } = cornLight;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
               </tr>
             ))}
@@ -110,7 +109,7 @@ const CornLightDetails = () => {
       </div>
 
       {/* Thumbnail Images */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
         {cornLight.images.map((image, index) => (
           <img
             key={index}

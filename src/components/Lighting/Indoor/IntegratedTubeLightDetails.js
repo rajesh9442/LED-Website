@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LEDIntegratedTubeLight from '../../../images/Indoor/IntegratedTubeLight/LEDIntegratedTubeLight2-8ft,10-72W.jpg';
-import LEDIntegratedTubeLightAlternate from '../../../images/Indoor/IntegratedTubeLight/11.jpg'; // Add another image for switching
+import LEDIntegratedTubeLightAlternate from '../../../images/Indoor/IntegratedTubeLight/11.jpg';
 import LEDIntegratedTubeLightAlternate1 from '../../../images/Indoor/IntegratedTubeLight/12.jpg';
 
 const imageData = [
@@ -28,9 +28,7 @@ const specifications = {
 };
 
 const IntegratedTubeLightDetails = () => {
-  console.log("Rendering IntegratedTubeLightDetails component");  // Debugging log
-
-  const [selectedImage, setSelectedImage] = useState(imageData[0]); // Default to the first image
+  const [selectedImage, setSelectedImage] = useState(imageData[0]);
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
@@ -54,8 +52,8 @@ const IntegratedTubeLightDetails = () => {
             alt={`Thumbnail ${index + 1}`}
             onClick={() => setSelectedImage(image)}
             style={{
-              width: '60px',  // Thumbnail size
-              height: '60px', // Thumbnail size
+              width: '60px',
+              height: '60px',
               objectFit: 'cover',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
@@ -66,13 +64,13 @@ const IntegratedTubeLightDetails = () => {
       </div>
 
       {/* Specifications */}
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specifications).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }} dangerouslySetInnerHTML={{ __html: value }}></td>
               </tr>
             ))}

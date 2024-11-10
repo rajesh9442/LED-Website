@@ -7,7 +7,7 @@ import AdditionalImage12 from '../../../images/Outdoor/ShoeBox/12.jpg';
 const shoeBoxData = {
   'led-shoe-box-area-light': {
     title: 'LED Shoe Box Area Light 150-450W',
-    images: [LEDShoeBoxAreaLight150to450W,AdditionalImage12, AdditionalImage1], // Multiple images for thumbnail view
+    images: [LEDShoeBoxAreaLight150to450W, AdditionalImage12, AdditionalImage1], // Multiple images for thumbnail view
     specs: {
       SIZE: '150W: 11.3″ L x 19.7″ W x 3″ D | 240-300W: 14″ L x 25.1″ W x 3″ D | 450W: TBD',
       LUMENS: '150W: 21,135lm | 240W: 33,816lm | 300W: 42,270lm | 450W: 63,405lm',
@@ -41,13 +41,13 @@ const ShoeBoxDetails = () => {
   const renderSpecifications = () => {
     const { specs } = shoeBox;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', textAlign: 'left', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
               </tr>
             ))}

@@ -10,7 +10,7 @@ import additionalImage3 from '../../../images/Outdoor/ExitSigns/13.jpg';
 const imageData = {
   'sign1': {
     title: 'LED Exit & Emergency Combo Sign 5W',
-    images: [signImage1,additionalImage3, additionalImage1],
+    images: [signImage1, additionalImage3, additionalImage1],
     specs: {
       SIZE: '11.7” L x 12” W x 3.8” H',
       WATTS: '5W',
@@ -29,7 +29,7 @@ const imageData = {
   },
   'sign2': {
     title: 'LED Indoor Slim Exit Combo',
-    images: [signImage2,additionalImage3,additionalImage1],
+    images: [signImage2, additionalImage3, additionalImage1],
     specs: {
       SIZE: '16.9” L x 7.5” H x 1.8” D',
       WATTS: '5W',
@@ -69,12 +69,8 @@ const imageData = {
 
 const ExitSignsDetails = () => {
   const { id } = useParams();
-  
-  const sign = imageData[id]; // Get the data for the selected sign
+  const sign = imageData[id];
   const [selectedImage, setSelectedImage] = useState(sign ? sign.images[0] : null);
-
-  console.log('ID from URL:', id);  // Debugging log
-  console.log('Sign object:', sign);  // Debugging log
 
   if (!sign) {
     return <div>Invalid sign selection.</div>;
@@ -83,13 +79,13 @@ const ExitSignsDetails = () => {
   const renderSpecifications = () => {
     const { specs } = sign;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
+      <div style={{ marginTop: '20px', textAlign: 'left', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
               </tr>
             ))}
@@ -108,7 +104,7 @@ const ExitSignsDetails = () => {
         <img
           src={selectedImage}
           alt={sign.title}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
         />
       </div>
 

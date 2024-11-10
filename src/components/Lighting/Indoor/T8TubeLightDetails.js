@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import T8TubeLight1 from '../../../images/Indoor/T8TubeLight/1.jpg';
 import T8TubeLight2 from '../../../images/Indoor/T8TubeLight/LEDT8TubeLiightSinglePin8ft50W.jpg';
-import AdditionalT8TubeLight1 from '../../../images/Indoor/T8TubeLight/11.jpg'; // Example additional image
+import AdditionalT8TubeLight1 from '../../../images/Indoor/T8TubeLight/11.jpg';
 import AdditionalT8TubeLight2 from '../../../images/Indoor/T8TubeLight/2.jpg';
 import AdditionalT8TubeLight3 from '../../../images/Indoor/T8TubeLight/3.jpg';
 
 const t8TubeLightData = {
   light1: {
     title: 'LED T8 Tube Light Single Pin 8ft 50W',
-    images: [T8TubeLight1, AdditionalT8TubeLight2,AdditionalT8TubeLight3,AdditionalT8TubeLight1], // Multiple images
+    images: [T8TubeLight1, AdditionalT8TubeLight2, AdditionalT8TubeLight3, AdditionalT8TubeLight1],
     specs: {
       SIZE: '8ft: 1.4″ * Ø * 8 ‘L',
       WATT: '50W',
@@ -25,7 +25,7 @@ const t8TubeLightData = {
   },
   light2: {
     title: 'LED T8 Tube Light 2ft – 4ft 10 – 22W',
-    images: [T8TubeLight2, AdditionalT8TubeLight1], // Multiple images
+    images: [T8TubeLight2, AdditionalT8TubeLight1],
     specs: {
       SIZE: '2ft: 1.4″ Ø x 2′ L\n3ft: 1.4″ Ø x 3′ L\n4ft: 1.4″ Ø x 4′ L',
       '10W': '1,200lm (2ft)',
@@ -45,9 +45,9 @@ const t8TubeLightData = {
 };
 
 const T8TubeLightDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const light = t8TubeLightData[id]; // Get the data for the selected light
-  const [selectedImage, setSelectedImage] = useState(light ? light.images[0] : null); // Default to the first image
+  const { id } = useParams();
+  const light = t8TubeLightData[id];
+  const [selectedImage, setSelectedImage] = useState(light ? light.images[0] : null);
 
   if (!light) {
     return <div>Invalid T8 Tube Light selection.</div>;
@@ -56,13 +56,13 @@ const T8TubeLightDetails = () => {
   const renderSpecifications = () => {
     const { specs } = light;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', textAlign: 'left', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{value}</td>
               </tr>
             ))}
@@ -74,7 +74,7 @@ const T8TubeLightDetails = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>{light.title}</h1> {/* Title of the page */}
+      <h1>{light.title}</h1>
 
       {/* Main Image Display */}
       <div style={{ marginBottom: '20px' }}>
@@ -94,8 +94,8 @@ const T8TubeLightDetails = () => {
             alt={`Thumbnail ${index + 1}`}
             onClick={() => setSelectedImage(image)}
             style={{
-              width: '60px', // Thumbnail size
-              height: '60px', // Thumbnail size
+              width: '60px',
+              height: '60px',
               objectFit: 'cover',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',

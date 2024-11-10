@@ -79,18 +79,9 @@ const CCTVDetails = () => {
   const renderFeatures = () => {
     const { features } = cctv;
     return (
-      <div style={{ 
-        marginTop: '20px', 
-        width: '50%', 
-        margin: 'auto',
-        textAlign: 'left',
-        '@media (max-width: 768px)': {
-          width: '90%',
-          textAlign: 'left',
-        } 
-      }}>
-        <h2>Features</h2>
-        <ul>
+      <div style={{ marginTop: '20px', width: '80%', maxWidth: '600px', margin: 'auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Features</h2>
+        <ul style={{ textAlign: 'left', paddingLeft: '20px' }}>
           {features.map((feature, index) => (
             <li key={index} style={{ padding: '8px', borderBottom: '1px solid #ddd' }}>
               {feature}
@@ -102,14 +93,7 @@ const CCTVDetails = () => {
   };
 
   return (
-    <div style={{
-      padding: '20px',
-      textAlign: 'center',
-      '@media (max-width: 768px)': {
-        textAlign: 'left',
-        padding: '10px'
-      }
-    }}>
+    <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{cctv.title}</h1>
       <img
         src={cctv.src}
@@ -120,9 +104,6 @@ const CCTVDetails = () => {
           objectFit: 'cover',
           display: 'block',
           margin: '20px auto',
-          '@media (max-width: 768px)': {
-            margin: '20px 0'
-          }
         }}
       />
       {renderFeatures()}

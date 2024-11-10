@@ -7,6 +7,7 @@ import gasPriceSignImage5 from '../../images/Signs/GasSign/2.jpg';
 import gasPriceSignImage6 from '../../images/Signs/GasSign/7.png';
 
 const GasSign = () => {
+  // Data for the table
   const tableData = [
     {
       height: '12\'\'',
@@ -30,7 +31,61 @@ const GasSign = () => {
       color: 'Red',
       linesForLEDs: '3 lines'
     },
-    // Additional rows here...
+    {
+      height: '12\'\'',
+      modelNumber: 'GLG-12inch8.88 9/10-Red/Amber/Green',
+      numberFormat: '8.88 9/10',
+      maxSizeCharacter: '304.8mm',
+      housingDimension: 'H400mm W836mm D60mm',
+      voltage: 'R/Y:35W B/G/W:37W',
+      netWeight: '9.5kg',
+      color: 'Red',
+      linesForLEDs: '3 lines'
+    },
+    {
+      height: '16\'\'',
+      modelNumber: 'GLG-16inch8.888-Red/Amber/Green',
+      numberFormat: '8.888',
+      maxSizeCharacter: '406.4mm',
+      housingDimension: 'H507mm W1224mm D60mm',
+      voltage: 'R/Y:64W B/G/W:52W',
+      netWeight: '18kg',
+      color: 'Red',
+      linesForLEDs: '4 lines'
+    },
+    {
+      height: '16\'\'',
+      modelNumber: 'GLG-16inch8.889-Red/Amber/Green',
+      numberFormat: '8.889',
+      maxSizeCharacter: '406.4mm',
+      housingDimension: 'H507mm W1077mm D60mm',
+      voltage: 'R/Y:53W B/G/W:44.5W',
+      netWeight: '16kg',
+      color: 'Red',
+      linesForLEDs: '4 lines'
+    },
+    {
+      height: '24\'\'',
+      modelNumber: 'GLG-24inch8.888-Red/Amber/Green',
+      numberFormat: '8.888',
+      maxSizeCharacter: '609.6mm',
+      housingDimension: 'H710mm W1771mm D60mm',
+      voltage: 'R/Y:112W B/G/W:80W',
+      netWeight: '26kg',
+      color: 'Red',
+      linesForLEDs: '5 lines'
+    },
+    {
+      height: '24\'\'',
+      modelNumber: 'GLG-24inch8.889-Red/Amber/Green',
+      numberFormat: '8.889',
+      maxSizeCharacter: '609.6mm',
+      housingDimension: 'H710mm W1564mm D60mm',
+      voltage: 'R/Y:94.5W B/G/W:71W',
+      netWeight: '24.6kg',
+      color: 'Red',
+      linesForLEDs: '5 lines'
+    }
   ];
 
   return (

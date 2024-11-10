@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import DownLightImage1 from '../../../images/Indoor/DownLightSeries/1.jpg'; // Correct path
-import DownLightImage2 from '../../../images/Indoor/DownLightSeries/11.jpg'; // Additional image for switching
+import DownLightImage1 from '../../../images/Indoor/DownLightSeries/1.jpg';
+import DownLightImage2 from '../../../images/Indoor/DownLightSeries/11.jpg';
 import DownLightImage12 from '../../../images/Indoor/DownLightSeries/12.jpg';
 
 const downlightData = {
   'downlight-1': {
     title: 'LED 4-6″ Retrofit Downlight 10W-15W 5CCT',
-    images: [DownLightImage1, DownLightImage12, DownLightImage2], // Multiple images
+    images: [DownLightImage1, DownLightImage12, DownLightImage2],
     specs: {
       SIZE: '10W: 4.9” L x 2.6” D<br />15W: 7.3” L x 3” D',
       WATT: '10W - 15W',
@@ -20,17 +20,16 @@ const downlightData = {
       MATERIALS: 'Iron, PC',
       HOUSING_COLOR: 'White, Frosted',
       LIFESPAN: '50,000 hours',
-      DESCRIPTION: 'LED Downlights are safe to use in damp locations that rarely have direct water contact, such as bathrooms and awnings. These Lights can be easily converted and installed from below the ceiling without removing old fixtures. LED Downlights are perfect for homes, hotels, and offices. This light has a switch on the back to change between four color temperatures.',
+      DESCRIPTION: 'LED Downlights are safe to use in damp locations...',
     },
   },
-  // Add more downlight data as needed
+  // Additional downlight data could go here
 };
 
 const DownLightDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const downlight = downlightData[id]; // Get the data for the selected downlight
+  const { id } = useParams();
+  const downlight = downlightData[id];
 
-  // Set initial image state
   const [selectedImage, setSelectedImage] = useState(downlight.images[0]);
 
   if (!downlight) {
@@ -40,13 +39,13 @@ const DownLightDetails = () => {
   const renderSpecifications = () => {
     const { specs } = downlight;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
-        <h2>Specifications</h2>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '20px', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>Specifications</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold' }}>{key}</td>
+                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', width: '30%' }}>{key}</td>
                 <td style={{ padding: '8px', border: '1px solid #ddd' }} dangerouslySetInnerHTML={{ __html: value }}></td>
               </tr>
             ))}
@@ -70,7 +69,7 @@ const DownLightDetails = () => {
       </div>
 
       {/* Thumbnail Images */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
         {downlight.images.map((image, index) => (
           <img
             key={index}
