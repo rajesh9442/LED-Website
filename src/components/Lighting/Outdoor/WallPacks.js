@@ -8,16 +8,6 @@ import WallPack5 from '../../../images/Outdoor/WallPacks/5.jpg';
 import WallPack6 from '../../../images/Outdoor/WallPacks/6.jpg';
 
 const specifications = {
-  // 'LED Mini Wall Pack W/Photocell 30W': {
-  //   path: 'led-mini-wall-pack-w-photocell-30w',
-  //   src: WallPack1,
-  //   description: 'LED Mini Wall Pack W/Photocell 30W',
-  // },
-  // 'LED Mini Wall Pack W/Photocell 13W': {
-  //   path: 'led-mini-wall-pack-w-photocell-13w',
-  //   src: WallPack2,
-  //   description: 'LED Mini Wall Pack W/Photocell 13W',
-  // },
   'Led Mini Wall Pack 13W/20W/30W': {
     path: 'led-mini-wall-pack-20w',
     src: WallPack3,
@@ -37,7 +27,7 @@ const specifications = {
     path: 'led-outdoor-wall-pack-w-photo-cell-sensor-40-120w',
     src: WallPack6,
     description: 'LED Outdoor Wall Pack W/Photo Cell Sensor 40 -120W',
-  }
+  },
 };
 
 const WallPacks = () => {
@@ -50,17 +40,25 @@ const WallPacks = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Wall Packs</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginTop: '10px' }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '15px',
+          justifyContent: 'center',
+          marginTop: '10px',
+        }}
+      >
         {Object.keys(specifications).map((key) => (
-          <div 
-            key={key} 
+          <div
+            key={key}
             style={{ textAlign: 'center', cursor: 'pointer' }}
             onClick={() => handleImageClick(key)}
           >
-            <div 
-              style={{ 
-                display: 'inline-block', 
-                border: '2px solid transparent', 
+            <div
+              style={{
+                display: 'inline-block',
+                border: '2px solid transparent',
                 padding: '5px',
                 transition: 'border-color 0.3s, transform 0.3s',
               }}
@@ -73,10 +71,17 @@ const WallPacks = () => {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              <img 
-                src={specifications[key].src} 
-                alt={key} 
-                style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }} 
+              <img
+                src={specifications[key].src}
+                alt={key}
+                style={{
+                  width: '100%',
+                  maxWidth: '250px',
+                  height: 'auto',
+                  objectFit: 'cover',
+                  display: 'block',
+                  borderRadius: '8px',
+                }}
               />
               <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
                 {key}
@@ -87,6 +92,6 @@ const WallPacks = () => {
       </div>
     </div>
   );
-}
+};
 
 export default WallPacks;

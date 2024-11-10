@@ -32,23 +32,29 @@ const FloodLight = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Flood Lights</h1>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '15px',
+          justifyContent: 'center',
+          marginTop: '10px',
+        }}
+      >
         {Object.keys(floodLightData).map((key) => (
           <div
             key={key}
             style={{
-              margin: '0 15px',
               cursor: 'pointer',
               border: '2px solid transparent',
-              padding: '5px',
-              display: 'inline-block',
-              transform: 'scale(1)',
+              padding: '10px',
               transition: 'transform 0.2s, border-color 0.2s',
+              textAlign: 'center',
             }}
             onClick={() => handleImageClick(key)}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = 'black';
-              e.currentTarget.style.transform = 'scale(1.1)';
+              e.currentTarget.style.transform = 'scale(1.05)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = 'transparent';
@@ -58,7 +64,7 @@ const FloodLight = () => {
             <img
               src={floodLightData[key].src}
               alt={key}
-              style={{ width: '250px', height: '250px', objectFit: 'cover' }}
+              style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
             />
             <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
               {floodLightData[key].description}

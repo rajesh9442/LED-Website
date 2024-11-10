@@ -49,7 +49,14 @@ const Panels = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Panels</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginTop: '10px' }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '15px',
+          marginTop: '10px',
+        }}
+      >
         {Object.keys(panelData).map((key) => (
           <div
             key={key}
@@ -64,7 +71,7 @@ const Panels = () => {
             onClick={() => handlePanelClick(key)}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = 'black';
-              e.currentTarget.style.transform = 'scale(1.1)';
+              e.currentTarget.style.transform = 'scale(1.05)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = 'transparent';
@@ -74,7 +81,7 @@ const Panels = () => {
             <img
               src={panelData[key].src}
               alt={panelData[key].name}
-              style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }}
+              style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
             />
             <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>{panelData[key].name}</p>
           </div>
