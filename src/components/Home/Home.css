@@ -3,7 +3,9 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px; /* Add padding for smaller screens */
   position: relative;
+  box-sizing: border-box;
 }
 
 .slideshow-container {
@@ -94,7 +96,7 @@
 /* Ensure images are responsive */
 .content-image img {
   max-width: 100%;
-  width: 50%; /* Reduced image size from 80% to 70% */
+  width: 50%; /* Reduced image size */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for a floating effect */
@@ -102,13 +104,17 @@
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  .home {
+    padding: 0 10px; /* Adjust padding for mobile screens */
+  }
+
   .container {
     grid-template-columns: 1fr; /* Stack text and image in one column */
     text-align: center; /* Center text and image for mobile */
   }
 
   .content-image img {
-    width: 60%; /* Reduced mobile image size from 70% to 60% */
+    width: 80%; /* Adjust image size on mobile */
     margin-bottom: 20px; /* Space between the image and text when stacked */
   }
 

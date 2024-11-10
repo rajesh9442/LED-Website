@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 10px 20px;
   z-index: 10000;
   position: relative;
   width: 100%; /* Ensure full width */
@@ -30,11 +30,11 @@
   padding: 0;
   display: flex;
   position: relative; /* Position relative to allow absolute positioning of dropdown */
+  gap: 15px; /* Space between links */
 }
 
 /* Styling for each navbar link */
 .navbar-links li {
-  margin-left: 15px;
   position: relative; /* Position relative to allow absolute positioning of dropdown */
 }
 
@@ -43,13 +43,12 @@
   display: block;
   color: rgb(19, 19, 19);
   text-align: center;
-  padding: 14px 16px; /* Maintain the same padding for content */
+  padding: 10px 16px;
   text-decoration: none;
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-  position: relative;
-  font-weight: 600; /* Make menu items slightly bold */
-  font-size: 1.1em; /* Increase font size for larger text */
-  box-sizing: border-box; /* Include padding and borders in width calculation */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1em;
+  box-sizing: border-box;
 }
 
 /* Smooth underline for navbar items */
@@ -68,7 +67,7 @@
 
 /* Hover state for the underline */
 .navbar-links > li > a:hover::before,
-.navbar-links > li > a.active::before { /* Keep underline when active */
+.navbar-links > li > a.active::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -84,22 +83,22 @@
   z-index: 1000;
   padding: 10px;
   box-sizing: border-box;
-  white-space: nowrap; /* Prevent line breaks */
-  display: flex; /* Use flexbox to layout sections side by side */
-  gap: 20px; /* Space between the sections */
-  min-width: 200px; /* Ensure dropdown width */
+  white-space: nowrap;
+  display: flex;
+  gap: 20px;
+  min-width: 200px;
 }
 
 /* Dropdown Section */
 .dropdown-section {
   display: flex;
   flex-direction: column;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
 /* Dropdown Items (Body Text) */
 .dropdown-section ul {
-  list-style-type: none; /* Remove bullet points */
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
@@ -107,7 +106,7 @@
 /* Dropdown List Items */
 .dropdown-section li {
   padding: 0;
-  margin-bottom: 5px; /* Spacing between items */
+  margin-bottom: 5px;
 }
 
 /* Dropdown Item Links */
@@ -116,10 +115,10 @@
   text-decoration: none;
   display: block;
   padding: 5px;
-  font-size: 1em; /* Regular text size, treating as body text */
-  font-weight: normal; /* Ensure dropdown items are normal weight */
+  font-size: 1em;
+  font-weight: normal;
   transition: color 0.3s ease;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
 /* Hover Effect */
@@ -129,11 +128,45 @@
 
 /* Show Dropdown on Hover */
 .dropdown-container:hover .dropdown {
-  display: flex; /* Show dropdown menu */
+  display: flex;
 }
 
-/* Hide Dropdown when not hovering over the dropdown area */
-.dropdown-container:hover .dropdown,
-.dropdown .dropdown-section:hover {
-  display: flex; /* Ensure the dropdown stays visible when hovering over the dropdown area */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Dropdown styles for mobile */
+  .dropdown {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dropdown-section {
+    width: 100%;
+  }
+
+  /* Adjust link styles for mobile */
+  .navbar-links li a {
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+  }
 }

@@ -8,6 +8,8 @@
 /* General Container Styles */
 .contact-us-container {
   padding: 15px; /* Adjusted padding around the container */
+  max-width: 1200px; /* Limit max width for readability on larger screens */
+  margin: 0 auto; /* Center align the container */
 }
 
 /* Heading Styles */
@@ -22,6 +24,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two columns of equal width */
   gap: 15px; /* Space between the columns */
+  width: 100%; /* Full width */
 }
 
 /* Contact Details Styles */
@@ -73,6 +76,7 @@
   margin-bottom: 15px; /* Reduced margin below rows */
   width: 100%; /* Full width for form rows */
   justify-content: flex-start; /* Aligns form rows to the left */
+  flex-wrap: wrap; /* Wrap form fields on smaller screens */
 }
 
 .form-group {
@@ -90,7 +94,8 @@
 
 .form-group input,
 .form-group textarea {
-  width: 90%; /* Adjust width for left alignment */
+  width: 100%; /* Full width for inputs */
+  max-width: 100%; /* Ensure it doesn't exceed container width */
   padding: 8px; /* Reduced padding */
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -128,7 +133,7 @@ button:hover {
 /* Map Container Styles */
 .map-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align map to the left */
   width: 100%; /* Make the map container full width */
 }
 
@@ -137,4 +142,29 @@ button:hover {
   height: 250px; /* Reduced height for the map */
   border: none;
   border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-us-content {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    text-align: left; /* Left-align content for mobile */
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack form fields vertically */
+  }
+
+  .contact-form, .contact-details {
+    align-items: flex-start; /* Left-align form fields on mobile */
+    text-align: left;
+  }
+
+  .form-group input, .form-group textarea {
+    width: 100%; /* Full width inputs on smaller screens */
+  }
+
+  button {
+    align-self: flex-start; /* Left-align button on mobile */
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import cctvImage1 from '../../images/CCTV/1.png'; // Adjust the path based on your folder structure
+import cctvImage1 from '../../images/CCTV/1.png';
 import cctvImage2 from '../../images/CCTV/2.png';
 import cctvImage3 from '../../images/CCTV/3.png';
 import cctvImage4 from '../../images/CCTV/4.png';
@@ -69,8 +69,8 @@ const imageData = {
 };
 
 const CCTVDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const cctv = imageData[id]; // Get the data for the selected CCTV
+  const { id } = useParams();
+  const cctv = imageData[id];
 
   if (!cctv) {
     return <div>Invalid CCTV selection.</div>;
@@ -79,7 +79,16 @@ const CCTVDetails = () => {
   const renderFeatures = () => {
     const { features } = cctv;
     return (
-      <div style={{ marginTop: '20px', textAlign: 'left', width: '50%', margin: 'auto' }}>
+      <div style={{ 
+        marginTop: '20px', 
+        width: '50%', 
+        margin: 'auto',
+        textAlign: 'left',
+        '@media (max-width: 768px)': {
+          width: '90%',
+          textAlign: 'left',
+        } 
+      }}>
         <h2>Features</h2>
         <ul>
           {features.map((feature, index) => (
@@ -93,12 +102,28 @@ const CCTVDetails = () => {
   };
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
+    <div style={{
+      padding: '20px',
+      textAlign: 'center',
+      '@media (max-width: 768px)': {
+        textAlign: 'left',
+        padding: '10px'
+      }
+    }}>
       <h1>{cctv.title}</h1>
       <img
         src={cctv.src}
         alt={cctv.title}
-        style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+        style={{
+          width: '300px',
+          height: '300px',
+          objectFit: 'cover',
+          display: 'block',
+          margin: '20px auto',
+          '@media (max-width: 768px)': {
+            margin: '20px 0'
+          }
+        }}
       />
       {renderFeatures()}
     </div>

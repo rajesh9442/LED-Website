@@ -3,12 +3,12 @@
   background-color: #333;
   color: white;
   padding: 40px 20px;
-  width: 100%;  /* Ensure the footer spans the full width */
-  box-sizing: border-box;  /* Include padding and border in the element's width */
+  width: 100%; /* Ensure the footer spans the full width */
+  box-sizing: border-box; /* Include padding and border in the element's width */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;  /* Remove any default margins */
+  margin: 0; /* Remove any default margins */
 }
 
 .footer-container {
@@ -17,8 +17,8 @@
   justify-content: space-evenly; /* Evenly distribute space between sections */
   width: 100%;
   max-width: 1200px;
-  padding: 0 20px;  /* Add padding inside the container */
-  box-sizing: border-box;  /* Include padding in the width */
+  padding: 0 20px; /* Add padding inside the container */
+  box-sizing: border-box; /* Include padding in the width */
   gap: 30px;
 }
 
@@ -26,7 +26,7 @@
   flex: 1;
   min-width: 250px;
   max-width: 300px; /* Ensure sections don't get too wide */
-  text-align: left;  /* Left-align the content */
+  text-align: left; /* Left-align the content */
 }
 
 /* Center the Products section, including heading and list */
@@ -86,7 +86,7 @@
   width: 100%;
   padding-top: 20px;
   border-top: 1px solid #555;
-  padding: 0 20px;  /* Ensure padding on the sides */
+  padding: 0 20px; /* Ensure padding on the sides */
   box-sizing: border-box;
 }
 
@@ -112,13 +112,31 @@
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
-    padding: 0 10px;  /* Adjust padding for smaller screens */
+    align-items: flex-start; /* Left-align content for mobile view */
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+
+  .footer-section {
+    max-width: 100%; /* Make sections full width on mobile */
+    text-align: left; /* Left-align content on mobile */
+  }
+
+  /* Ensure Products section and heading are left-aligned on smaller screens */
+  .footer-section.products,
+  .footer-section.products h4 {
+    text-align: left;
   }
 
   .footer-bottom {
     flex-direction: column;
-    text-align: center;
+    text-align: left; /* Left-align text for mobile */
+    padding: 20px 0; /* Increase vertical padding for better spacing */
+  }
+
+  .footer-bottom-left,
+  .footer-bottom-right {
+    width: 100%; /* Ensure full width */
+    text-align: left; /* Left-align content on mobile */
   }
 
   .footer-bottom-right {
