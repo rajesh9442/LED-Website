@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import WallPack1 from '../../../images/Outdoor/WallPacks/1.jpg'; 
-import WallPack2 from '../../../images/Outdoor/WallPacks/2.jpg';
 import WallPack3 from '../../../images/Outdoor/WallPacks/3.jpg';
 import WallPack4 from '../../../images/Outdoor/WallPacks/4.jpg';
 import WallPack5 from '../../../images/Outdoor/WallPacks/5.jpg';

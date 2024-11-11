@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import WallPack1 from '../../../images/Outdoor/WallPacks/1.jpg'; 
-import WallPack2 from '../../../images/Outdoor/WallPacks/2.jpg';
 import WallPack3 from '../../../images/Outdoor/WallPacks/3.jpg';
 import WallPack4 from '../../../images/Outdoor/WallPacks/4.jpg';
 import WallPack5 from '../../../images/Outdoor/WallPacks/5.jpg';
 import WallPack6 from '../../../images/Outdoor/WallPacks/6.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/WallPacks/11.jpg';
-import AdditionalImage2 from '../../../images/Outdoor/WallPacks/12.jpg';
-import AdditionalImage3 from '../../../images/Outdoor/WallPacks/13.jpg';
-import AdditionalImage4 from '../../../images/Outdoor/WallPacks/14.jpg';
 import AdditionalImage111 from '../../../images/Outdoor/WallPacks/111.jpg';
 import AdditionalImage112 from '../../../images/Outdoor/WallPacks/112.jpg';
 import AdditionalImage113 from '../../../images/Outdoor/WallPacks/113.jpg';

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import LEDMiniFloodLight15to50W from '../../../images/Outdoor/FloodLight/LEDMiniFloodLight15to50W.jpg';
 import LEDFloodLight150to300W from '../../../images/Outdoor/FloodLight/LEDFloodLight150to300W.jpg';
 import AdditionalImage1 from '../../../images/Outdoor/FloodLight/11.jpg';
-import AdditionalImage12 from '../../../images/Outdoor/FloodLight/12.jpg';
 import AdditionalImage13 from '../../../images/Outdoor/FloodLight/13.jpg';
 import AdditionalImage14 from '../../../images/Outdoor/FloodLight/14.jpg';
 import AdditionalImage21 from '../../../images/Outdoor/FloodLight/21.jpg';
