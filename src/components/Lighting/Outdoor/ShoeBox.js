@@ -15,6 +15,7 @@ const ShoeBox = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/shoe-box/details/${shoeBoxData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -28,6 +28,7 @@ const DisplaySign = () => {
 
   const handleImageClick = (key) => {
     navigate(`/signs/display-sign/details/${displaySignData[key].path}`); // Navigate to the unique route
+    window.scrollTo(0, 0);
   };
 
   return (

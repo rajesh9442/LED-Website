@@ -16,6 +16,7 @@ const DownLightSeries = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/downlight-series/details/${downlightData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

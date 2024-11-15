@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LEDIntegratedTubeLight from '../../../images/Indoor/IntegratedTubeLight/LEDIntegratedTubeLight2-8ft,10-72W.jpg';
 
 const IntegratedTubeLight = () => {
+  const navigate = useNavigate();
+
+  const handleImageClick = () => {
+    navigate('/lighting/integrated-tube-light/details');
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Integrated Tube Light</h1>
@@ -25,14 +32,13 @@ const IntegratedTubeLight = () => {
             e.currentTarget.style.borderColor = 'transparent';
             e.currentTarget.style.transform = 'scale(1)';
           }}
+          onClick={handleImageClick} // Added onClick event to handle navigation and scroll
         >
-          <Link to={`/lighting/integrated-tube-light/details`} aria-label="LED Integrated Tube Light Details">
-            <img 
-              src={LEDIntegratedTubeLight} 
-              alt="LED Integrated Tube Light" 
-              style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }} 
-            />
-          </Link>
+          <img 
+            src={LEDIntegratedTubeLight} 
+            alt="LED Integrated Tube Light" 
+            style={{ width: '250px', height: '250px', objectFit: 'cover', display: 'block' }} 
+          />
           <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
             LED Integrated Tube Light 2-8ft, 10-72W
           </p>

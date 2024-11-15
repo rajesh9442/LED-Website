@@ -8,6 +8,7 @@ const T8TubeLight = () => {
 
   const handleImageClick = (lightKey) => {
     navigate(`/t8-tube-light/${lightKey}`);
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -27,6 +27,7 @@ const ExitSigns = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/exit-signs/details/${imageData[key].path}`);  // Navigate to the correct path
+    window.scrollTo(0, 0);
   };
 
   return (

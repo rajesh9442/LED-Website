@@ -18,6 +18,7 @@ const CCTV = () => {
 
   const handleImageClick = (key) => {
     navigate(`/cctv/details/${imageData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

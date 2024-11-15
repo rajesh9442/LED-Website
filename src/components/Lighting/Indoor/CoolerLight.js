@@ -16,6 +16,7 @@ const CoolerLight = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/cooler-light/details/${coolerLightData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

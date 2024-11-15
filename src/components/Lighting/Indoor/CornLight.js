@@ -27,6 +27,7 @@ const CornLight = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/corn-light/details/${imageData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -15,6 +15,7 @@ const Troffers = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/troffers/details/${troffersData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

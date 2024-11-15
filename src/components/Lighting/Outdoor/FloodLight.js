@@ -27,6 +27,7 @@ const FloodLight = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/flood-light/details/${floodLightData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

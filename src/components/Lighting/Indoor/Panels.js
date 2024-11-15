@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Panel1 from '../../../images/Indoor/Panels/1.jpeg';
-import Panel2 from '../../../images/Indoor/Panels/2.jpeg';
+import Panel1 from '../../../images/Indoor/Panels/1.jpg';
+import Panel2 from '../../../images/Indoor/Panels/2.jpg';
 import Panel3 from '../../../images/Indoor/Panels/3.jpeg';
 import Panel4 from '../../../images/Indoor/Panels/4.jpeg';
 import Panel5 from '../../../images/Indoor/Panels/5.jpg';
@@ -10,33 +10,33 @@ import Panel7 from '../../../images/Indoor/Panels/7.jpg';
 
 const panelData = {
   'panel1': {
-    name: '2×4 FT LED Light Flat Panel, 40/50/60W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights',
+    name: '2×4 FT LED Light Flat Panel, 30/40/50/72W, Color Temperature Selectable 3K | 3.5K | 4K | 5K | 6.5K, Dimmable Recessed Drop Ceiling Lights',
     src: Panel1,
   },
   'panel2': {
     name: '2x2FT LED Flat Panel Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
     src: Panel2,
   },
-  'panel3': {
-    name: '2×4 FT LED Flat Panel, 40/50/60W, Dimmable Recessed Drop Ceiling Lights',
-    src: Panel3,
-  },
-  'panel4': {
-    name: '2×2 FT LED Light Flat Panel, 20/30/40W, Color Temperature Selectable 3K | 4K | 5K',
-    src: Panel4,
-  },
-  'panel5': {
-    name: 'LED Adjustable CCT Backlit Panel Light Adjustable 2x2ft 2x4ft 20-60W',
-    src: Panel5,
-  },
+  // 'panel3': {
+  //   name: '2×4 FT LED Flat Panel, 40/50/60W, Dimmable Recessed Drop Ceiling Lights',
+  //   src: Panel3,
+  // },
+  // 'panel4': {
+  //   name: '2×2 FT LED Light Flat Panel, 20/30/40W, Color Temperature Selectable 3K | 4K | 5K',
+  //   src: Panel4,
+  // },
+  // 'panel5': {
+  //   name: 'LED Adjustable CCT Backlit Panel Light Adjustable 2x2ft 2x4ft 20-60W',
+  //   src: Panel5,
+  // },
   'panel6': {
-    name: 'LED Adjustable CCT T-Bar Light 2x2ft 20/30/40W 2x4ft 40/50/60W',
+    name: 'LED Adjustable CCT T-Bar Light 2x4ft 40/50/60W',
     src: Panel6,
   },
-  'panel7': {
-    name: 'LED Backlit Panel Light 2x2ft 40W 2x4ft 72W',
-    src: Panel7,
-  },
+  // 'panel7': {
+  //   name: 'LED Backlit Panel Light 2x2ft 40W 2x4ft 72W',
+  //   src: Panel7,
+  // },
 };
 
 const Panels = () => {
@@ -44,6 +44,7 @@ const Panels = () => {
 
   const handlePanelClick = (key) => {
     navigate(`/panels/${encodeURIComponent(key)}`);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -81,7 +82,7 @@ const Panels = () => {
             <img
               src={panelData[key].src}
               alt={panelData[key].name}
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
+              style={{ width: '90%', maxWidth: '200px', height: 'auto', objectFit: 'cover', display: 'block' }}
             />
             <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>{panelData[key].name}</p>
           </div>

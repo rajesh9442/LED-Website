@@ -33,6 +33,7 @@ const WallPacks = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/wall-packs/details/${specifications[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

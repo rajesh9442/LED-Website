@@ -52,6 +52,7 @@ const GimbalLight = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/gimbal-light/details/${imageData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (

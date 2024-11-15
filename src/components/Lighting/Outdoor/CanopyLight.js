@@ -39,6 +39,7 @@ const CanopyLight = () => {
 
   const handleImageClick = (id) => {
     navigate(`/lighting/canopy-light/details/${id}`);
+    window.scrollTo(0, 0);
   };
 
   return (

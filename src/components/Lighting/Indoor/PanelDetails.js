@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Panel1 from '../../../images/Indoor/Panels/1.jpeg';
-import Panel2 from '../../../images/Indoor/Panels/2.jpeg';
+import Panel1 from '../../../images/Indoor/Panels/1.jpg';
+import Panel111 from '../../../images/Indoor/Panels/111.jpg';
+import Panel112 from '../../../images/Indoor/Panels/112.jpg';
+import Panel113 from '../../../images/Indoor/Panels/113.jpg';
+import Panel114 from '../../../images/Indoor/Panels/114.jpg';
+import Panel2 from '../../../images/Indoor/Panels/2.jpg';
+import Panel221 from '../../../images/Indoor/Panels/221.jpg';
+import Panel222 from '../../../images/Indoor/Panels/222.jpg';
 import Panel3 from '../../../images/Indoor/Panels/3.jpeg';
 import Panel4 from '../../../images/Indoor/Panels/4.jpeg';
 import Panel5 from '../../../images/Indoor/Panels/5.jpg';
@@ -14,9 +20,9 @@ import AdditionalImage23 from '../../../images/Indoor/Panels/23.jpg';
 
 const panelData = {
   'panel1': {
-    images: [Panel1,AdditionalImage1, AdditionalImage],
+    images: [Panel1,Panel111, Panel112, Panel113, Panel114],
     specs: {
-      TITLE: '2×4 FT LED Light Flat Panel, 40/50/60W, Color Temperature Selectable 3K | 4K | 5K, Dimmable Recessed Drop Ceiling Lights',
+      TITLE: '2×4 FT LED Light Flat Panel, 30/40/50/72W, Color Temperature Selectable 3K 3.5K | 4K | 5K | 6.5K, Dimmable Recessed Drop Ceiling Lights',
       FEATURES: [
         'This 2×4 LED Backlit Flat Panel is the perfect replacement for fluorescent troffers used in drop ceilings.',
         'Designed to fit in conventional suspended grid ceilings for new construction or retrofit projects, LED flat panels will save you time and money.',
@@ -35,7 +41,7 @@ const panelData = {
     },
   },
   'panel2': {
-    images: [Panel2,AdditionalImage23,AdditionalImage2, AdditionalImage],
+    images: [Panel2,AdditionalImage23,AdditionalImage2, Panel221, Panel222],
     specs: {
       TITLE: '2x2FT LED Flat Panel Light, 40W 5000K Recessed Back-Lit Drop Ceiling Light',
       FEATURES: [
@@ -123,7 +129,7 @@ const panelData = {
   'panel6': {
     images: [Panel6,AdditionalImage1, AdditionalImage],
     specs: {
-      TITLE: 'LED Adjustable CCT T-Bar Light 2x2ft 20/30/40W 2x4ft 40/50/60W',
+      TITLE: 'LED Adjustable CCT T-Bar Light 2x4ft 40/50/60W',
       SPECIFICATIONS: {
         SIZE: 'FL22: 24" L x 24" W x 0.6″ D, FL24: 48" L x 24" W x 0.6″ D',
         '20W +30W + 40W': '2,200lm, 3,300lm, 4,400lm',

@@ -22,6 +22,7 @@ const UfoHighbay = () => {
 
   const handleImageClick = (key) => {
     navigate(`/lighting/ufo-highbay/details/${ufoHighbayData[key].path}`);
+    window.scrollTo(0, 0);
   };
 
   return (
