@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import coolerLightImage from '../../../images/Indoor/CoolerLight/CoolerLight.jpg'; // Main image
 import additionalImage from '../../../images/Indoor/CoolerLight/11.jpg'; // Additional image
@@ -29,15 +29,24 @@ const coolerLightData = {
 const CoolerLightDetails = () => {
   const { id } = useParams();
   const coolerLight = coolerLightData[id];
-
   const [selectedImage, setSelectedImage] = useState(coolerLight.images[0]);
+  const [isMobile, setIsMobile] = useState(false);
   const [zoomStyles, setZoomStyles] = useState({});
+
+  useEffect(() => {
+    // Check for mobile screen size
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // Initial check
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   if (!coolerLight) {
     return <div>Invalid Cooler Light selection.</div>;
   }
 
   const handleMouseMove = (e) => {
+    if (isMobile) return; // Skip zoom effect for mobile
     const rect = e.target.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100; // Mouse X position in percentage
     const y = ((e.clientY - rect.top) / rect.height) * 100; // Mouse Y position in percentage
@@ -50,7 +59,7 @@ const CoolerLightDetails = () => {
   };
 
   const handleMouseLeave = () => {
-    setZoomStyles({}); // Reset zoom effect
+    if (!isMobile) setZoomStyles({}); // Reset zoom effect
   };
 
   const renderSpecifications = () => {
@@ -76,31 +85,32 @@ const CoolerLightDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{coolerLight.title}</h1>
 
-      {/* Main Image Display with Zoom Effect */}
+      {/* Main Image Display with Zoom Effect or Fullscreen */}
       <div
         style={{
           marginBottom: '20px',
-          width: '300px',
-          height: '300px',
+          width: isMobile ? '90%' : '300px',
+          height: isMobile ? 'auto' : '300px',
           margin: '0 auto',
           overflow: 'hidden',
           position: 'relative',
         }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={() => isMobile && window.open(selectedImage, '_blank')} // Open image fullscreen on mobile
       >
         <img
           src={selectedImage}
           alt={coolerLight.title}
           style={{
-            width: '300px',
-            height: '300px',
+            width: isMobile ? '100%' : '300px',
+            height: isMobile ? 'auto' : '300px',
             objectFit: 'contain',
-            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide the image when zoom effect is active
+            display: zoomStyles.backgroundImage && !isMobile ? 'none' : 'block',
           }}
         />
         {/* Zoom effect div */}
-        {zoomStyles.backgroundImage && (
+        {!isMobile && zoomStyles.backgroundImage && (
           <div
             style={{
               width: '100%',
