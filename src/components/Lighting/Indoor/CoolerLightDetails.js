@@ -21,9 +21,9 @@ const coolerLightData = {
       'CRI': '>80Ra',
       'Beam Angle': '170°',
       'Cover': 'Clear',
-      DESCRIPTION: 'LED Cooler Lights are an excellent solution for lighting refrigerated units. These lights are safe for indoor use in coolers and freezers. LED Cooler Lights are perfect for grocery stores, gas stations, and convenience stores.',
-    },
-  },
+      DESCRIPTION: 'LED Cooler Lights are an excellent solution for lighting refrigerated units. These lights are safe for indoor use in coolers and freezers. LED Cooler Lights are perfect for grocery stores, gas stations, and convenience stores.'
+    }
+  }
 };
 
 const CoolerLightDetails = () => {
@@ -32,7 +32,6 @@ const CoolerLightDetails = () => {
 
   const [selectedImage, setSelectedImage] = useState(coolerLight.images[0]);
   const [zoomStyles, setZoomStyles] = useState({});
-  const [touchStart, setTouchStart] = useState(null);
 
   if (!coolerLight) {
     return <div>Invalid Cooler Light selection.</div>;
@@ -40,44 +39,18 @@ const CoolerLightDetails = () => {
 
   const handleMouseMove = (e) => {
     const rect = e.target.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Mouse X position in percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Mouse Y position in percentage
     setZoomStyles({
       backgroundImage: `url(${selectedImage})`,
       backgroundPosition: `${x}% ${y}%`,
-      backgroundSize: '200%',
+      backgroundSize: '200%', // Increase image size for zoom
       backgroundRepeat: 'no-repeat',
     });
   };
 
   const handleMouseLeave = () => {
-    setZoomStyles({});
-  };
-
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    setTouchStart({ x: touch.clientX, y: touch.clientY });
-  };
-
-  const handleTouchMove = (e) => {
-    if (!touchStart) return;
-
-    const touch = e.touches[0];
-    const rect = e.target.getBoundingClientRect();
-    const x = ((touch.clientX - rect.left) / rect.width) * 100;
-    const y = ((touch.clientY - rect.top) / rect.height) * 100;
-
-    setZoomStyles({
-      backgroundImage: `url(${selectedImage})`,
-      backgroundPosition: `${x}% ${y}%`,
-      backgroundSize: '200%',
-      backgroundRepeat: 'no-repeat',
-    });
-  };
-
-  const handleTouchEnd = () => {
-    setZoomStyles({});
-    setTouchStart(null);
+    setZoomStyles({}); // Reset zoom effect
   };
 
   const renderSpecifications = () => {
@@ -115,9 +88,6 @@ const CoolerLightDetails = () => {
         }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         <img
           src={selectedImage}
@@ -126,9 +96,10 @@ const CoolerLightDetails = () => {
             width: '300px',
             height: '300px',
             objectFit: 'contain',
-            display: zoomStyles.backgroundImage ? 'none' : 'block',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide the image when zoom effect is active
           }}
         />
+        {/* Zoom effect div */}
         {zoomStyles.backgroundImage && (
           <div
             style={{
