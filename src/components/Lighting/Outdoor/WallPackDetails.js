@@ -149,10 +149,27 @@ const WallPackDetails = () => {
   const { id } = useParams();
   const selectedPack = specifications[id];
   const [selectedImage, setSelectedImage] = useState(selectedPack?.images[0]);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!selectedPack) {
     return <div>Invalid Wall Pack selected.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Calculate mouse X position
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Calculate mouse Y position
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Zoom level
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect
+  };
 
   const renderSpecifications = () => {
     const { specs } = selectedPack;
@@ -163,7 +180,17 @@ const WallPackDetails = () => {
           <tbody>
             {Object.entries(specs).map(([key, value]) => (
               <tr key={key}>
-                <td style={{ padding: '8px', border: '1px solid #ddd', fontWeight: 'bold', textAlign: 'left', width: '30%' }}>{key}</td>
+                <td
+                  style={{
+                    padding: '8px',
+                    border: '1px solid #ddd',
+                    fontWeight: 'bold',
+                    textAlign: 'left',
+                    width: '30%',
+                  }}
+                >
+                  {key}
+                </td>
                 <td style={{ padding: '8px', border: '1px solid #ddd', textAlign: 'left' }}>{value}</td>
               </tr>
             ))}
@@ -199,13 +226,42 @@ const WallPackDetails = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{selectedPack.title}</h1>
-      <div style={{ marginBottom: '20px' }}>
+
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={selectedPack.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'contain',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide image when zoom effect is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
+
       {renderImageThumbnails()}
       {renderSpecifications()}
     </div>

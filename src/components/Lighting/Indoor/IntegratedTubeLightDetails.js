@@ -29,18 +29,61 @@ const specifications = {
 
 const IntegratedTubeLightDetails = () => {
   const [selectedImage, setSelectedImage] = useState(imageData[0]);
+  const [zoomStyles, setZoomStyles] = useState({});
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Calculate mouse X position as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Calculate mouse Y position as percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Increase the image size for zoom effect
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect
+  };
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>Integrated Tube Light 2-8ft, 10-72W</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
-        <img 
-          src={selectedImage} 
-          alt="LED Integrated Tube Light" 
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }} 
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        <img
+          src={selectedImage}
+          alt="LED Integrated Tube Light"
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'cover',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide the image when zoom is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}
@@ -54,7 +97,7 @@ const IntegratedTubeLightDetails = () => {
             style={{
               width: '60px',
               height: '60px',
-              objectFit: 'cover',
+              objectFit: 'contain',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
               padding: '5px',

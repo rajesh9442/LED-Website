@@ -31,10 +31,27 @@ const DownLightDetails = () => {
   const downlight = downlightData[id];
 
   const [selectedImage, setSelectedImage] = useState(downlight.images[0]);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!downlight) {
     return <div>Invalid Downlight selection.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Mouse X position in percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Mouse Y position in percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Increase image size for zoom effect
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom styles when the mouse leaves the image
+  };
 
   const renderSpecifications = () => {
     const { specs } = downlight;
@@ -59,13 +76,39 @@ const DownLightDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{downlight.title}</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={downlight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'fill',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide the image when the zoom div is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}
@@ -79,7 +122,7 @@ const DownLightDetails = () => {
             style={{
               width: '60px',
               height: '60px',
-              objectFit: 'cover',
+              objectFit: 'contain',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
               padding: '5px',

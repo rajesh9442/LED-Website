@@ -31,10 +31,27 @@ const TroffersDetails = () => {
   const { id } = useParams();
   const troffer = troffersData[id];
   const [selectedImage, setSelectedImage] = useState(troffer ? troffer.images[0] : null);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!troffer) {
     return <div>Invalid Troffer selection.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Calculate mouse X position as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Calculate mouse Y position as percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Increase image size for zoom effect
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect when the mouse leaves
+  };
 
   const renderSpecifications = () => {
     const { specs } = troffer;
@@ -59,13 +76,39 @@ const TroffersDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{troffer.title}</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={troffer.title}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'cover',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide image when zoom effect is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}
@@ -79,7 +122,7 @@ const TroffersDetails = () => {
             style={{
               width: '60px',
               height: '60px',
-              objectFit: 'cover',
+              objectFit: 'contain',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
               padding: '5px',

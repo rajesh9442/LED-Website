@@ -38,54 +38,43 @@ const WallPacks = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>Wall Packs</h1>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '15px',
-          justifyContent: 'center',
-          marginTop: '10px',
-        }}
-      >
+      <h1>Wall Pack Options</h1>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
         {Object.keys(specifications).map((key) => (
           <div
             key={key}
-            style={{ textAlign: 'center', cursor: 'pointer' }}
+            style={{
+              margin: '15px',
+              cursor: 'pointer',
+              border: '2px solid transparent',
+              padding: '5px',
+              display: 'inline-block',
+              transform: 'scale(1)',
+              transition: 'transform 0.2s, border-color 0.2s',
+              textAlign: 'center',
+            }}
             onClick={() => handleImageClick(key)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#000'; // Border on hover
+              e.currentTarget.style.transform = 'scale(1.1)'; // Scale on hover
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'transparent'; // Reset border
+              e.currentTarget.style.transform = 'scale(1)'; // Reset scale
+            }}
           >
-            <div
+            <img
+              src={specifications[key].src}
+              alt={key}
               style={{
-                display: 'inline-block',
-                border: '2px solid transparent',
-                padding: '5px',
-                transition: 'border-color 0.3s, transform 0.3s',
+                width: '250px',
+                height: 'auto',
+                maxWidth: '100%',
+                objectFit: 'cover',
+                borderRadius: '8px',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'black';
-                e.currentTarget.style.transform = 'scale(1.05)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'transparent';
-                e.currentTarget.style.transform = 'scale(1)';
-              }}
-            >
-              <img
-                src={specifications[key].src}
-                alt={key}
-                style={{
-                  width: '100%',
-                  maxWidth: '250px',
-                  height: 'auto',
-                  objectFit: 'cover',
-                  display: 'block',
-                  borderRadius: '8px',
-                }}
-              />
-              <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>
-                {key}
-              </p>
-            </div>
+            />
+            <p style={{ marginTop: '10px', fontSize: '16px', color: '#555' }}>{specifications[key].description}</p>
           </div>
         ))}
       </div>

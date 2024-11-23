@@ -174,14 +174,31 @@ const panelData = {
 };
 
 const PanelDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const panel = panelData[id]; // Get the data for the selected panel
+  const { id } = useParams(); // Get the panel ID from the URL parameter
+  const panel = panelData[id]; // Retrieve the panel data based on the ID
 
-  const [selectedImage, setSelectedImage] = useState(panel ? panel.images[0] : null); // Initialize state unconditionally
+  const [selectedImage, setSelectedImage] = useState(panel ? panel.images[0] : null); // Initialize the selected image
+  const [zoomStyles, setZoomStyles] = useState({}); // Initialize zoom styles
 
   if (!panel) {
     return <div>Invalid panel selection.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Calculate mouse X position as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Calculate mouse Y position as percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Increase the image size for zoom effect
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect when the mouse leaves the image
+  };
 
   const renderSpecifications = () => {
     const { specs } = panel;
@@ -213,14 +230,40 @@ const PanelDetails = () => {
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{panel.specs.TITLE}</h1> {/* Title of the page */}
-      
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={id}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'contain',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide the image when zoom effect is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}

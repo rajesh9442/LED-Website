@@ -50,10 +50,27 @@ const UfoHighbayDetails = () => {
   const { id } = useParams();
   const highbay = ufoHighbayData[id];
   const [selectedImage, setSelectedImage] = useState(highbay ? highbay.images[0] : null);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!highbay) {
     return <div>Invalid Highbay selection.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Calculate mouse X position as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Calculate mouse Y position as percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Zoom level
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect
+  };
 
   const renderSpecifications = () => {
     const { specs } = highbay;
@@ -78,13 +95,39 @@ const UfoHighbayDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{highbay.title}</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={highbay.title}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'cover',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide image when zoom effect is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}
@@ -98,7 +141,7 @@ const UfoHighbayDetails = () => {
             style={{
               width: '60px',
               height: '60px',
-              objectFit: 'cover',
+              objectFit: 'contain',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
               padding: '5px',

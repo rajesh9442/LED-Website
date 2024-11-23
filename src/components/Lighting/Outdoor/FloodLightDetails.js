@@ -79,16 +79,34 @@ const floodLightData = {
 };
 
 const FloodLightDetails = () => {
-  const { id } = useParams(); // Get the id from the URL parameter
-  const floodLight = floodLightData[id]; // Get the data for the selected floodlight
-  const [selectedImage, setSelectedImage] = useState(floodLight ? floodLight.images[0] : null); // Default to the first image
+  const { id } = useParams();
+  const floodLight = floodLightData[id];
+  const [selectedImage, setSelectedImage] = useState(floodLight ? floodLight.images[0] : null);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!floodLight) {
     return <div>Invalid Flood Light selection.</div>;
   }
 
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Calculate mouse X position as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Calculate mouse Y position as percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Zoom level
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect
+  };
+
   const renderSpecifications = () => {
     const { specs } = floodLight;
+    if (!specs) return null; // Return null if no specifications are provided
     return (
       <div style={{ marginTop: '20px', textAlign: 'left', width: '80%', maxWidth: '700px', margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center' }}>Specifications</h2>
@@ -110,13 +128,39 @@ const FloodLightDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{floodLight.title}</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={floodLight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'cover',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide image when zoom effect is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}
@@ -128,9 +172,9 @@ const FloodLightDetails = () => {
             alt={`Thumbnail ${index + 1}`}
             onClick={() => setSelectedImage(image)}
             style={{
-              width: '60px', // Thumbnail size
-              height: '60px', // Thumbnail size
-              objectFit: 'cover',
+              width: '60px',
+              height: '60px',
+              objectFit: 'contain',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
               padding: '5px',

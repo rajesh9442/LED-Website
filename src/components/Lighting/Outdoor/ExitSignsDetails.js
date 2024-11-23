@@ -8,7 +8,7 @@ import additionalImage2 from '../../../images/Outdoor/ExitSigns/12.jpg';
 import additionalImage3 from '../../../images/Outdoor/ExitSigns/13.jpg';
 
 const imageData = {
-  'sign1': {
+  sign1: {
     title: 'LED Exit & Emergency Combo Sign 5W',
     images: [signImage1, additionalImage3, additionalImage1],
     specs: {
@@ -27,7 +27,7 @@ const imageData = {
       DESCRIPTION: 'This Exit and Emergency Combo Sign is designed to show an exit during a crisis.',
     },
   },
-  'sign2': {
+  sign2: {
     title: 'LED Indoor Slim Exit Combo',
     images: [signImage2, additionalImage3, additionalImage1],
     specs: {
@@ -46,7 +46,7 @@ const imageData = {
       DESCRIPTION: 'This LED Emergency Light is safe for outdoor use.',
     },
   },
-  'sign3': {
+  sign3: {
     title: 'LED Indoor Emergency Light - 2.4W',
     images: [signImage3, additionalImage2],
     specs: {
@@ -71,10 +71,27 @@ const ExitSignsDetails = () => {
   const { id } = useParams();
   const sign = imageData[id];
   const [selectedImage, setSelectedImage] = useState(sign ? sign.images[0] : null);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!sign) {
     return <div>Invalid sign selection.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Mouse X position as percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Mouse Y position as percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Zoom level
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect when the mouse leaves
+  };
 
   const renderSpecifications = () => {
     const { specs } = sign;
@@ -99,13 +116,39 @@ const ExitSignsDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{sign.title}</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+      {/* Main Image Display with Hover Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={sign.title}
-          style={{ width: '300px', height: '300px', objectFit: 'cover', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'cover',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide image when zoom effect is active
+          }}
         />
+        {/* Zoom Effect Overlay */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}
@@ -119,7 +162,7 @@ const ExitSignsDetails = () => {
             style={{
               width: '60px',
               height: '60px',
-              objectFit: 'cover',
+              objectFit: 'contain',
               cursor: 'pointer',
               border: selectedImage === image ? '2px solid black' : '1px solid #ccc',
               padding: '5px',

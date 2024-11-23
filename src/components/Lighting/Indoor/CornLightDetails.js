@@ -71,10 +71,27 @@ const CornLightDetails = () => {
   const cornLight = imageData[id];
 
   const [selectedImage, setSelectedImage] = useState(cornLight.images[0]);
+  const [zoomStyles, setZoomStyles] = useState({});
 
   if (!cornLight) {
     return <div>Invalid Corn Light selection.</div>;
   }
+
+  const handleMouseMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100; // Mouse X position in percentage
+    const y = ((e.clientY - rect.top) / rect.height) * 100; // Mouse Y position in percentage
+    setZoomStyles({
+      backgroundImage: `url(${selectedImage})`,
+      backgroundPosition: `${x}% ${y}%`,
+      backgroundSize: '200%', // Increase image size for zoom
+      backgroundRepeat: 'no-repeat',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyles({}); // Reset zoom effect
+  };
 
   const renderSpecifications = () => {
     const { specs } = cornLight;
@@ -99,13 +116,39 @@ const CornLightDetails = () => {
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h1>{cornLight.title}</h1>
 
-      {/* Main Image Display */}
-      <div style={{ marginBottom: '20px' }}>
+      {/* Main Image Display with Zoom Effect */}
+      <div
+        style={{
+          marginBottom: '20px',
+          width: '300px',
+          height: '300px',
+          margin: '0 auto',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           src={selectedImage}
           alt={cornLight.title}
-          style={{ width: '300px', height: '300px', objectFit: 'fill', display: 'block', margin: '0 auto' }}
+          style={{
+            width: '300px',
+            height: '300px',
+            objectFit: 'contain',
+            display: zoomStyles.backgroundImage ? 'none' : 'block', // Hide the image when zoom effect is active
+          }}
         />
+        {/* Zoom effect div */}
+        {zoomStyles.backgroundImage && (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              ...zoomStyles,
+            }}
+          />
+        )}
       </div>
 
       {/* Thumbnail Images */}

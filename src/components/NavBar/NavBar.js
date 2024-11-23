@@ -11,22 +11,26 @@ const NavBar = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuVisible(prev => !prev);
+    window.scrollTo(0, 0);
   };
 
   const handleLightingClick = () => {
     setLightingDropdownVisible(prev => !prev);
     setSignsDropdownVisible(false);
+    window.scrollTo(0, 0);
   };
 
   const handleSignsClick = () => {
     setSignsDropdownVisible(prev => !prev);
     setLightingDropdownVisible(false);
+    window.scrollTo(0, 0);
   };
 
   const handleDropdownItemClick = () => {
     setLightingDropdownVisible(false);
     setSignsDropdownVisible(false);
     setMobileMenuVisible(false);
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
